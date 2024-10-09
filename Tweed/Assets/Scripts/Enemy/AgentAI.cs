@@ -34,12 +34,20 @@ namespace Assets.Scripts.Enemy
         // Update is called once per frame
         void Update()
         {
-            var deltaV = m_player.gameObject.transform.position - this.gameObject.transform.position;
+            var playerPos = m_player.gameObject.transform.position;
+            var deltaV = playerPos - this.gameObject.transform.position;
             var ray = new Ray(this.gameObject.transform.position, deltaV.normalized);
+
 
             var rayHit = Physics.Raycast(ray, out var hitInfo, float.PositiveInfinity, LayerMask.GetMask("Default"));
 
-            if (rayHit && hitInfo.collider.gameObject.tag == "Player")
+            var b = (playerPos - this.gameObject.transform.position).normalized;
+            var a = this.gameObject.transform.forward.normalized;
+            var angle = Vector3.Angle(a, b);
+
+            var canSeePlayer = rayHit && hitInfo.collider.gameObject.tag == "Player" && hitInfo.distance < 30.0f && angle < 30.0f;
+
+            if (canSeePlayer)
             {
                 Debug.DrawRay(ray.origin, ray.direction, Color.red);
                 m_agentFollow.Target = hitInfo.collider.gameObject;
