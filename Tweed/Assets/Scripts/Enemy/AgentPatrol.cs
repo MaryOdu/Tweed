@@ -3,55 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AgentPatrol : MonoBehaviour
+namespace Assets.Scripts.Enemy
 {
-    [SerializeField]
-    private List<GameObject> m_points;
-
-    private NavMeshAgent m_agent;
-    private int m_currIdx;
-    private GameObject m_destObj;
-
-    public AgentPatrol()
+    public class AgentPatrol : MonoBehaviour
     {
-        m_points = new List<GameObject>();
-    }
+        [SerializeField]
+        private List<GameObject> m_patrolPoints;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        m_agent = GetComponent<NavMeshAgent>();
-    }
+        private NavMeshAgent m_agent;
+        private int m_currIdx;
+        private GameObject m_destObj;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (m_agent.remainingDistance <= m_agent.stoppingDistance)
+        public List<GameObject> PatrolPoints
         {
-            if (!m_agent.hasPath || m_agent.velocity.sqrMagnitude == 0f)
+            get
             {
-                var nextPoint = this.GetNextObject();
-                m_agent.destination = nextPoint.transform.position;
+                return m_patrolPoints;
+            }
+            set
+            {
+                m_patrolPoints = value;
             }
         }
-    }
 
-    public GameObject GetNextObject()
-    {
-        if (m_currIdx >= m_points.Count)
+
+        public AgentPatrol()
         {
-            m_currIdx = 0;
+            m_patrolPoints = new List<GameObject>();
         }
-        else
-        {
-            m_currIdx++;
 
-            while (m_points[m_currIdx] == null) // Shouldn't be null, but hey-ho : Might as well check.
+        // Start is called before the first frame update
+        void Start()
+        {
+            m_agent = GetComponent<NavMeshAgent>();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (m_agent.remainingDistance <= m_agent.stoppingDistance)
+            {
+                if (!m_agent.hasPath || m_agent.velocity.sqrMagnitude == 0f)
+                {
+                    Debug.Log($"{gameObject.GetInstanceID()} : Agent has reached destination.");
+
+                    var nextPoint = GetNextObject();
+                    m_agent.destination = nextPoint.transform.position;
+                }
+            }
+        }
+
+        public GameObject GetNextObject()
+        {
+            if (m_currIdx >= m_patrolPoints.Count - 1)
+            {
+                m_currIdx = 0;
+            }
+            else
             {
                 m_currIdx++;
+
+                while (m_patrolPoints[m_currIdx] == null) // Shouldn't be null, but hey-ho : Might as well check.
+                {
+                    m_currIdx++;
+                }
             }
+
+            return m_patrolPoints[m_currIdx];
         }
-        
-        return m_points[m_currIdx];
     }
 }
