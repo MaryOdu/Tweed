@@ -33,13 +33,13 @@ namespace Assets.Scripts.Enemy
         }
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             m_agent = GetComponent<NavMeshAgent>();
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if (m_agent.remainingDistance <= m_agent.stoppingDistance)
             {
@@ -53,7 +53,7 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        public GameObject GetNextObject()
+        private GameObject GetNextObject()
         {
             if (m_currIdx >= m_patrolPoints.Count - 1)
             {
