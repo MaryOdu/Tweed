@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 585805725493591366}
   - component: {fileID: 3735339200495999089}
   - component: {fileID: 3512150553505552715}
+  - component: {fileID: 2050788656502308041}
   m_Layer: 0
   m_Name: Test_Agent
   m_TagString: Untagged
@@ -301,6 +302,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
+  m_patrolPoints: []
+  m_patrolSpeed: 3.5
+  m_searchSpeed: 4.5
+  m_alertSpeed: 7
+  m_sightRange: 30
+  m_sightAngle: 45
 --- !u!195 &3512150553505552715
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -323,6 +330,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2050788656502308041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4987575096904773626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4866f2a43da9edd44a1c554cd45151b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8400310166157264417
 GameObject:
   m_ObjectHideFlags: 0

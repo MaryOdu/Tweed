@@ -89,15 +89,18 @@ namespace Assets.Scripts.Enemy
                     else if (m_searchArea == SearchArea.Local)
                     {
                         this.LookAround();
+                        m_searchArea = SearchArea.Patrol;
+                    }
+                    else if (m_searchArea == SearchArea.Patrol)
+                    {
+                        this.SearchPatrol();
+                        m_searchArea = SearchArea.Level;
                     }
                     else
                     {
-                        this.SearchPatrol();
+                        this.SearchLevel();
+                        m_searchArea = SearchArea.Local;
                     }
-
-                    m_searchArea = m_searchArea == SearchArea.Local ? SearchArea.Patrol
-                    : m_searchArea == SearchArea.Patrol ? SearchArea.Level
-                    : SearchArea.Local;
                 }
             }
         }
