@@ -120,8 +120,7 @@ namespace Assets.Scripts.Enemy
             }
             else
             {
-                var deltaT = Time.time - m_playerLastSeenTime;
-                m_state = m_playerLastSeenTime == 0 || deltaT > m_searchTime.TotalSeconds ? EnemyState.Patrol : EnemyState.Search;
+                m_state = m_playerLastSeenTime == 0 || this.RemainingSearchTime <= 0.0f ? EnemyState.Patrol : EnemyState.Search;
 
                 Debug.DrawRay(ray.origin, ray.direction * debugRayDistance, Color.blue);
 
@@ -129,7 +128,7 @@ namespace Assets.Scripts.Enemy
                 {
                     if (!m_agent.hasPath || m_agent.velocity.sqrMagnitude == 0f)
                     {
-                        if (deltaT > m_searchTime.TotalSeconds)
+                        if (this.RemainingSearchTime <= 0.0f)
                         {
                             m_state = EnemyState.Patrol;
                         }
