@@ -59,6 +59,15 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        public float RemainingSearchTime
+        {
+            get
+            {
+                return (float)m_searchTime.TotalSeconds - (Time.time - m_playerLastSeenTime);
+            }
+            
+        }
+
         public AgentAI()
         {
             m_patrolPoints = new List<GameObject>();
