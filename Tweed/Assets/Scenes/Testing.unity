@@ -900,6 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff8ccf704ded6d44a066b355a5bdd9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CamDir: {fileID: 441592237}
 --- !u!136 &947822042
 CapsuleCollider:
   m_ObjectHideFlags: 0
