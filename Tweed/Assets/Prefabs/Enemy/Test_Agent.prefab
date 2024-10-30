@@ -342,6 +342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4866f2a43da9edd44a1c554cd45151b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_patrolColour: {r: 0.9, g: 0.9, b: 1, a: 1}
+  m_searchColour: {r: 0.75, g: 0.75, b: 0, a: 1}
+  m_alertColour: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &8400310166157264417
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +462,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5022331367748746995}
   - component: {fileID: 7045305887649720270}
-  - component: {fileID: 6740267032623546563}
   - component: {fileID: 6117296832665314891}
   m_Layer: 0
   m_Name: Main Camera
@@ -534,14 +536,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6740267032623546563
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8731582703834255478}
-  m_Enabled: 1
 --- !u!114 &6117296832665314891
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -88,16 +88,19 @@ namespace Assets.Scripts.Enemy
                     }
                     else if (m_searchArea == SearchArea.Local)
                     {
+                        Debug.Log("Searching Local Area");
                         this.LookAround();
                         m_searchArea = SearchArea.Patrol;
                     }
                     else if (m_searchArea == SearchArea.Patrol)
                     {
+                        Debug.Log("Searching Patrol");
                         this.SearchPatrol();
                         m_searchArea = SearchArea.Level;
                     }
                     else
                     {
+                        Debug.Log("Searching Level");
                         this.SearchLevel();
                         m_searchArea = SearchArea.Local;
                     }
@@ -136,18 +139,22 @@ namespace Assets.Scripts.Enemy
             var rnd = Random.Range(0, 100);
 
             var orderedPoints = m_searchPoints.ToList();
+            var comparer = new TargetObjectComparer(m_target);
 
-            if (rnd < 50) // Agent will search in order
+            if (true) // Agent will search in order
             {
-                orderedPoints.Sort(new GameObjectPositionComparer());
+                Debug.Log("AgentSearch.SearchPatrol | Searching closest to player.");
+                orderedPoints.Sort(comparer);
             }
-            if (rnd >= 50 && rnd <= 80) // Agent will search in reverse order
+            else if (rnd >= 80 && rnd <= 90) // Agent will search in reverse order
             {
-                orderedPoints.Sort(new GameObjectPositionComparer());
+                Debug.Log("AgentSearch.SearchPatrol | Searching farthest from player.");
+                orderedPoints.Sort(comparer);
                 orderedPoints.Reverse();
             }
-            if (rnd > 80) // Agent will search randomly
+            else if (rnd > 90) // Agent will search randomly
             {
+                Debug.Log("AgentSearch.SearchPatrol | Searching randomly.");
                 orderedPoints = new List<GameObject>();
                 List<int> indices = new List<int>();
 
@@ -164,7 +171,23 @@ namespace Assets.Scripts.Enemy
                 }
             }
 
-            foreach(var point in orderedPoints)
+            var searchCount = (int)((0.3f) * orderedPoints.Count);
+
+            if (searchCount > 0)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    var points = orderedPoints.Take(searchCount).ToList();
+                    points.Sort(new RandomComparer());
+
+                    foreach (var point in points)
+                    {
+                        m_searchQueue.Enqueue(point.transform.position);
+                    }
+                }
+            }
+
+            foreach (var point in orderedPoints)
             {
                 m_searchQueue.Enqueue(point.transform.position);
             }

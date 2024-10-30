@@ -16,7 +16,7 @@ namespace Assets.Scripts.Util
             m_v3Comparer = new Vector3Comparer();
         }
 
-        public int Compare(GameObject x, GameObject y)
+        public virtual int Compare(GameObject x, GameObject y)
         {
             var v1 = x.transform.position;
             var v2 = y.transform.position;

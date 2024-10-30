@@ -131,6 +131,7 @@ namespace Assets.Scripts.Enemy
                         if (this.RemainingSearchTime <= 0.0f)
                         {
                             m_state = EnemyState.Patrol;
+                            m_searchTime = TimeSpan.FromSeconds(60);
                         }
                     }
                 }
