@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     //Player Movement speed
     public static float speed = 5f;
     public static float rotationSpeed = 700f;
+
+    [SerializeField] private Transform CamDir;
     //private Vector3 PlayerMovementInput;
 
     
@@ -21,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
    
+
+
     private void FixedUpdate()
     {
 
@@ -32,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         Vector3 PlayerMovementInput = new Vector3(horizontalInput, 0, verticalInput);
+        PlayerMovementInput = Quaternion.AngleAxis(CamDir.rotation.eulerAngles.y, Vector3.up) * PlayerMovementInput;
         PlayerMovementInput.Normalize();
 
         transform.Translate(PlayerMovementInput * speed * Time.deltaTime, Space.World);
