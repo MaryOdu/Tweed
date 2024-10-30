@@ -496,6 +496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff8ccf704ded6d44a066b355a5bdd9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.5
+  rotationSpeed: 700
   CamDir: {fileID: 884972588374213430}
 --- !u!1 &5775915038445263943
 GameObject:
