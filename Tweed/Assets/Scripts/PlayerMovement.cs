@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+//using UnityEngine.AI;
+
 
 public class PlayerMovement : MonoBehaviour
 {
     //Player Movement speed
     [SerializeField]
-    private float speed = 5f;
+    private float speed = 2f;
 
     [SerializeField]
     private float rotationSpeed = 700f;
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] 
     private Transform CamDir;
     //private Vector3 PlayerMovementInput;
+    Animator animator;
 
 
     void Start()
@@ -28,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         m_velocity = Vector3.zero;
 
         m_rigidBody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
    
@@ -53,13 +57,14 @@ public class PlayerMovement : MonoBehaviour
 
         m_velocity -= m_velocity * 0.25f;
 
-        Debug.Log(m_velocity);
+        //Debug.Log(m_velocity);
         //transform.Translate(PlayerMovementInput * speed * Time.deltaTime, Space.World);
 
         if (PlayerMovementInput != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(PlayerMovementInput, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            
         }
         //MovePlayer();
     }
