@@ -97,7 +97,7 @@ namespace Assets.Scripts.Enemy
             m_searchTime = TimeSpan.FromSeconds(60);
             m_state = EnemyState.Patrol;
 
-            AI_Animation = GetComponent<Animator>();
+            AI_Animation = GetComponent<Animator>(); //<- Zac
         }
 
         // Update is called once per frame
@@ -154,7 +154,7 @@ namespace Assets.Scripts.Enemy
                     m_agentSearch.enabled = false;
 
                     m_agent.speed = m_patrolSpeed;
-                    AI_Animation.SetBool("IsPatroling", true);
+                    AI_Animation.SetBool("IsPatroling", true); //<- all these obviusly Zac XD
                     AI_Animation.SetBool("IsSearching", false);
                     AI_Animation.SetBool("IsChaseing", false);
                     break;
