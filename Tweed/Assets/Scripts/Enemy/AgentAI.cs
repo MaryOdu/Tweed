@@ -18,6 +18,8 @@ namespace Assets.Scripts.Enemy
     public class AgentAI : MonoBehaviour
     {
         private const int debugRayDistance = 100;
+
+        [SerializeField]
         private EnemyState m_state;
 
         private AgentFollow m_agentFollow;
@@ -47,8 +49,10 @@ namespace Assets.Scripts.Enemy
         [SerializeField]
         private float m_sightAngle;
 
+        [SerializeField]
         private TimeSpan m_searchTime;
 
+        [SerializeField]
         private float m_playerLastSeenTime;
 
         public EnemyState State

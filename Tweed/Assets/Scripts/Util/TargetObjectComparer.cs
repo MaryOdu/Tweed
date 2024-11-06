@@ -19,10 +19,7 @@ namespace Assets.Scripts.Util
 
         public override int Compare(GameObject x, GameObject y)
         {
-            var v1 = m_target.transform.position - x.transform.position;
-            var v2 = m_target.transform.position - y.transform.position;
-
-            return (int)(v1 - v2).magnitude;
+            return (int)(x.transform.position - m_target.transform.position).sqrMagnitude;
         }
     }
 }   
