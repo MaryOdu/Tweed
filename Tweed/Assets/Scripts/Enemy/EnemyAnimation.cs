@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEngine;
+
+namespace Assets.Scripts.Enemy
+{
+    public class EnemyAnimation : MonoBehaviour
+    {
+        private Animator m_animator;
+        private AgentAI m_agent;
+
+        public EnemyAnimation()
+        {
+            
+        }
+
+        private void Start()
+        {
+            m_agent = this.GetComponent<AgentAI>();
+            m_animator = this.GetComponent<Animator>();
+        }
+
+        private void Update()
+        {
+            switch (m_agent.State)
+            {
+                case EnemyState.Patrol:
+                    m_animator.SetBool("IsPatroling", true); //<- all these obviusly Zac XD. 
+                    m_animator.SetBool("IsSearching", false);
+                    m_animator.SetBool("IsChaseing", false);// ^ Drop the 'e' when you add '...ing'
+                    break;
+                case EnemyState.Search:
+                    m_animator.SetBool("IsSearching", true);
+                    m_animator.SetBool("IsPatroling", false);
+                    m_animator.SetBool("IsChaseing", false);
+                    break;
+                case EnemyState.Alert:
+                    m_animator.SetBool("IsChaseing", true);
+                    m_animator.SetBool("IsPatroling", false);
+                    m_animator.SetBool("IsSearching", false);
+                    break;
+            }
+        }
+    }
+}

@@ -55,8 +55,6 @@ namespace Assets.Scripts.Enemy
         [SerializeField]
         private float m_playerLastSeenTime;
 
-        private Animator AI_Animation; //<- ZAC
-
         public EnemyState State
         {
             get
@@ -100,8 +98,6 @@ namespace Assets.Scripts.Enemy
 
             m_searchTime = TimeSpan.FromSeconds(60);
             m_state = EnemyState.Patrol;
-
-            AI_Animation = GetComponent<Animator>(); //<- Zac
         }
 
         // Update is called once per frame
@@ -158,9 +154,7 @@ namespace Assets.Scripts.Enemy
                     m_agentSearch.enabled = false;
 
                     m_agent.speed = m_patrolSpeed;
-                    AI_Animation.SetBool("IsPatroling", true); //<- all these obviusly Zac XD
-                    AI_Animation.SetBool("IsSearching", false);
-                    AI_Animation.SetBool("IsChaseing", false);
+
                     break;
                 case EnemyState.Search:
                     m_agentPatrol.enabled = false;
@@ -168,9 +162,7 @@ namespace Assets.Scripts.Enemy
                     m_agentSearch.enabled = true;
 
                     m_agent.speed = m_searchSpeed;
-                    AI_Animation.SetBool("IsSearching", true);
-                    AI_Animation.SetBool("IsPatroling", false);
-                    AI_Animation.SetBool("IsChaseing", false);
+
                     break;
                 case EnemyState.Alert:
                     m_agentPatrol.enabled = false;
@@ -178,9 +170,7 @@ namespace Assets.Scripts.Enemy
                     m_agentSearch.enabled = false;
 
                     m_agent.speed = m_alertSpeed;
-                    AI_Animation.SetBool("IsChaseing", true);
-                    AI_Animation.SetBool("IsPatroling", false);
-                    AI_Animation.SetBool("IsSearching", false);
+
                     break;
             }
         }

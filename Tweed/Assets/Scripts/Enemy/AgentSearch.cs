@@ -135,46 +135,13 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         public void SearchPatrol()
         {
-            var rnd = Random.Range(0, 100);
-
             var orderedPoints = m_searchPoints.OrderBy(x => (m_target.transform.position - x.transform.position).sqrMagnitude).ToList();
-            //var comparer = new TargetObjectComparer(m_target);
-
-            //if (true) // Agent will search in order
-            //{
-            //    Debug.Log("AgentSearch.SearchPatrol | Searching closest to player.");
-            //   // orderedPoints.Sort(comparer);
-            //}
-            //else if (rnd >= 80 && rnd <= 90) // Agent will search in reverse order
-            //{
-            //    Debug.Log("AgentSearch.SearchPatrol | Searching farthest from player.");
-            //    orderedPoints.Sort(comparer);
-            //    orderedPoints.Reverse();
-            //}
-            //else if (rnd > 90) // Agent will search randomly
-            //{
-            //    Debug.Log("AgentSearch.SearchPatrol | Searching randomly.");
-            //    orderedPoints = new List<GameObject>();
-            //    List<int> indices = new List<int>();
-
-            //    for (int i = 0; i < m_searchPoints.Count; i++)
-            //    {
-            //        indices.Add(i);
-            //    }
-
-            //    for (int i = 0; i < m_searchPoints.Count; i++)
-            //    {
-            //        var idx = Random.Range(indices.Min(), indices.Max());
-            //        orderedPoints.Add(m_searchPoints[idx]);
-            //        indices.Remove(idx);
-            //    }
-            //}
 
             var searchCount = (int)((0.3f) * orderedPoints.Count);
 
             if (searchCount > 0)
             {
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 2; i++)
                 {
                     var points = orderedPoints.Take(searchCount).ToList();
                     points.Sort(new RandomComparer());
@@ -185,11 +152,6 @@ namespace Assets.Scripts.Enemy
                     }
                 }
             }
-
-            //foreach (var point in orderedPoints)
-            //{
-            //    m_searchQueue.Enqueue(point.transform.position);
-            //}
         }
 
         /// <summary>
