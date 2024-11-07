@@ -25,6 +25,8 @@ namespace Assets.Scripts.Enemy
 
         private void Update()
         {
+            m_animator.ResetTrigger("IsAttacking2");
+
             switch (m_agent.State)
             {
                 case EnemyState.Patrol:
@@ -38,9 +40,15 @@ namespace Assets.Scripts.Enemy
                     m_animator.SetBool("IsChaseing", false);
                     break;
                 case EnemyState.Alert:
-                    m_animator.SetBool("IsChaseing", true);
+
+                    m_animator.SetBool("IsChaseing", !m_agent.IsAttacking);
                     m_animator.SetBool("IsPatroling", false);
                     m_animator.SetBool("IsSearching", false);
+
+                    if (m_agent.IsAttacking)
+                    {
+                        m_animator.SetTrigger("IsAttacking2");
+                    }
                     break;
             }
         }

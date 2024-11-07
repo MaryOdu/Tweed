@@ -22,7 +22,7 @@ namespace Assets.Scripts.Enemy
         [SerializeField]
         private EnemyState m_state;
 
-        private AgentFollow m_agentFollow;
+        private AgentAttack m_agentAttack;
         private AgentPatrol m_agentPatrol;
         private AgentSearch m_agentSearch;
 
@@ -69,7 +69,14 @@ namespace Assets.Scripts.Enemy
             {
                 return (float)m_searchTime.TotalSeconds - (Time.time - m_playerLastSeenTime);
             }
-            
+        }
+
+        public bool IsAttacking
+        {
+            get
+            {
+                return m_agentAttack.IsAttacking;
+            }
         }
 
         public AgentAI()
@@ -83,16 +90,16 @@ namespace Assets.Scripts.Enemy
         void Start()
         {
             m_agent = this.GetComponent<NavMeshAgent>();
-            m_agentFollow = this.AddComponent<AgentFollow>();
+            m_agentAttack = this.AddComponent<AgentAttack>();
             m_agentPatrol = this.AddComponent<AgentPatrol>();
             m_agentSearch = this.AddComponent<AgentSearch>();
 
             m_agentPatrol.enabled = false;
-            m_agentFollow.enabled = false;
+            m_agentAttack.enabled = false;
             m_agentSearch.enabled = false;
 
             m_agentSearch.Target = m_target;
-            m_agentFollow.Target = m_target;
+            m_agentAttack.Target = m_target;
 
             m_agentPatrol.PatrolPoints = m_patrolPoints;
 
@@ -118,7 +125,7 @@ namespace Assets.Scripts.Enemy
             if (canSeePlayer)
             {
                 Debug.DrawRay(ray.origin, ray.direction * debugRayDistance, Color.red);
-                m_agentFollow.Target = hitInfo.collider.gameObject;
+                m_agentAttack.Target = hitInfo.collider.gameObject;
                 m_state = EnemyState.Alert;
                 m_playerLastSeenTime = Time.time;
             }
@@ -150,7 +157,7 @@ namespace Assets.Scripts.Enemy
             {
                 case EnemyState.Patrol:
                     m_agentPatrol.enabled = true;
-                    m_agentFollow.enabled = false;
+                    m_agentAttack.enabled = false;
                     m_agentSearch.enabled = false;
 
                     m_agent.speed = m_patrolSpeed;
@@ -158,7 +165,7 @@ namespace Assets.Scripts.Enemy
                     break;
                 case EnemyState.Search:
                     m_agentPatrol.enabled = false;
-                    m_agentFollow.enabled = false;
+                    m_agentAttack.enabled = false;
                     m_agentSearch.enabled = true;
 
                     m_agent.speed = m_searchSpeed;
@@ -166,7 +173,7 @@ namespace Assets.Scripts.Enemy
                     break;
                 case EnemyState.Alert:
                     m_agentPatrol.enabled = false;
-                    m_agentFollow.enabled = true;
+                    m_agentAttack.enabled = true;
                     m_agentSearch.enabled = false;
 
                     m_agent.speed = m_alertSpeed;

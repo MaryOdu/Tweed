@@ -137,19 +137,16 @@ namespace Assets.Scripts.Enemy
         {
             var orderedPoints = m_searchPoints.OrderBy(x => (m_target.transform.position - x.transform.position).sqrMagnitude).ToList();
 
-            var searchCount = (int)((0.3f) * orderedPoints.Count);
+            var searchCount = Math.Max((int)((0.3f) * orderedPoints.Count), 1);
 
-            if (searchCount > 0)
+            for (int i = 0; i < 2; i++)
             {
-                for (int i = 0; i < 2; i++)
+                orderedPoints.Sort(new RandomComparer());
+                var points = orderedPoints.Take(searchCount).ToList();
+                
+                foreach (var point in points)
                 {
-                    var points = orderedPoints.Take(searchCount).ToList();
-                    points.Sort(new RandomComparer());
-
-                    foreach (var point in points)
-                    {
-                        m_searchQueue.Enqueue(point.transform.position);
-                    }
+                    m_searchQueue.Enqueue(point.transform.position);
                 }
             }
         }

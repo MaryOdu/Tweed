@@ -508,7 +508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1014634973264464, guid: f16b8aefd28ae9c428c927c430518b43, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4995574636380638, guid: f16b8aefd28ae9c428c927c430518b43, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2171,7 +2171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8422394170282375474}
   - component: {fileID: 2620190548792465519}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FreeLook Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3090,7 +3090,7 @@ GameObject:
   - component: {fileID: 1644537026789952541}
   - component: {fileID: 285988884897453283}
   - component: {fileID: 861195550796766388}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
