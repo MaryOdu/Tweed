@@ -25,29 +25,30 @@ namespace Assets.Scripts.Enemy
 
         private void Update()
         {
-            m_animator.ResetTrigger("IsAttacking2");
+            //m_animator.ResetTrigger("IsAttacking");
+            m_animator.SetBool("IsAttacking", false);
 
             switch (m_agent.State)
             {
                 case EnemyState.Patrol:
-                    m_animator.SetBool("IsPatroling", true); //<- all these obviusly Zac XD. 
+                    m_animator.SetBool("IsPatroling", true);
                     m_animator.SetBool("IsSearching", false);
-                    m_animator.SetBool("IsChaseing", false);// ^ Drop the 'e' when you add '...ing'
+                    m_animator.SetBool("IsChasing", false);
                     break;
                 case EnemyState.Search:
                     m_animator.SetBool("IsSearching", true);
                     m_animator.SetBool("IsPatroling", false);
-                    m_animator.SetBool("IsChaseing", false);
+                    m_animator.SetBool("IsChasing", false);
                     break;
                 case EnemyState.Alert:
 
-                    m_animator.SetBool("IsChaseing", !m_agent.IsAttacking);
+                    m_animator.SetBool("IsChasing", !m_agent.IsAttacking);
                     m_animator.SetBool("IsPatroling", false);
                     m_animator.SetBool("IsSearching", false);
 
                     if (m_agent.IsAttacking)
                     {
-                        m_animator.SetTrigger("IsAttacking2");
+                        m_animator.SetBool("IsAttacking", true);
                     }
                     break;
             }
