@@ -253,7 +253,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Safe
+    m_ConditionEvent: Walking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102242688835532608}
@@ -1538,17 +1538,17 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 3271557904761414464}
-    second:
-    - {fileID: 1678076428239732883}
-  - first: {fileID: -2992236007260557437}
-    second:
-    - {fileID: 244102907652919342}
-    - {fileID: 3076701816437442628}
   - first: {fileID: 8562365272878177086}
     second:
     - {fileID: -2534023407375722866}
     - {fileID: -713654949291590274}
+  - first: {fileID: -2992236007260557437}
+    second:
+    - {fileID: 244102907652919342}
+    - {fileID: 3076701816437442628}
+  - first: {fileID: 3271557904761414464}
+    second:
+    - {fileID: 1678076428239732883}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: -600, y: -470, z: 0}
