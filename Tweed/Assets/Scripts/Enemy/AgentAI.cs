@@ -149,6 +149,15 @@ namespace Assets.Scripts.Enemy
             }
 
             this.UpdateActiveBehaviour();
+
+            if (m_agent.CompareTag("EnemyCam")) //<------------- So the flying camara's will keep a distance from player but still go ontop of nav points
+            {
+                if (m_agentAttack.enabled == true)
+                {
+                    m_agent.stoppingDistance = 8;
+                }
+                else { m_agent.stoppingDistance = 3; }
+            }
         }
 
         private void UpdateActiveBehaviour()
