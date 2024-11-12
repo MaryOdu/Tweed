@@ -1,188 +1,542 @@
 fileFormatVersion: 2
 guid: 3ed428e2209b1a14f81d67ac300c81ed
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: GastaroidQueen_
-    100004: GastaroidQueen_ Head
-    100006: GastaroidQueen_ L Calf
-    100008: GastaroidQueen_ L Clavicle
-    100010: GastaroidQueen_ L Finger0
-    100012: GastaroidQueen_ L Finger01
-    100014: GastaroidQueen_ L Finger1
-    100016: GastaroidQueen_ L Finger11
-    100018: GastaroidQueen_ L Finger2
-    100020: GastaroidQueen_ L Finger21
-    100022: GastaroidQueen_ L Foot
-    100024: GastaroidQueen_ L Forearm
-    100026: GastaroidQueen_ L Hand
-    100028: GastaroidQueen_ L HorseLink
-    100030: GastaroidQueen_ L Thigh
-    100032: GastaroidQueen_ L Toe0
-    100034: GastaroidQueen_ L Toe01
-    100036: GastaroidQueen_ L Toe1
-    100038: GastaroidQueen_ L Toe11
-    100040: GastaroidQueen_ L Toe2
-    100042: GastaroidQueen_ L Toe21
-    100044: GastaroidQueen_ L UpperArm
-    100046: GastaroidQueen_ Neck
-    100048: GastaroidQueen_ Neck1
-    100050: GastaroidQueen_ Neck2
-    100052: GastaroidQueen_ Pelvis
-    100054: GastaroidQueen_ Ponytail1
-    100056: GastaroidQueen_ R Calf
-    100058: GastaroidQueen_ R Clavicle
-    100060: GastaroidQueen_ R Finger0
-    100062: GastaroidQueen_ R Finger01
-    100064: GastaroidQueen_ R Finger1
-    100066: GastaroidQueen_ R Finger11
-    100068: GastaroidQueen_ R Finger2
-    100070: GastaroidQueen_ R Finger21
-    100072: GastaroidQueen_ R Foot
-    100074: GastaroidQueen_ R Forearm
-    100076: GastaroidQueen_ R Hand
-    100078: GastaroidQueen_ R HorseLink
-    100080: GastaroidQueen_ R Thigh
-    100082: GastaroidQueen_ R Toe0
-    100084: GastaroidQueen_ R Toe01
-    100086: GastaroidQueen_ R Toe1
-    100088: GastaroidQueen_ R Toe11
-    100090: GastaroidQueen_ R Toe2
-    100092: GastaroidQueen_ R Toe21
-    100094: GastaroidQueen_ R UpperArm
-    100096: GastaroidQueen_ Spine
-    100098: GastaroidQueen_ Spine1
-    100100: GastaroidQueen_ Spine2
-    100102: GastaroidQueen_Belly_A
-    100104: GastaroidQueen_Belly_B_1
-    100106: GastaroidQueen_Belly_B_2
-    100108: GastaroidQueen_Belly_B_3
-    100110: GastaroidQueen_Belly_B_4
-    100112: GastaroidQueen_LungLeftA_01
-    100114: GastaroidQueen_LungLeftA_02
-    100116: GastaroidQueen_LungLeftA_03
-    100118: GastaroidQueen_LungLeftB_01
-    100120: GastaroidQueen_LungLeftB_02
-    100122: GastaroidQueen_LungLeftB_03
-    100124: GastaroidQueen_LungRightA_01
-    100126: GastaroidQueen_LungRightA_02
-    100128: GastaroidQueen_LungRightA_03
-    100130: GastaroidQueen_LungRightB_01
-    100132: GastaroidQueen_LungRightB_02
-    100134: GastaroidQueen_LungRightB_03
-    100136: GastaroidQueen_Tail
-    100138: GastaroidQueen_Tail1
-    100140: GastaroidQueen_Tail10
-    100142: GastaroidQueen_Tail11
-    100144: GastaroidQueen_Tail12
-    100146: GastaroidQueen_Tail13
-    100148: GastaroidQueen_Tail14
-    100150: GastaroidQueen_Tail15
-    100152: GastaroidQueen_Tail16
-    100154: GastaroidQueen_Tail17
-    100156: GastaroidQueen_Tail2
-    100158: GastaroidQueen_Tail3
-    100160: GastaroidQueen_Tail4
-    100162: GastaroidQueen_Tail5
-    100164: GastaroidQueen_Tail6
-    100166: GastaroidQueen_Tail7
-    100168: GastaroidQueen_Tail8
-    100170: GastaroidQueen_Tail9
-    100172: root
-    400000: //RootNode
-    400002: GastaroidQueen_
-    400004: GastaroidQueen_ Head
-    400006: GastaroidQueen_ L Calf
-    400008: GastaroidQueen_ L Clavicle
-    400010: GastaroidQueen_ L Finger0
-    400012: GastaroidQueen_ L Finger01
-    400014: GastaroidQueen_ L Finger1
-    400016: GastaroidQueen_ L Finger11
-    400018: GastaroidQueen_ L Finger2
-    400020: GastaroidQueen_ L Finger21
-    400022: GastaroidQueen_ L Foot
-    400024: GastaroidQueen_ L Forearm
-    400026: GastaroidQueen_ L Hand
-    400028: GastaroidQueen_ L HorseLink
-    400030: GastaroidQueen_ L Thigh
-    400032: GastaroidQueen_ L Toe0
-    400034: GastaroidQueen_ L Toe01
-    400036: GastaroidQueen_ L Toe1
-    400038: GastaroidQueen_ L Toe11
-    400040: GastaroidQueen_ L Toe2
-    400042: GastaroidQueen_ L Toe21
-    400044: GastaroidQueen_ L UpperArm
-    400046: GastaroidQueen_ Neck
-    400048: GastaroidQueen_ Neck1
-    400050: GastaroidQueen_ Neck2
-    400052: GastaroidQueen_ Pelvis
-    400054: GastaroidQueen_ Ponytail1
-    400056: GastaroidQueen_ R Calf
-    400058: GastaroidQueen_ R Clavicle
-    400060: GastaroidQueen_ R Finger0
-    400062: GastaroidQueen_ R Finger01
-    400064: GastaroidQueen_ R Finger1
-    400066: GastaroidQueen_ R Finger11
-    400068: GastaroidQueen_ R Finger2
-    400070: GastaroidQueen_ R Finger21
-    400072: GastaroidQueen_ R Foot
-    400074: GastaroidQueen_ R Forearm
-    400076: GastaroidQueen_ R Hand
-    400078: GastaroidQueen_ R HorseLink
-    400080: GastaroidQueen_ R Thigh
-    400082: GastaroidQueen_ R Toe0
-    400084: GastaroidQueen_ R Toe01
-    400086: GastaroidQueen_ R Toe1
-    400088: GastaroidQueen_ R Toe11
-    400090: GastaroidQueen_ R Toe2
-    400092: GastaroidQueen_ R Toe21
-    400094: GastaroidQueen_ R UpperArm
-    400096: GastaroidQueen_ Spine
-    400098: GastaroidQueen_ Spine1
-    400100: GastaroidQueen_ Spine2
-    400102: GastaroidQueen_Belly_A
-    400104: GastaroidQueen_Belly_B_1
-    400106: GastaroidQueen_Belly_B_2
-    400108: GastaroidQueen_Belly_B_3
-    400110: GastaroidQueen_Belly_B_4
-    400112: GastaroidQueen_LungLeftA_01
-    400114: GastaroidQueen_LungLeftA_02
-    400116: GastaroidQueen_LungLeftA_03
-    400118: GastaroidQueen_LungLeftB_01
-    400120: GastaroidQueen_LungLeftB_02
-    400122: GastaroidQueen_LungLeftB_03
-    400124: GastaroidQueen_LungRightA_01
-    400126: GastaroidQueen_LungRightA_02
-    400128: GastaroidQueen_LungRightA_03
-    400130: GastaroidQueen_LungRightB_01
-    400132: GastaroidQueen_LungRightB_02
-    400134: GastaroidQueen_LungRightB_03
-    400136: GastaroidQueen_Tail
-    400138: GastaroidQueen_Tail1
-    400140: GastaroidQueen_Tail10
-    400142: GastaroidQueen_Tail11
-    400144: GastaroidQueen_Tail12
-    400146: GastaroidQueen_Tail13
-    400148: GastaroidQueen_Tail14
-    400150: GastaroidQueen_Tail15
-    400152: GastaroidQueen_Tail16
-    400154: GastaroidQueen_Tail17
-    400156: GastaroidQueen_Tail2
-    400158: GastaroidQueen_Tail3
-    400160: GastaroidQueen_Tail4
-    400162: GastaroidQueen_Tail5
-    400164: GastaroidQueen_Tail6
-    400166: GastaroidQueen_Tail7
-    400168: GastaroidQueen_Tail8
-    400170: GastaroidQueen_Tail9
-    400172: root
-    7400000: 2HitComboClawsAttack1Forward_RM
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: GastaroidQueen_
+  - first:
+      1: 100004
+    second: GastaroidQueen_ Head
+  - first:
+      1: 100006
+    second: GastaroidQueen_ L Calf
+  - first:
+      1: 100008
+    second: GastaroidQueen_ L Clavicle
+  - first:
+      1: 100010
+    second: GastaroidQueen_ L Finger0
+  - first:
+      1: 100012
+    second: GastaroidQueen_ L Finger01
+  - first:
+      1: 100014
+    second: GastaroidQueen_ L Finger1
+  - first:
+      1: 100016
+    second: GastaroidQueen_ L Finger11
+  - first:
+      1: 100018
+    second: GastaroidQueen_ L Finger2
+  - first:
+      1: 100020
+    second: GastaroidQueen_ L Finger21
+  - first:
+      1: 100022
+    second: GastaroidQueen_ L Foot
+  - first:
+      1: 100024
+    second: GastaroidQueen_ L Forearm
+  - first:
+      1: 100026
+    second: GastaroidQueen_ L Hand
+  - first:
+      1: 100028
+    second: GastaroidQueen_ L HorseLink
+  - first:
+      1: 100030
+    second: GastaroidQueen_ L Thigh
+  - first:
+      1: 100032
+    second: GastaroidQueen_ L Toe0
+  - first:
+      1: 100034
+    second: GastaroidQueen_ L Toe01
+  - first:
+      1: 100036
+    second: GastaroidQueen_ L Toe1
+  - first:
+      1: 100038
+    second: GastaroidQueen_ L Toe11
+  - first:
+      1: 100040
+    second: GastaroidQueen_ L Toe2
+  - first:
+      1: 100042
+    second: GastaroidQueen_ L Toe21
+  - first:
+      1: 100044
+    second: GastaroidQueen_ L UpperArm
+  - first:
+      1: 100046
+    second: GastaroidQueen_ Neck
+  - first:
+      1: 100048
+    second: GastaroidQueen_ Neck1
+  - first:
+      1: 100050
+    second: GastaroidQueen_ Neck2
+  - first:
+      1: 100052
+    second: GastaroidQueen_ Pelvis
+  - first:
+      1: 100054
+    second: GastaroidQueen_ Ponytail1
+  - first:
+      1: 100056
+    second: GastaroidQueen_ R Calf
+  - first:
+      1: 100058
+    second: GastaroidQueen_ R Clavicle
+  - first:
+      1: 100060
+    second: GastaroidQueen_ R Finger0
+  - first:
+      1: 100062
+    second: GastaroidQueen_ R Finger01
+  - first:
+      1: 100064
+    second: GastaroidQueen_ R Finger1
+  - first:
+      1: 100066
+    second: GastaroidQueen_ R Finger11
+  - first:
+      1: 100068
+    second: GastaroidQueen_ R Finger2
+  - first:
+      1: 100070
+    second: GastaroidQueen_ R Finger21
+  - first:
+      1: 100072
+    second: GastaroidQueen_ R Foot
+  - first:
+      1: 100074
+    second: GastaroidQueen_ R Forearm
+  - first:
+      1: 100076
+    second: GastaroidQueen_ R Hand
+  - first:
+      1: 100078
+    second: GastaroidQueen_ R HorseLink
+  - first:
+      1: 100080
+    second: GastaroidQueen_ R Thigh
+  - first:
+      1: 100082
+    second: GastaroidQueen_ R Toe0
+  - first:
+      1: 100084
+    second: GastaroidQueen_ R Toe01
+  - first:
+      1: 100086
+    second: GastaroidQueen_ R Toe1
+  - first:
+      1: 100088
+    second: GastaroidQueen_ R Toe11
+  - first:
+      1: 100090
+    second: GastaroidQueen_ R Toe2
+  - first:
+      1: 100092
+    second: GastaroidQueen_ R Toe21
+  - first:
+      1: 100094
+    second: GastaroidQueen_ R UpperArm
+  - first:
+      1: 100096
+    second: GastaroidQueen_ Spine
+  - first:
+      1: 100098
+    second: GastaroidQueen_ Spine1
+  - first:
+      1: 100100
+    second: GastaroidQueen_ Spine2
+  - first:
+      1: 100102
+    second: GastaroidQueen_Belly_A
+  - first:
+      1: 100104
+    second: GastaroidQueen_Belly_B_1
+  - first:
+      1: 100106
+    second: GastaroidQueen_Belly_B_2
+  - first:
+      1: 100108
+    second: GastaroidQueen_Belly_B_3
+  - first:
+      1: 100110
+    second: GastaroidQueen_Belly_B_4
+  - first:
+      1: 100112
+    second: GastaroidQueen_LungLeftA_01
+  - first:
+      1: 100114
+    second: GastaroidQueen_LungLeftA_02
+  - first:
+      1: 100116
+    second: GastaroidQueen_LungLeftA_03
+  - first:
+      1: 100118
+    second: GastaroidQueen_LungLeftB_01
+  - first:
+      1: 100120
+    second: GastaroidQueen_LungLeftB_02
+  - first:
+      1: 100122
+    second: GastaroidQueen_LungLeftB_03
+  - first:
+      1: 100124
+    second: GastaroidQueen_LungRightA_01
+  - first:
+      1: 100126
+    second: GastaroidQueen_LungRightA_02
+  - first:
+      1: 100128
+    second: GastaroidQueen_LungRightA_03
+  - first:
+      1: 100130
+    second: GastaroidQueen_LungRightB_01
+  - first:
+      1: 100132
+    second: GastaroidQueen_LungRightB_02
+  - first:
+      1: 100134
+    second: GastaroidQueen_LungRightB_03
+  - first:
+      1: 100136
+    second: GastaroidQueen_Tail
+  - first:
+      1: 100138
+    second: GastaroidQueen_Tail1
+  - first:
+      1: 100140
+    second: GastaroidQueen_Tail10
+  - first:
+      1: 100142
+    second: GastaroidQueen_Tail11
+  - first:
+      1: 100144
+    second: GastaroidQueen_Tail12
+  - first:
+      1: 100146
+    second: GastaroidQueen_Tail13
+  - first:
+      1: 100148
+    second: GastaroidQueen_Tail14
+  - first:
+      1: 100150
+    second: GastaroidQueen_Tail15
+  - first:
+      1: 100152
+    second: GastaroidQueen_Tail16
+  - first:
+      1: 100154
+    second: GastaroidQueen_Tail17
+  - first:
+      1: 100156
+    second: GastaroidQueen_Tail2
+  - first:
+      1: 100158
+    second: GastaroidQueen_Tail3
+  - first:
+      1: 100160
+    second: GastaroidQueen_Tail4
+  - first:
+      1: 100162
+    second: GastaroidQueen_Tail5
+  - first:
+      1: 100164
+    second: GastaroidQueen_Tail6
+  - first:
+      1: 100166
+    second: GastaroidQueen_Tail7
+  - first:
+      1: 100168
+    second: GastaroidQueen_Tail8
+  - first:
+      1: 100170
+    second: GastaroidQueen_Tail9
+  - first:
+      1: 100172
+    second: root
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: GastaroidQueen_
+  - first:
+      4: 400004
+    second: GastaroidQueen_ Head
+  - first:
+      4: 400006
+    second: GastaroidQueen_ L Calf
+  - first:
+      4: 400008
+    second: GastaroidQueen_ L Clavicle
+  - first:
+      4: 400010
+    second: GastaroidQueen_ L Finger0
+  - first:
+      4: 400012
+    second: GastaroidQueen_ L Finger01
+  - first:
+      4: 400014
+    second: GastaroidQueen_ L Finger1
+  - first:
+      4: 400016
+    second: GastaroidQueen_ L Finger11
+  - first:
+      4: 400018
+    second: GastaroidQueen_ L Finger2
+  - first:
+      4: 400020
+    second: GastaroidQueen_ L Finger21
+  - first:
+      4: 400022
+    second: GastaroidQueen_ L Foot
+  - first:
+      4: 400024
+    second: GastaroidQueen_ L Forearm
+  - first:
+      4: 400026
+    second: GastaroidQueen_ L Hand
+  - first:
+      4: 400028
+    second: GastaroidQueen_ L HorseLink
+  - first:
+      4: 400030
+    second: GastaroidQueen_ L Thigh
+  - first:
+      4: 400032
+    second: GastaroidQueen_ L Toe0
+  - first:
+      4: 400034
+    second: GastaroidQueen_ L Toe01
+  - first:
+      4: 400036
+    second: GastaroidQueen_ L Toe1
+  - first:
+      4: 400038
+    second: GastaroidQueen_ L Toe11
+  - first:
+      4: 400040
+    second: GastaroidQueen_ L Toe2
+  - first:
+      4: 400042
+    second: GastaroidQueen_ L Toe21
+  - first:
+      4: 400044
+    second: GastaroidQueen_ L UpperArm
+  - first:
+      4: 400046
+    second: GastaroidQueen_ Neck
+  - first:
+      4: 400048
+    second: GastaroidQueen_ Neck1
+  - first:
+      4: 400050
+    second: GastaroidQueen_ Neck2
+  - first:
+      4: 400052
+    second: GastaroidQueen_ Pelvis
+  - first:
+      4: 400054
+    second: GastaroidQueen_ Ponytail1
+  - first:
+      4: 400056
+    second: GastaroidQueen_ R Calf
+  - first:
+      4: 400058
+    second: GastaroidQueen_ R Clavicle
+  - first:
+      4: 400060
+    second: GastaroidQueen_ R Finger0
+  - first:
+      4: 400062
+    second: GastaroidQueen_ R Finger01
+  - first:
+      4: 400064
+    second: GastaroidQueen_ R Finger1
+  - first:
+      4: 400066
+    second: GastaroidQueen_ R Finger11
+  - first:
+      4: 400068
+    second: GastaroidQueen_ R Finger2
+  - first:
+      4: 400070
+    second: GastaroidQueen_ R Finger21
+  - first:
+      4: 400072
+    second: GastaroidQueen_ R Foot
+  - first:
+      4: 400074
+    second: GastaroidQueen_ R Forearm
+  - first:
+      4: 400076
+    second: GastaroidQueen_ R Hand
+  - first:
+      4: 400078
+    second: GastaroidQueen_ R HorseLink
+  - first:
+      4: 400080
+    second: GastaroidQueen_ R Thigh
+  - first:
+      4: 400082
+    second: GastaroidQueen_ R Toe0
+  - first:
+      4: 400084
+    second: GastaroidQueen_ R Toe01
+  - first:
+      4: 400086
+    second: GastaroidQueen_ R Toe1
+  - first:
+      4: 400088
+    second: GastaroidQueen_ R Toe11
+  - first:
+      4: 400090
+    second: GastaroidQueen_ R Toe2
+  - first:
+      4: 400092
+    second: GastaroidQueen_ R Toe21
+  - first:
+      4: 400094
+    second: GastaroidQueen_ R UpperArm
+  - first:
+      4: 400096
+    second: GastaroidQueen_ Spine
+  - first:
+      4: 400098
+    second: GastaroidQueen_ Spine1
+  - first:
+      4: 400100
+    second: GastaroidQueen_ Spine2
+  - first:
+      4: 400102
+    second: GastaroidQueen_Belly_A
+  - first:
+      4: 400104
+    second: GastaroidQueen_Belly_B_1
+  - first:
+      4: 400106
+    second: GastaroidQueen_Belly_B_2
+  - first:
+      4: 400108
+    second: GastaroidQueen_Belly_B_3
+  - first:
+      4: 400110
+    second: GastaroidQueen_Belly_B_4
+  - first:
+      4: 400112
+    second: GastaroidQueen_LungLeftA_01
+  - first:
+      4: 400114
+    second: GastaroidQueen_LungLeftA_02
+  - first:
+      4: 400116
+    second: GastaroidQueen_LungLeftA_03
+  - first:
+      4: 400118
+    second: GastaroidQueen_LungLeftB_01
+  - first:
+      4: 400120
+    second: GastaroidQueen_LungLeftB_02
+  - first:
+      4: 400122
+    second: GastaroidQueen_LungLeftB_03
+  - first:
+      4: 400124
+    second: GastaroidQueen_LungRightA_01
+  - first:
+      4: 400126
+    second: GastaroidQueen_LungRightA_02
+  - first:
+      4: 400128
+    second: GastaroidQueen_LungRightA_03
+  - first:
+      4: 400130
+    second: GastaroidQueen_LungRightB_01
+  - first:
+      4: 400132
+    second: GastaroidQueen_LungRightB_02
+  - first:
+      4: 400134
+    second: GastaroidQueen_LungRightB_03
+  - first:
+      4: 400136
+    second: GastaroidQueen_Tail
+  - first:
+      4: 400138
+    second: GastaroidQueen_Tail1
+  - first:
+      4: 400140
+    second: GastaroidQueen_Tail10
+  - first:
+      4: 400142
+    second: GastaroidQueen_Tail11
+  - first:
+      4: 400144
+    second: GastaroidQueen_Tail12
+  - first:
+      4: 400146
+    second: GastaroidQueen_Tail13
+  - first:
+      4: 400148
+    second: GastaroidQueen_Tail14
+  - first:
+      4: 400150
+    second: GastaroidQueen_Tail15
+  - first:
+      4: 400152
+    second: GastaroidQueen_Tail16
+  - first:
+      4: 400154
+    second: GastaroidQueen_Tail17
+  - first:
+      4: 400156
+    second: GastaroidQueen_Tail2
+  - first:
+      4: 400158
+    second: GastaroidQueen_Tail3
+  - first:
+      4: 400160
+    second: GastaroidQueen_Tail4
+  - first:
+      4: 400162
+    second: GastaroidQueen_Tail5
+  - first:
+      4: 400164
+    second: GastaroidQueen_Tail6
+  - first:
+      4: 400166
+    second: GastaroidQueen_Tail7
+  - first:
+      4: 400168
+    second: GastaroidQueen_Tail8
+  - first:
+      4: 400170
+    second: GastaroidQueen_Tail9
+  - first:
+      4: 400172
+    second: root
+  - first:
+      74: 7400000
+    second: 2HitComboClawsAttack1Forward_RM
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -191,9 +545,9 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
-      does not match:\n\tCannot find root motion transform 'root'.\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -212,6 +566,7 @@ ModelImporter:
     - serializedVersion: 16
       name: 2HitComboClawsAttack1Forward_RM
       takeName: Take 001
+      internalID: 0
       firstFrame: 0
       lastFrame: 65
       wrapMode: 0
@@ -520,25 +875,36 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -547,10 +913,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -560,14 +926,20 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: root
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 576f570392134fd4a992ea2b770b7aea,
     type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -1,141 +1,386 @@
 fileFormatVersion: 2
 guid: 3867bd758863aa44584a345662a1eff9
-timeCreated: 1566577249
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: MechBiped_ankleLeft
-    100004: MechBiped_ankleRight
-    100006: MechBiped_CalfLeft
-    100008: MechBiped_CalfRight
-    100010: MechBiped_Cockpit
-    100012: MechBiped_CockpitDoor
-    100014: MechBiped_FootLeft
-    100016: MechBiped_FootRight
-    100018: MechBiped_Hips1Left
-    100020: MechBiped_Hips1Right
-    100022: MechBiped_Hips2Left
-    100024: MechBiped_Hips2Right
-    100026: MechBiped_Neck
-    100028: MechBiped_Pelvis
-    100030: MechBiped_PistionCockpit_1
-    100032: MechBiped_PistionCockpit_2
-    100034: MechBiped_PistonAnkleLeft_1
-    100036: MechBiped_PistonAnkleLeft_2
-    100038: MechBiped_PistonAnkleRight_1
-    100040: MechBiped_PistonAnkleRight_2
-    100042: MechBiped_PistonCalfLeft_1
-    100044: MechBiped_PistonCalfLeft_2
-    100046: MechBiped_PistonCalfRight_1
-    100048: MechBiped_PistonCalfRight_2
-    100050: MechBiped_PistonHips1Left_1
-    100052: MechBiped_PistonHips1Left_2
-    100054: MechBiped_PistonHips1Right_1
-    100056: MechBiped_PistonHips1Right_2
-    100058: MechBiped_PistonHips2Left_1
-    100060: MechBiped_PistonHips2Left_2
-    100062: MechBiped_PistonHips2Right_1
-    100064: MechBiped_PistonHips2Right_2
-    100066: MechBiped_PistonThighLeft_1
-    100068: MechBiped_PistonThighLeft_2
-    100070: MechBiped_PistonThighRight_1
-    100072: MechBiped_PistonThighRight_2
-    100074: MechBiped_PistonToe1Left_002
-    100076: MechBiped_PistonToe1Left_2
-    100078: MechBiped_PistonToe1Right_1
-    100080: MechBiped_PistonToe1Right_2
-    100082: MechBiped_PistonToe2Left_1
-    100084: MechBiped_PistonToe2Left_2
-    100086: MechBiped_PistonToe2Right_1
-    100088: MechBiped_PistonToe2Right_2
-    100090: MechBiped_PistonToe3Left_1
-    100092: MechBiped_PistonToe3Left_2
-    100094: MechBiped_PistonToe3Right_1
-    100096: MechBiped_PistonToe3Right_2
-    100098: MechBiped_ShoulderLeft
-    100100: MechBiped_ShoulderRight
-    100102: MechBiped_ThighLeft
-    100104: MechBiped_ThighRight
-    100106: MechBiped_ToeLeft_1
-    100108: MechBiped_ToeLeft_2
-    100110: MechBiped_ToeLeft_3
-    100112: MechBiped_ToeRight_1
-    100114: MechBiped_ToeRight_2
-    100116: MechBiped_ToeRight_3
-    100118: root
-    400000: //RootNode
-    400002: MechBiped_ankleLeft
-    400004: MechBiped_ankleRight
-    400006: MechBiped_CalfLeft
-    400008: MechBiped_CalfRight
-    400010: MechBiped_Cockpit
-    400012: MechBiped_CockpitDoor
-    400014: MechBiped_FootLeft
-    400016: MechBiped_FootRight
-    400018: MechBiped_Hips1Left
-    400020: MechBiped_Hips1Right
-    400022: MechBiped_Hips2Left
-    400024: MechBiped_Hips2Right
-    400026: MechBiped_Neck
-    400028: MechBiped_Pelvis
-    400030: MechBiped_PistionCockpit_1
-    400032: MechBiped_PistionCockpit_2
-    400034: MechBiped_PistonAnkleLeft_1
-    400036: MechBiped_PistonAnkleLeft_2
-    400038: MechBiped_PistonAnkleRight_1
-    400040: MechBiped_PistonAnkleRight_2
-    400042: MechBiped_PistonCalfLeft_1
-    400044: MechBiped_PistonCalfLeft_2
-    400046: MechBiped_PistonCalfRight_1
-    400048: MechBiped_PistonCalfRight_2
-    400050: MechBiped_PistonHips1Left_1
-    400052: MechBiped_PistonHips1Left_2
-    400054: MechBiped_PistonHips1Right_1
-    400056: MechBiped_PistonHips1Right_2
-    400058: MechBiped_PistonHips2Left_1
-    400060: MechBiped_PistonHips2Left_2
-    400062: MechBiped_PistonHips2Right_1
-    400064: MechBiped_PistonHips2Right_2
-    400066: MechBiped_PistonThighLeft_1
-    400068: MechBiped_PistonThighLeft_2
-    400070: MechBiped_PistonThighRight_1
-    400072: MechBiped_PistonThighRight_2
-    400074: MechBiped_PistonToe1Left_002
-    400076: MechBiped_PistonToe1Left_2
-    400078: MechBiped_PistonToe1Right_1
-    400080: MechBiped_PistonToe1Right_2
-    400082: MechBiped_PistonToe2Left_1
-    400084: MechBiped_PistonToe2Left_2
-    400086: MechBiped_PistonToe2Right_1
-    400088: MechBiped_PistonToe2Right_2
-    400090: MechBiped_PistonToe3Left_1
-    400092: MechBiped_PistonToe3Left_2
-    400094: MechBiped_PistonToe3Right_1
-    400096: MechBiped_PistonToe3Right_2
-    400098: MechBiped_ShoulderLeft
-    400100: MechBiped_ShoulderRight
-    400102: MechBiped_ThighLeft
-    400104: MechBiped_ThighRight
-    400106: MechBiped_ToeLeft_1
-    400108: MechBiped_ToeLeft_2
-    400110: MechBiped_ToeLeft_3
-    400112: MechBiped_ToeRight_1
-    400114: MechBiped_ToeRight_2
-    400116: MechBiped_ToeRight_3
-    400118: root
-    7400000: DodgeLeft_RM
-    9500000: //RootNode
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: MechBiped_ankleLeft
+  - first:
+      1: 100004
+    second: MechBiped_ankleRight
+  - first:
+      1: 100006
+    second: MechBiped_CalfLeft
+  - first:
+      1: 100008
+    second: MechBiped_CalfRight
+  - first:
+      1: 100010
+    second: MechBiped_Cockpit
+  - first:
+      1: 100012
+    second: MechBiped_CockpitDoor
+  - first:
+      1: 100014
+    second: MechBiped_FootLeft
+  - first:
+      1: 100016
+    second: MechBiped_FootRight
+  - first:
+      1: 100018
+    second: MechBiped_Hips1Left
+  - first:
+      1: 100020
+    second: MechBiped_Hips1Right
+  - first:
+      1: 100022
+    second: MechBiped_Hips2Left
+  - first:
+      1: 100024
+    second: MechBiped_Hips2Right
+  - first:
+      1: 100026
+    second: MechBiped_Neck
+  - first:
+      1: 100028
+    second: MechBiped_Pelvis
+  - first:
+      1: 100030
+    second: MechBiped_PistionCockpit_1
+  - first:
+      1: 100032
+    second: MechBiped_PistionCockpit_2
+  - first:
+      1: 100034
+    second: MechBiped_PistonAnkleLeft_1
+  - first:
+      1: 100036
+    second: MechBiped_PistonAnkleLeft_2
+  - first:
+      1: 100038
+    second: MechBiped_PistonAnkleRight_1
+  - first:
+      1: 100040
+    second: MechBiped_PistonAnkleRight_2
+  - first:
+      1: 100042
+    second: MechBiped_PistonCalfLeft_1
+  - first:
+      1: 100044
+    second: MechBiped_PistonCalfLeft_2
+  - first:
+      1: 100046
+    second: MechBiped_PistonCalfRight_1
+  - first:
+      1: 100048
+    second: MechBiped_PistonCalfRight_2
+  - first:
+      1: 100050
+    second: MechBiped_PistonHips1Left_1
+  - first:
+      1: 100052
+    second: MechBiped_PistonHips1Left_2
+  - first:
+      1: 100054
+    second: MechBiped_PistonHips1Right_1
+  - first:
+      1: 100056
+    second: MechBiped_PistonHips1Right_2
+  - first:
+      1: 100058
+    second: MechBiped_PistonHips2Left_1
+  - first:
+      1: 100060
+    second: MechBiped_PistonHips2Left_2
+  - first:
+      1: 100062
+    second: MechBiped_PistonHips2Right_1
+  - first:
+      1: 100064
+    second: MechBiped_PistonHips2Right_2
+  - first:
+      1: 100066
+    second: MechBiped_PistonThighLeft_1
+  - first:
+      1: 100068
+    second: MechBiped_PistonThighLeft_2
+  - first:
+      1: 100070
+    second: MechBiped_PistonThighRight_1
+  - first:
+      1: 100072
+    second: MechBiped_PistonThighRight_2
+  - first:
+      1: 100074
+    second: MechBiped_PistonToe1Left_002
+  - first:
+      1: 100076
+    second: MechBiped_PistonToe1Left_2
+  - first:
+      1: 100078
+    second: MechBiped_PistonToe1Right_1
+  - first:
+      1: 100080
+    second: MechBiped_PistonToe1Right_2
+  - first:
+      1: 100082
+    second: MechBiped_PistonToe2Left_1
+  - first:
+      1: 100084
+    second: MechBiped_PistonToe2Left_2
+  - first:
+      1: 100086
+    second: MechBiped_PistonToe2Right_1
+  - first:
+      1: 100088
+    second: MechBiped_PistonToe2Right_2
+  - first:
+      1: 100090
+    second: MechBiped_PistonToe3Left_1
+  - first:
+      1: 100092
+    second: MechBiped_PistonToe3Left_2
+  - first:
+      1: 100094
+    second: MechBiped_PistonToe3Right_1
+  - first:
+      1: 100096
+    second: MechBiped_PistonToe3Right_2
+  - first:
+      1: 100098
+    second: MechBiped_ShoulderLeft
+  - first:
+      1: 100100
+    second: MechBiped_ShoulderRight
+  - first:
+      1: 100102
+    second: MechBiped_ThighLeft
+  - first:
+      1: 100104
+    second: MechBiped_ThighRight
+  - first:
+      1: 100106
+    second: MechBiped_ToeLeft_1
+  - first:
+      1: 100108
+    second: MechBiped_ToeLeft_2
+  - first:
+      1: 100110
+    second: MechBiped_ToeLeft_3
+  - first:
+      1: 100112
+    second: MechBiped_ToeRight_1
+  - first:
+      1: 100114
+    second: MechBiped_ToeRight_2
+  - first:
+      1: 100116
+    second: MechBiped_ToeRight_3
+  - first:
+      1: 100118
+    second: root
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: MechBiped_ankleLeft
+  - first:
+      4: 400004
+    second: MechBiped_ankleRight
+  - first:
+      4: 400006
+    second: MechBiped_CalfLeft
+  - first:
+      4: 400008
+    second: MechBiped_CalfRight
+  - first:
+      4: 400010
+    second: MechBiped_Cockpit
+  - first:
+      4: 400012
+    second: MechBiped_CockpitDoor
+  - first:
+      4: 400014
+    second: MechBiped_FootLeft
+  - first:
+      4: 400016
+    second: MechBiped_FootRight
+  - first:
+      4: 400018
+    second: MechBiped_Hips1Left
+  - first:
+      4: 400020
+    second: MechBiped_Hips1Right
+  - first:
+      4: 400022
+    second: MechBiped_Hips2Left
+  - first:
+      4: 400024
+    second: MechBiped_Hips2Right
+  - first:
+      4: 400026
+    second: MechBiped_Neck
+  - first:
+      4: 400028
+    second: MechBiped_Pelvis
+  - first:
+      4: 400030
+    second: MechBiped_PistionCockpit_1
+  - first:
+      4: 400032
+    second: MechBiped_PistionCockpit_2
+  - first:
+      4: 400034
+    second: MechBiped_PistonAnkleLeft_1
+  - first:
+      4: 400036
+    second: MechBiped_PistonAnkleLeft_2
+  - first:
+      4: 400038
+    second: MechBiped_PistonAnkleRight_1
+  - first:
+      4: 400040
+    second: MechBiped_PistonAnkleRight_2
+  - first:
+      4: 400042
+    second: MechBiped_PistonCalfLeft_1
+  - first:
+      4: 400044
+    second: MechBiped_PistonCalfLeft_2
+  - first:
+      4: 400046
+    second: MechBiped_PistonCalfRight_1
+  - first:
+      4: 400048
+    second: MechBiped_PistonCalfRight_2
+  - first:
+      4: 400050
+    second: MechBiped_PistonHips1Left_1
+  - first:
+      4: 400052
+    second: MechBiped_PistonHips1Left_2
+  - first:
+      4: 400054
+    second: MechBiped_PistonHips1Right_1
+  - first:
+      4: 400056
+    second: MechBiped_PistonHips1Right_2
+  - first:
+      4: 400058
+    second: MechBiped_PistonHips2Left_1
+  - first:
+      4: 400060
+    second: MechBiped_PistonHips2Left_2
+  - first:
+      4: 400062
+    second: MechBiped_PistonHips2Right_1
+  - first:
+      4: 400064
+    second: MechBiped_PistonHips2Right_2
+  - first:
+      4: 400066
+    second: MechBiped_PistonThighLeft_1
+  - first:
+      4: 400068
+    second: MechBiped_PistonThighLeft_2
+  - first:
+      4: 400070
+    second: MechBiped_PistonThighRight_1
+  - first:
+      4: 400072
+    second: MechBiped_PistonThighRight_2
+  - first:
+      4: 400074
+    second: MechBiped_PistonToe1Left_002
+  - first:
+      4: 400076
+    second: MechBiped_PistonToe1Left_2
+  - first:
+      4: 400078
+    second: MechBiped_PistonToe1Right_1
+  - first:
+      4: 400080
+    second: MechBiped_PistonToe1Right_2
+  - first:
+      4: 400082
+    second: MechBiped_PistonToe2Left_1
+  - first:
+      4: 400084
+    second: MechBiped_PistonToe2Left_2
+  - first:
+      4: 400086
+    second: MechBiped_PistonToe2Right_1
+  - first:
+      4: 400088
+    second: MechBiped_PistonToe2Right_2
+  - first:
+      4: 400090
+    second: MechBiped_PistonToe3Left_1
+  - first:
+      4: 400092
+    second: MechBiped_PistonToe3Left_2
+  - first:
+      4: 400094
+    second: MechBiped_PistonToe3Right_1
+  - first:
+      4: 400096
+    second: MechBiped_PistonToe3Right_2
+  - first:
+      4: 400098
+    second: MechBiped_ShoulderLeft
+  - first:
+      4: 400100
+    second: MechBiped_ShoulderRight
+  - first:
+      4: 400102
+    second: MechBiped_ThighLeft
+  - first:
+      4: 400104
+    second: MechBiped_ThighRight
+  - first:
+      4: 400106
+    second: MechBiped_ToeLeft_1
+  - first:
+      4: 400108
+    second: MechBiped_ToeLeft_2
+  - first:
+      4: 400110
+    second: MechBiped_ToeLeft_3
+  - first:
+      4: 400112
+    second: MechBiped_ToeRight_1
+  - first:
+      4: 400114
+    second: MechBiped_ToeRight_2
+  - first:
+      4: 400116
+    second: MechBiped_ToeRight_3
+  - first:
+      4: 400118
+    second: root
+  - first:
+      74: 7400000
+    second: DodgeLeft_RM
+  - first:
+      95: 9500000
+    second: //RootNode
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -143,16 +388,20 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: DodgeLeft_RM
       takeName: Take 001
+      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -304,26 +553,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -333,15 +605,20 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: root
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: ab131d71c4de13c49bc7a2aee6f9d9fb,
     type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

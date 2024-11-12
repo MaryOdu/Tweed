@@ -1,71 +1,176 @@
 fileFormatVersion: 2
 guid: 650636cf0564b10408ec19ecd2176601
-timeCreated: 1554159874
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: AssaultMech_ArmLeft_1
-    100002: AssaultMech_ArmLeft_2
-    100004: AssaultMech_ArmRight_1
-    100006: AssaultMech_ArmRight_2
-    100008: AssaultMech_Body
-    100010: AssaultMech_CalfLeft
-    100012: AssaultMech_CalfRight
-    100014: AssaultMech_FootLeft
-    100016: AssaultMech_FootRight
-    100018: AssaultMech_HipLeft
-    100020: AssaultMech_HipRight
-    100022: AssaultMech_Neck
-    100024: AssaultMech_Pelvis
-    100026: AssaultMech_ThighLeft
-    100028: AssaultMech_ThighRight
-    100030: AssaultMech_ToeLeft_1
-    100032: AssaultMech_ToeLeft_2
-    100034: AssaultMech_ToeLeft_3
-    100036: AssaultMech_ToeLRight_1
-    100038: AssaultMech_ToeLRight_2
-    100040: AssaultMech_ToeLRight_3
-    100042: AssaultMech_WeaponLeft
-    100044: AssaultMech_WeaponRight
-    100046: root
-    100048: //RootNode
-    400000: AssaultMech_ArmLeft_1
-    400002: AssaultMech_ArmLeft_2
-    400004: AssaultMech_ArmRight_1
-    400006: AssaultMech_ArmRight_2
-    400008: AssaultMech_Body
-    400010: AssaultMech_CalfLeft
-    400012: AssaultMech_CalfRight
-    400014: AssaultMech_FootLeft
-    400016: AssaultMech_FootRight
-    400018: AssaultMech_HipLeft
-    400020: AssaultMech_HipRight
-    400022: AssaultMech_Neck
-    400024: AssaultMech_Pelvis
-    400026: AssaultMech_ThighLeft
-    400028: AssaultMech_ThighRight
-    400030: AssaultMech_ToeLeft_1
-    400032: AssaultMech_ToeLeft_2
-    400034: AssaultMech_ToeLeft_3
-    400036: AssaultMech_ToeLRight_1
-    400038: AssaultMech_ToeLRight_2
-    400040: AssaultMech_ToeLRight_3
-    400042: AssaultMech_WeaponLeft
-    400044: AssaultMech_WeaponRight
-    400046: root
-    400048: //RootNode
-    7400000: Activating
-    9500000: //RootNode
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: AssaultMech_ArmLeft_1
+  - first:
+      1: 100002
+    second: AssaultMech_ArmLeft_2
+  - first:
+      1: 100004
+    second: AssaultMech_ArmRight_1
+  - first:
+      1: 100006
+    second: AssaultMech_ArmRight_2
+  - first:
+      1: 100008
+    second: AssaultMech_Body
+  - first:
+      1: 100010
+    second: AssaultMech_CalfLeft
+  - first:
+      1: 100012
+    second: AssaultMech_CalfRight
+  - first:
+      1: 100014
+    second: AssaultMech_FootLeft
+  - first:
+      1: 100016
+    second: AssaultMech_FootRight
+  - first:
+      1: 100018
+    second: AssaultMech_HipLeft
+  - first:
+      1: 100020
+    second: AssaultMech_HipRight
+  - first:
+      1: 100022
+    second: AssaultMech_Neck
+  - first:
+      1: 100024
+    second: AssaultMech_Pelvis
+  - first:
+      1: 100026
+    second: AssaultMech_ThighLeft
+  - first:
+      1: 100028
+    second: AssaultMech_ThighRight
+  - first:
+      1: 100030
+    second: AssaultMech_ToeLeft_1
+  - first:
+      1: 100032
+    second: AssaultMech_ToeLeft_2
+  - first:
+      1: 100034
+    second: AssaultMech_ToeLeft_3
+  - first:
+      1: 100036
+    second: AssaultMech_ToeLRight_1
+  - first:
+      1: 100038
+    second: AssaultMech_ToeLRight_2
+  - first:
+      1: 100040
+    second: AssaultMech_ToeLRight_3
+  - first:
+      1: 100042
+    second: AssaultMech_WeaponLeft
+  - first:
+      1: 100044
+    second: AssaultMech_WeaponRight
+  - first:
+      1: 100046
+    second: root
+  - first:
+      1: 100048
+    second: //RootNode
+  - first:
+      4: 400000
+    second: AssaultMech_ArmLeft_1
+  - first:
+      4: 400002
+    second: AssaultMech_ArmLeft_2
+  - first:
+      4: 400004
+    second: AssaultMech_ArmRight_1
+  - first:
+      4: 400006
+    second: AssaultMech_ArmRight_2
+  - first:
+      4: 400008
+    second: AssaultMech_Body
+  - first:
+      4: 400010
+    second: AssaultMech_CalfLeft
+  - first:
+      4: 400012
+    second: AssaultMech_CalfRight
+  - first:
+      4: 400014
+    second: AssaultMech_FootLeft
+  - first:
+      4: 400016
+    second: AssaultMech_FootRight
+  - first:
+      4: 400018
+    second: AssaultMech_HipLeft
+  - first:
+      4: 400020
+    second: AssaultMech_HipRight
+  - first:
+      4: 400022
+    second: AssaultMech_Neck
+  - first:
+      4: 400024
+    second: AssaultMech_Pelvis
+  - first:
+      4: 400026
+    second: AssaultMech_ThighLeft
+  - first:
+      4: 400028
+    second: AssaultMech_ThighRight
+  - first:
+      4: 400030
+    second: AssaultMech_ToeLeft_1
+  - first:
+      4: 400032
+    second: AssaultMech_ToeLeft_2
+  - first:
+      4: 400034
+    second: AssaultMech_ToeLeft_3
+  - first:
+      4: 400036
+    second: AssaultMech_ToeLRight_1
+  - first:
+      4: 400038
+    second: AssaultMech_ToeLRight_2
+  - first:
+      4: 400040
+    second: AssaultMech_ToeLRight_3
+  - first:
+      4: 400042
+    second: AssaultMech_WeaponLeft
+  - first:
+      4: 400044
+    second: AssaultMech_WeaponRight
+  - first:
+      4: 400046
+    second: root
+  - first:
+      4: 400048
+    second: //RootNode
+  - first:
+      74: 7400000
+    second: Activating
+  - first:
+      95: 9500000
+    second: //RootNode
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -73,16 +178,20 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: Activating
       takeName: Take 001
+      internalID: 0
       firstFrame: 0
       lastFrame: 60
       wrapMode: 0
@@ -164,26 +273,49 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -193,15 +325,20 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: root
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 6b54c65c68de1314694945804fe7edbc,
     type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
