@@ -55,6 +55,13 @@ namespace Assets.Scripts.Enemy
         [SerializeField]
         private float m_playerLastSeenTime;
 
+        [SerializeField]
+        private float m_attackStopDistance;
+
+        [SerializeField]
+        private float m_stopDistance;
+
+
         public EnemyState State
         {
             get
@@ -79,11 +86,29 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        public float SightRange
+        {
+            get
+            {
+                return m_sightRange;
+            }
+        }
+
+        public float SightAngle
+        {
+            get
+            {
+                return m_sightAngle;
+            }
+        }
+
         public AgentAI()
         {
             m_patrolPoints = new List<GameObject>();
             m_sightRange = 30.0f;
             m_sightAngle = 45.0f;
+            m_attackStopDistance = 8f;
+            m_stopDistance = 3f;
         }
 
         // Start is called before the first frame update
@@ -124,7 +149,7 @@ namespace Assets.Scripts.Enemy
 
             if (canSeePlayer)
             {
-                Debug.DrawRay(ray.origin, ray.direction * debugRayDistance, Color.red);
+                Debug.DrawRay(ray.origin, ray.direction * b.magnitude, Color.red);
                 m_agentAttack.Target = hitInfo.collider.gameObject;
                 m_state = EnemyState.Alert;
                 m_playerLastSeenTime = Time.time;
@@ -149,14 +174,18 @@ namespace Assets.Scripts.Enemy
             }
 
             this.UpdateActiveBehaviour();
+            this.UpdateStopDsistance();
+        }
 
-            if (m_agent.CompareTag("EnemyCam")) //<------------- So the flying camara's will keep a distance from player but still go ontop of nav points
+        private void UpdateStopDsistance()
+        {
+            if (m_agentAttack.enabled)
             {
-                if (m_agentAttack.enabled == true)
-                {
-                    m_agent.stoppingDistance = 8;
-                }
-                else { m_agent.stoppingDistance = 3; }
+                m_agent.stoppingDistance = m_attackStopDistance;
+            }
+            else
+            {
+                m_agent.stoppingDistance = m_stopDistance;
             }
         }
 

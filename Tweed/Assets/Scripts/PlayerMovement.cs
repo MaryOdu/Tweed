@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] 
     private Transform CamDir;
     //private Vector3 PlayerMovementInput;
+
+    [SerializeField]
     Animator animator;
     private bool WalkOn;
     
@@ -45,8 +47,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical"); 
 
@@ -62,7 +62,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (PlayerMovementInput != Vector3.zero)
         {
-            
             Quaternion toRotation = Quaternion.LookRotation(PlayerMovementInput, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
 

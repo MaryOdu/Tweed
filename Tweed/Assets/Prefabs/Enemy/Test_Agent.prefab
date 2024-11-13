@@ -301,6 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd8aa4a4bfa746488b3ce53e5c1b590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_state: 0
   m_target: {fileID: 0}
   m_patrolPoints: []
   m_patrolSpeed: 3.5
@@ -308,6 +309,9 @@ MonoBehaviour:
   m_alertSpeed: 7
   m_sightRange: 30
   m_sightAngle: 45
+  m_playerLastSeenTime: 0
+  m_attackStopDistance: 8
+  m_stopDistance: 3
 --- !u!195 &3512150553505552715
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -469,7 +473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5022331367748746995
 Transform:
   m_ObjectHideFlags: 0
