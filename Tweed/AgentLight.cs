@@ -4,10 +4,10 @@ using UnityEngine;
 using Assets.Scripts.Util;
 using Assets.Scripts.Enemy;
 
-public class AgentLight : MonoBehaviour
+public class GuardLight : MonoBehaviour
 {
     private Light m_headLight;
-    private AgentAI m_agent;
+    private GuardAI m_agent;
 
     [SerializeField]
     private Color m_patrolColour;
@@ -21,7 +21,7 @@ public class AgentLight : MonoBehaviour
     //[SerializeField]
     //private Color m_friendlyColour; <---------- to use when bots are friendly
 
-    public AgentLight()
+    public GuardLight()
     {
         m_patrolColour = new Color(0.9f, 0.9f, 1.0f);
         m_searchColour = new Color(0.75f, 0.75f, 0);
@@ -32,7 +32,7 @@ public class AgentLight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_agent = this.GetComponent<AgentAI>();
+        m_agent = this.GetComponent<GuardAI>();
         m_headLight = this.gameObject.FindChild("Headlight").GetComponent<Light>();
     }
 

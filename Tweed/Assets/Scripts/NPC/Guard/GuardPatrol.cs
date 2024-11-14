@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 namespace Assets.Scripts.Enemy
 {
-    public class AgentPatrol : MonoBehaviour
+    public class GuardPatrol : MonoBehaviour
     {
         [SerializeField]
         private List<GameObject> m_patrolPoints;
@@ -27,7 +27,7 @@ namespace Assets.Scripts.Enemy
         }
 
 
-        public AgentPatrol()
+        public GuardPatrol()
         {
             m_patrolPoints = new List<GameObject>();
         }

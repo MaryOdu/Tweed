@@ -8,7 +8,7 @@ using UnityEngine.AI;
 
 namespace Assets.Scripts.Enemy
 {
-    public class AgentAttack : MonoBehaviour
+    public class GuardAttack : MonoBehaviour
     {
         [SerializeField]
         private GameObject m_target;
@@ -40,7 +40,7 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        public AgentAttack()
+        public GuardAttack()
         {
             m_attackRange = 2.0f;
         }

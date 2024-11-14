@@ -304,6 +304,8 @@ MonoBehaviour:
   m_sightRange: 15
   m_sightAngle: 45
   m_playerLastSeenTime: 5
+  m_stopDistance: 3
+  m_attackStopDistance: 3
 --- !u!114 &1226663368612193238
 MonoBehaviour:
   m_ObjectHideFlags: 0

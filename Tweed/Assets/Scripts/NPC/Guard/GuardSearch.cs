@@ -19,11 +19,11 @@ namespace Assets.Scripts.Enemy
         Level
     }
 
-    internal class AgentSearch : MonoBehaviour
+    internal class GuardSearch : MonoBehaviour
     {
         private SearchArea m_searchArea;
         private NavMeshAgent m_agent;
-        private AgentPatrol m_patrol;
+        private GuardPatrol m_patrol;
 
         private List<GameObject> m_searchPoints;
 
@@ -59,7 +59,7 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        public AgentSearch()
+        public GuardSearch()
         {
             m_searchQueue = new Queue<Vector3>();
             m_localSearchRadius = 10.0f;
@@ -68,7 +68,7 @@ namespace Assets.Scripts.Enemy
 
         private void Start()
         {
-            m_patrol = this.GetComponent<AgentPatrol>();
+            m_patrol = this.GetComponent<GuardPatrol>();
             m_agent = this.GetComponent<NavMeshAgent>();
             m_searchPoints = m_patrol.PatrolPoints;
         }

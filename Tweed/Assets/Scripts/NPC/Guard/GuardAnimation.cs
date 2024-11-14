@@ -7,19 +7,19 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
-    public class EnemyAnimation : MonoBehaviour
+    public class GuardAnimation : MonoBehaviour
     {
         private Animator m_animator;
-        private AgentAI m_agent;
+        private GuardAI m_agent;
 
-        public EnemyAnimation()
+        public GuardAnimation()
         {
             
         }
 
         private void Start()
         {
-            m_agent = this.GetComponent<AgentAI>();
+            m_agent = this.GetComponent<GuardAI>();
             m_animator = this.GetComponent<Animator>();
         }
 
