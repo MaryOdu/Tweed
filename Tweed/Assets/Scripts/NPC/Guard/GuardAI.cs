@@ -1,3 +1,4 @@
+using Assets.Scripts.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using UnityEngine.AI;
 
 namespace Assets.Scripts.Enemy
 {
-    public enum EnemyState
+    public enum GuardState
     {
         Patrol,
         Search,
@@ -20,7 +21,7 @@ namespace Assets.Scripts.Enemy
         private const int debugRayDistance = 100;
 
         [SerializeField]
-        private EnemyState m_state;
+        private GuardState m_state;
 
         private GuardAttack m_agentAttack;
         private GuardPatrol m_agentPatrol;
@@ -62,7 +63,7 @@ namespace Assets.Scripts.Enemy
         private float m_attackStopDistance;
 
 
-        public EnemyState State
+        public GuardState State
         {
             get
             {
@@ -129,36 +130,33 @@ namespace Assets.Scripts.Enemy
             m_agentPatrol.PatrolPoints = m_patrolPoints;
 
             m_searchTime = TimeSpan.FromSeconds(60);
-            m_state = EnemyState.Patrol;
+            m_state = GuardState.Patrol;
         }
 
         // Update is called once per frame
         void Update()
         {
-            var playerPos = m_target.gameObject.transform.position;
-            var deltaV = playerPos - this.gameObject.transform.position;
-            var ray = new Ray(this.gameObject.transform.position, deltaV.normalized);
+            //var playerPos = m_target.gameObject.transform.position;
+            //var deltaV = playerPos - this.gameObject.transform.position;
+            //var ray = new Ray(this.gameObject.transform.position, deltaV.normalized);
 
-            var rayHit = Physics.Raycast(ray, out var hitInfo, float.PositiveInfinity, LayerMask.GetMask("Default"));
+            //var rayHit = Physics.Raycast(ray, out var hitInfo, float.PositiveInfinity, LayerMask.GetMask("Default"));
 
-            var b = (playerPos - this.gameObject.transform.position).normalized;
-            var a = this.gameObject.transform.forward.normalized;
-            var angle = Vector3.Angle(a, b);
+            //var b = (playerPos - this.gameObject.transform.position).normalized;
+            //var a = this.gameObject.transform.forward.normalized;
+            //var angle = Vector3.Angle(a, b);
 
-            var canSeePlayer = rayHit && hitInfo.collider.gameObject == m_target && hitInfo.distance < m_sightRange && angle < m_sightAngle;
+            //var canSeePlayer = rayHit && hitInfo.collider.gameObject == m_target && hitInfo.distance < m_sightRange && angle < m_sightAngle;
 
-            if (canSeePlayer)
+            if (AIHelper.CanSeeObject(this.gameObject, m_target, m_sightRange, m_sightAngle, true))
             {
-                Debug.DrawRay(ray.origin, ray.direction * b.magnitude, Color.red);
-                m_agentAttack.Target = hitInfo.collider.gameObject;
-                m_state = EnemyState.Alert;
+                m_agentAttack.Target = m_target;
+                m_state = GuardState.Alert;
                 m_playerLastSeenTime = Time.time;
             }
             else
             {
-                m_state = m_playerLastSeenTime == 0 || this.RemainingSearchTime <= 0.0f ? EnemyState.Patrol : EnemyState.Search;
-
-                Debug.DrawRay(ray.origin, ray.direction * debugRayDistance, Color.blue);
+                m_state = m_playerLastSeenTime == 0 || this.RemainingSearchTime <= 0.0f ? GuardState.Patrol : GuardState.Search;
 
                 if (m_agent.remainingDistance <= m_agent.stoppingDistance)
                 {
@@ -166,7 +164,7 @@ namespace Assets.Scripts.Enemy
                     {
                         if (this.RemainingSearchTime <= 0.0f)
                         {
-                            m_state = EnemyState.Patrol;
+                            m_state = GuardState.Patrol;
                             m_searchTime = TimeSpan.FromSeconds(60);
                         }
                     }
@@ -189,11 +187,16 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        public void GetGuardState(GuardState state)
+        {
+            m_state = state;
+        }
+
         private void UpdateActiveBehaviour()
         {
             switch (m_state)
             {
-                case EnemyState.Patrol:
+                case GuardState.Patrol:
                     m_agentPatrol.enabled = true;
                     m_agentAttack.enabled = false;
                     m_agentSearch.enabled = false;
@@ -201,7 +204,7 @@ namespace Assets.Scripts.Enemy
                     m_agent.speed = m_patrolSpeed;
 
                     break;
-                case EnemyState.Search:
+                case GuardState.Search:
                     m_agentPatrol.enabled = false;
                     m_agentAttack.enabled = false;
                     m_agentSearch.enabled = true;
@@ -209,7 +212,7 @@ namespace Assets.Scripts.Enemy
                     m_agent.speed = m_searchSpeed;
 
                     break;
-                case EnemyState.Alert:
+                case GuardState.Alert:
                     m_agentPatrol.enabled = false;
                     m_agentAttack.enabled = true;
                     m_agentSearch.enabled = false;

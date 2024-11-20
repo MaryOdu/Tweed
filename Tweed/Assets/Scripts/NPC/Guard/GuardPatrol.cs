@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -36,6 +37,7 @@ namespace Assets.Scripts.Enemy
         private void Start()
         {
             m_agent = GetComponent<NavMeshAgent>();
+            m_patrolPoints = m_patrolPoints.Where(x => x != null).ToList();
         }
 
         // Update is called once per frame
@@ -48,13 +50,22 @@ namespace Assets.Scripts.Enemy
                     Debug.Log($"{gameObject.GetInstanceID()} : Agent has reached destination.");
 
                     var nextPoint = GetNextObject();
-                    m_agent.destination = nextPoint.transform.position;
+
+                    if (nextPoint != null)
+                    {
+                        m_agent.destination = nextPoint.transform.position;
+                    }
                 }
             }
         }
 
         private GameObject GetNextObject()
         {
+            if (m_patrolPoints.Count < 1)
+            {
+                return null;
+            }
+
             if (m_currIdx >= m_patrolPoints.Count - 1)
             {
                 m_currIdx = 0;

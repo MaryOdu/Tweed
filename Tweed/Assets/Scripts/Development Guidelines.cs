@@ -23,6 +23,8 @@ Main Menu (early implamentation) <-- Game starts at main menu main menu.
 Win state (Not started) <--  you win Image shows then goes to main menu.
 Pause Menu (not started) <-- when player hits Esc game pauses
 
+Sentry <-- Sentry enemy AI & implementation
+
 --------
 -------- Bottem line Map related
 --------

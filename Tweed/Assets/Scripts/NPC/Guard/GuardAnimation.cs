@@ -30,17 +30,17 @@ namespace Assets.Scripts.Enemy
 
             switch (m_agent.State)
             {
-                case EnemyState.Patrol:
+                case GuardState.Patrol:
                     m_animator.SetBool("IsPatroling", true);
                     m_animator.SetBool("IsSearching", false);
                     m_animator.SetBool("IsChasing", false);
                     break;
-                case EnemyState.Search:
+                case GuardState.Search:
                     m_animator.SetBool("IsSearching", true);
                     m_animator.SetBool("IsPatroling", false);
                     m_animator.SetBool("IsChasing", false);
                     break;
-                case EnemyState.Alert:
+                case GuardState.Alert:
 
                     m_animator.SetBool("IsChasing", !m_agent.IsAttacking);
                     m_animator.SetBool("IsPatroling", false);

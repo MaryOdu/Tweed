@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 109661903263370307}
   - component: {fileID: 8683046513080126334}
   - component: {fileID: 7433182139393685378}
+  - component: {fileID: 1554353717838975433}
   m_Layer: 0
   m_Name: GateRockEdge (L)
   m_TagString: Untagged
@@ -3468,11 +3469,32 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &1554353717838975433
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460368577147616467}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1685385, y: 1.1289942, z: 1.2877134}
+  m_Center: {x: -0.08426911, y: 0.06449708, z: -0.03283441}
 --- !u!1 &3006814519502914239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3486,6 +3508,7 @@ GameObject:
   - component: {fileID: 5878209678782458434}
   - component: {fileID: 6093230170306972586}
   - component: {fileID: 569784260065206686}
+  - component: {fileID: 8426274394390394554}
   m_Layer: 0
   m_Name: GateRockEdge (R)
   m_TagString: Untagged
@@ -6941,11 +6964,32 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &8426274394390394554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006814519502914239}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1685385, y: 1.1289942, z: 1.2877134}
+  m_Center: {x: -0.084269226, y: 0.06449708, z: -0.03283441}
 --- !u!1 &3949010083445770846
 GameObject:
   m_ObjectHideFlags: 0
@@ -7677,7 +7721,7 @@ PrefabInstance:
     - target: {fileID: 3269738118311401997, guid: a9e706281041774419f641cb04011599,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.672971
+      value: -6.5570774
       objectReference: {fileID: 0}
     - target: {fileID: 3269738118311401997, guid: a9e706281041774419f641cb04011599,
         type: 3}
@@ -7687,12 +7731,12 @@ PrefabInstance:
     - target: {fileID: 3269738118311401997, guid: a9e706281041774419f641cb04011599,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.7000008
+      value: -1.8535233
       objectReference: {fileID: 0}
     - target: {fileID: 3269738118311401997, guid: a9e706281041774419f641cb04011599,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.95366263
+      value: 0.9328186
       objectReference: {fileID: 0}
     - target: {fileID: 3269738118311401997, guid: a9e706281041774419f641cb04011599,
         type: 3}
@@ -7702,7 +7746,7 @@ PrefabInstance:
     - target: {fileID: 3269738118311401997, guid: a9e706281041774419f641cb04011599,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.30087817
+      value: -0.36034638
       objectReference: {fileID: 0}
     - target: {fileID: 3269738118311401997, guid: a9e706281041774419f641cb04011599,
         type: 3}
@@ -7717,7 +7761,7 @@ PrefabInstance:
     - target: {fileID: 3269738118311401997, guid: a9e706281041774419f641cb04011599,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -35.021
+      value: -42.243
       objectReference: {fileID: 0}
     - target: {fileID: 3269738118311401997, guid: a9e706281041774419f641cb04011599,
         type: 3}

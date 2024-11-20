@@ -53,8 +53,8 @@ public class Gateway : MonoBehaviour
 
         if (DoorOpen == true)
         {
-            float currentX = Mathf.Lerp(transform.position.x, EndPos, ObSpeed * Time.deltaTime);
-            transform.position = new Vector3(currentX, transform.position.y, transform.position.z);
+            float currentX = Mathf.Lerp(transform.localPosition.x, EndPos, ObSpeed * Time.deltaTime);
+            transform.localPosition = new Vector3(currentX, transform.localPosition.y, transform.localPosition.z);
         }
 
     }

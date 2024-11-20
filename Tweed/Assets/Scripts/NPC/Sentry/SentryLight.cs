@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Util;
 using Assets.Scripts.Enemy;
+using Assets.Scripts.NPC.Sentry;
 
-public class GuardLight : MonoBehaviour
+public class SentryLight : MonoBehaviour
 {
     private Light m_headLight;
-    private GuardAI m_agent;
+    private SentryAI m_agent;
 
     [SerializeField]
-    private Color m_patrolColour;
-
-    [SerializeField]
-    private Color m_searchColour;
+    private Color m_passiveColour;
 
     [SerializeField]
     private Color m_alertColour;
@@ -21,18 +19,17 @@ public class GuardLight : MonoBehaviour
     //[SerializeField]
     //private Color m_friendlyColour; <---------- to use when bots are friendly
 
-    public GuardLight()
+    public SentryLight()
     {
-        m_patrolColour = new Color(0.9f, 0.9f, 1.0f);
-        m_searchColour = new Color(0.75f, 0.75f, 0);
-        m_alertColour = new Color(1.0f, 0, 0);
+        m_passiveColour = new Color(0.9f, 0.9f, 1.0f);
+        m_alertColour = new Color(0.75f, 0.75f, 0);
         //m_friendlyColour = new Color(0, 0.5f, 0); <---------- to use when bots are friendly
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        m_agent = this.GetComponent<GuardAI>();
+        m_agent = this.GetComponent<SentryAI>();
         m_headLight = this.gameObject.FindChild("Headlight").GetComponent<Light>();
     }
 
@@ -41,20 +38,10 @@ public class GuardLight : MonoBehaviour
     {
         switch (m_agent.State)
         {
-            case GuardState.Patrol:
-                m_headLight.color = m_patrolColour;
+            case SentryState.Passive:
+                m_headLight.color = m_passiveColour;
                 break;
-            case GuardState.Search:
-                if (m_agent.RemainingSearchTime < 10.0f)
-                {
-                    this.BlinkSearchToPatrol();
-                }
-                else
-                {
-                    m_headLight.color = m_searchColour;
-                }
-                break;
-            case GuardState.Alert:
+            case SentryState.Alert:
                 m_headLight.color = m_alertColour;
                 break;
         }
@@ -66,11 +53,5 @@ public class GuardLight : MonoBehaviour
     {
         m_headLight.range = m_agent.SightRange;
         m_headLight.spotAngle = m_agent.SightRange;
-    }
-
-    private void BlinkSearchToPatrol()
-    {
-        var colour = (int)m_agent.RemainingSearchTime % 2 == 0 ? m_patrolColour : m_searchColour;
-        m_headLight.color = colour;
     }
 }
