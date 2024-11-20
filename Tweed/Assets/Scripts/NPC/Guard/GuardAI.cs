@@ -1,3 +1,4 @@
+using Assets.Scripts.NPC.Sentry;
 using Assets.Scripts.Util;
 using System;
 using System.Collections;
@@ -61,6 +62,8 @@ namespace Assets.Scripts.Enemy
 
         [SerializeField]
         private float m_attackStopDistance;
+
+        private GameObject m_alertedBy;
 
 
         public GuardState State
@@ -136,19 +139,9 @@ namespace Assets.Scripts.Enemy
         // Update is called once per frame
         void Update()
         {
-            //var playerPos = m_target.gameObject.transform.position;
-            //var deltaV = playerPos - this.gameObject.transform.position;
-            //var ray = new Ray(this.gameObject.transform.position, deltaV.normalized);
+            var playerSeen = this.QueryAlertedBy() || AIHelper.CanSeeObject(this.gameObject, m_target, m_sightRange, m_sightAngle, true);
 
-            //var rayHit = Physics.Raycast(ray, out var hitInfo, float.PositiveInfinity, LayerMask.GetMask("Default"));
-
-            //var b = (playerPos - this.gameObject.transform.position).normalized;
-            //var a = this.gameObject.transform.forward.normalized;
-            //var angle = Vector3.Angle(a, b);
-
-            //var canSeePlayer = rayHit && hitInfo.collider.gameObject == m_target && hitInfo.distance < m_sightRange && angle < m_sightAngle;
-
-            if (AIHelper.CanSeeObject(this.gameObject, m_target, m_sightRange, m_sightAngle, true))
+            if (playerSeen)
             {
                 m_agentAttack.Target = m_target;
                 m_state = GuardState.Alert;
@@ -187,9 +180,46 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        public void GetGuardState(GuardState state)
+
+
+        public void AlertGuard(GameObject alertedBy)
         {
-            m_state = state;
+            m_alertedBy = alertedBy;
+            m_state = GuardState.Alert;
+        }
+
+        private bool QueryAlertedBy()
+        {
+            if (m_alertedBy != null)
+            {
+                var sentry = m_alertedBy.GetComponent<SentryAI>();
+
+                if (sentry != null)
+                {
+                    return this.QuerySentry(sentry);
+                }
+            }
+
+            return false;
+        }
+
+        private bool QuerySentry(SentryAI sentry)
+        {
+            switch (sentry.State)
+            {
+                case SentryState.Passive:
+                    m_alertedBy = null;
+                    m_state = GuardState.Search;
+                    break;
+                case SentryState.Alert:
+                    if (sentry.CurrentLookAtTarget != null)
+                    {
+                        return m_agent.SetDestination(sentry.CurrentLookAtTarget.transform.position);
+                    }
+                    break;
+            }
+
+            return false;
         }
 
         private void UpdateActiveBehaviour()

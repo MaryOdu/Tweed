@@ -128,7 +128,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1758119621213600, guid: 831a9ed648116ef488b7b95571194b33, type: 3}
       propertyPath: m_Name
-      value: Bot_Cam Variant
+      value: Sentry_Bot
       objectReference: {fileID: 0}
     - target: {fileID: 1758119621213600, guid: 831a9ed648116ef488b7b95571194b33, type: 3}
       propertyPath: m_TagString
@@ -265,7 +265,6 @@ MonoBehaviour:
   m_passiveRotationSpeed: 3
   m_alertRotationSpeed: 20
   m_lookTimeout: 3
-  m_playerLastSeenTime: 0
   m_guardList: []
   m_lookAtTargets: []
 --- !u!114 &136495992005012046

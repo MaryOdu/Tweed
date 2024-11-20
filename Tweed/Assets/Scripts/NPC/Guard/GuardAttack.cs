@@ -64,6 +64,12 @@ namespace Assets.Scripts.Enemy
         {
             if (m_target != null)
             {
+                if (m_target.transform.position != m_agent.destination)
+                {
+                    this.Resume();
+                }
+
+
                 m_agent.destination = m_target.transform.position;
 
                 if (m_agent.remainingDistance <= m_attackRange)

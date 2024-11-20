@@ -78,6 +78,14 @@ namespace Assets.Scripts.NPC.Sentry
             }
         }
 
+        public GameObject CurrentLookAtTarget
+        {
+            get
+            {
+                return m_currentLookAtTarget;
+            }
+        }
+
         public List<GameObject> Targets
         {
             get
@@ -134,7 +142,7 @@ namespace Assets.Scripts.NPC.Sentry
         private void UpdateSentryAlert()
         {
             this.RotateToFaceTarget(m_target, m_alertRotationSpeed);
-            this.UpdateGuardState(GuardState.Alert);
+            this.AlertGuards();
         }
 
         private void UpdateSentryPassive()
@@ -154,6 +162,10 @@ namespace Assets.Scripts.NPC.Sentry
                 {
                     m_lookTimer.Start();
                 }
+                else
+                {
+                    m_lookTimer.Stop();
+                }
             }
         }
 
@@ -165,18 +177,18 @@ namespace Assets.Scripts.NPC.Sentry
 
             var tgtRot = Quaternion.LookRotation(deltaV, this.transform.up);
 
-            var qRot = Quaternion.Lerp(this.transform.rotation, tgtRot, rotSpeed);
+            var qRot = Quaternion.RotateTowards(this.transform.rotation, tgtRot, rotSpeed);
 
             this.transform.rotation = qRot;
 
-            return qRot.Equals(tgtRot);
+            return (qRot.eulerAngles.y - tgtRot.eulerAngles.y) < rotSpeed;
         }
 
-        private void UpdateGuardState(GuardState state)
+        private void AlertGuards()
         {
             foreach (var guard in m_guardList) 
             {
-                guard.GetGuardState(state);
+                guard.AlertGuard(this.gameObject);
             }
         }
 

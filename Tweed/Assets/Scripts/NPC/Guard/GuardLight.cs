@@ -65,7 +65,7 @@ public class GuardLight : MonoBehaviour
     private void UpdateLightRangeAndAngle()
     {
         m_headLight.range = m_agent.SightRange;
-        m_headLight.spotAngle = m_agent.SightRange;
+        m_headLight.spotAngle = m_agent.SightAngle;
     }
 
     private void BlinkSearchToPatrol()

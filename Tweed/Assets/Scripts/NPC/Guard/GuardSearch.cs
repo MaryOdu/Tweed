@@ -139,9 +139,9 @@ namespace Assets.Scripts.Enemy
 
             var searchCount = Math.Max((int)((0.3f) * orderedPoints.Count), 1);
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 1; i++)
             {
-                orderedPoints.Sort(new RandomComparer());
+                //orderedPoints.Sort(new RandomComparer());
                 var points = orderedPoints.Take(searchCount).ToList();
                 
                 foreach (var point in points)
