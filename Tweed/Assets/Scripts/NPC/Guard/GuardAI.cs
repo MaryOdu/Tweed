@@ -3,10 +3,12 @@ using Assets.Scripts.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 //using UnityEditor.PackageManager; Was giveing an error when trying to build the project to get menus running <- ('ZAC')
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace Assets.Scripts.Enemy
 {
@@ -30,7 +32,10 @@ namespace Assets.Scripts.Enemy
 
         private NavMeshAgent m_agent;
 
+
         [SerializeField]
+        private List<GameObject> m_targets;
+
         private GameObject m_target;
 
         [SerializeField]
@@ -55,7 +60,7 @@ namespace Assets.Scripts.Enemy
         private TimeSpan m_searchTime;
 
         [SerializeField]
-        private float m_playerLastSeenTime;
+        private float m_targetLastSeenTime;
 
         [SerializeField]
         private float m_stopDistance;
@@ -78,7 +83,7 @@ namespace Assets.Scripts.Enemy
         {
             get
             {
-                return (float)m_searchTime.TotalSeconds - (Time.time - m_playerLastSeenTime);
+                return (float)m_searchTime.TotalSeconds - (Time.time - m_targetLastSeenTime);
             }
         }
 
@@ -103,6 +108,14 @@ namespace Assets.Scripts.Enemy
             get
             {
                 return m_sightAngle;
+            }
+        }
+
+        public GameObject Target
+        {
+            get
+            {
+                return m_target;
             }
         }
 
@@ -139,33 +152,65 @@ namespace Assets.Scripts.Enemy
         // Update is called once per frame
         void Update()
         {
-            var playerSeen = this.QueryAlertedBy() || AIHelper.CanSeeObject(this.gameObject, m_target, m_sightRange, m_sightAngle, true);
+            bool targetSeen = false;
 
-            if (playerSeen)
+            var orderedTargets = this.GetTargetsByDistance();
+
+            foreach (var target in orderedTargets)
+            {
+                targetSeen = this.QueryAlertedBy() || AIHelper.CanSeeObject(this.gameObject, target, m_sightRange, m_sightAngle, true);
+
+                if (targetSeen)
+                {
+                    this.SetTarget(target);
+                    break;
+                }
+            }
+            
+            if (targetSeen)
             {
                 m_agentAttack.Target = m_target;
                 m_state = GuardState.Alert;
-                m_playerLastSeenTime = Time.time;
+                m_targetLastSeenTime = Time.time;
             }
             else
             {
-                m_state = m_playerLastSeenTime == 0 || this.RemainingSearchTime <= 0.0f ? GuardState.Patrol : GuardState.Search;
+                m_state = m_targetLastSeenTime == 0 || this.RemainingSearchTime <= 0.0f ? GuardState.Patrol : GuardState.Search;
 
-                if (m_agent.remainingDistance <= m_agent.stoppingDistance)
+                if (this.WithinStoppingDistance() && this.RemainingSearchTime <= 0.0f)
                 {
-                    if (!m_agent.hasPath || m_agent.velocity.sqrMagnitude == 0f)
-                    {
-                        if (this.RemainingSearchTime <= 0.0f)
-                        {
-                            m_state = GuardState.Patrol;
-                            m_searchTime = TimeSpan.FromSeconds(60);
-                        }
-                    }
+                    m_state = GuardState.Patrol;
+                    m_searchTime = TimeSpan.FromSeconds(60);
                 }
             }
 
             this.UpdateActiveBehaviour();
             this.UpdateStopDsistance();
+        }
+
+        private List<GameObject> GetTargetsByDistance()
+        {
+            return m_targets.OrderBy(x => (this.transform.position - x.transform.position).sqrMagnitude).ToList();
+        }
+
+        private bool WithinStoppingDistance()
+        {
+            if (m_agent.remainingDistance <= m_agent.stoppingDistance)
+            {
+                if (!m_agent.hasPath || m_agent.velocity.sqrMagnitude == 0f)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void SetTarget(GameObject value)
+        {
+            m_target = value;
+            m_agentSearch.Target = m_target;
+            m_agentAttack.Target = m_target;
         }
 
         private void UpdateStopDsistance()

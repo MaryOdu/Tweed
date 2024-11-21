@@ -165,6 +165,7 @@ namespace Assets.Scripts.NPC.Sentry
                 else
                 {
                     m_lookTimer.Stop();
+                    m_lookTimer.ResetTimer();
                 }
             }
         }
@@ -175,7 +176,7 @@ namespace Assets.Scripts.NPC.Sentry
         {
             var deltaV = target.transform.position - this.transform.position;
 
-            var tgtRot = Quaternion.LookRotation(deltaV, this.transform.up);
+            var tgtRot = Quaternion.LookRotation(deltaV.normalized, this.transform.up);
 
             var qRot = Quaternion.RotateTowards(this.transform.rotation, tgtRot, rotSpeed);
 

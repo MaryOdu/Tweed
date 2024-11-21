@@ -135,6 +135,12 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         public void SearchPatrol()
         {
+            if (m_target == null)
+            {
+                Debug.LogWarning("SearchPatrol -> Target is null!");
+                return;
+            }
+
             var orderedPoints = m_searchPoints.OrderBy(x => (m_target.transform.position - x.transform.position).sqrMagnitude).ToList();
 
             var searchCount = Math.Max((int)((0.3f) * orderedPoints.Count), 1);

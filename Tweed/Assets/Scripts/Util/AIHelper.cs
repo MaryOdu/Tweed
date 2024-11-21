@@ -20,13 +20,12 @@ namespace Assets.Scripts.Util
         {
             var tgtPos = target.gameObject.transform.position;
             var deltaV = tgtPos - agent.transform.position;
-            var ray = new Ray(agent.transform.position, deltaV.normalized);
-
-            var rayHit = Physics.Raycast(ray, out var hitInfo, float.PositiveInfinity, LayerMask.GetMask("Default"));
-
-            var b = (tgtPos - agent.transform.position).normalized;
             var a = agent.transform.forward.normalized;
+            var b = (deltaV).normalized;
             var angle = Vector3.Angle(a, b);
+
+            var ray = new Ray(agent.transform.position, b);
+            var rayHit = Physics.Raycast(ray, out var hitInfo, float.PositiveInfinity, LayerMask.GetMask("Default"));
 
             var result = rayHit && hitInfo.collider.gameObject == target && hitInfo.distance < sightRange && angle < sightAngle;
 
@@ -34,11 +33,11 @@ namespace Assets.Scripts.Util
             {
                 if (result)
                 {
-                    Debug.DrawRay(ray.origin, ray.direction * b.magnitude, Color.red);
+                    Debug.DrawRay(ray.origin, ray.direction * deltaV.magnitude, Color.red);
                 }
                 else
                 {
-                    Debug.DrawRay(ray.origin, ray.direction * b.magnitude, Color.blue);
+                    Debug.DrawRay(ray.origin, ray.direction * deltaV.magnitude, Color.blue);
                 }
             }
 

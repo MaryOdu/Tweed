@@ -52,6 +52,7 @@ public class SentryLight : MonoBehaviour
     private void UpdateLightRangeAndAngle()
     {
         m_headLight.range = m_agent.SightRange;
-        m_headLight.spotAngle = m_agent.SightAngle;
+        m_headLight.shape = LightShape.Cone;
+        m_headLight.innerSpotAngle = m_agent.SightAngle;
     }
 }
