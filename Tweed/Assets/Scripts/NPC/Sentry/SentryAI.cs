@@ -92,6 +92,7 @@ namespace Assets.Scripts.NPC.Sentry
                 if (canSeeTarget)
                 {
                     m_target = target;
+                    break;
                 }
             }
 
