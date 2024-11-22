@@ -43,13 +43,9 @@ namespace Assets.Scripts.Enemy
                 case GuardState.Alert:
 
                     m_animator.SetBool("IsChasing", !m_agent.IsAttacking);
+                    m_animator.SetBool("IsAttacking", m_agent.IsAttacking);
                     m_animator.SetBool("IsPatroling", false);
                     m_animator.SetBool("IsSearching", false);
-
-                    if (m_agent.IsAttacking)
-                    {
-                        m_animator.SetBool("IsAttacking", true);
-                    }
                     break;
             }
         }

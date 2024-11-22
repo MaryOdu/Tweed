@@ -1,6 +1,7 @@
 using Assets.Scripts.NPC;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class NPCDirector : MonoBehaviour
@@ -9,6 +10,14 @@ public class NPCDirector : MonoBehaviour
     private List<GameObject> m_targets;
 
     private Dictionary<int, NPCAgent> m_agents;
+
+    public List<GameObject> AgentGameObjects
+    {
+        get
+        {
+            return m_agents.Select(x => x.Value.gameObject).ToList();
+        }
+    }
 
     public NPCDirector()
     {
