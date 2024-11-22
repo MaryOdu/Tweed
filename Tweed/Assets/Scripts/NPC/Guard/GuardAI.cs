@@ -1,3 +1,4 @@
+using Assets.Scripts.NPC;
 using Assets.Scripts.NPC.Sentry;
 using Assets.Scripts.Util;
 using System;
@@ -19,7 +20,7 @@ namespace Assets.Scripts.Enemy
         Alert,
     }
 
-    public class GuardAI : MonoBehaviour
+    public class GuardAI : NPCAgent
     {
         private const int debugRayDistance = 100;
 
@@ -29,12 +30,6 @@ namespace Assets.Scripts.Enemy
         private GuardAttack m_agentAttack;
         private GuardPatrol m_agentPatrol;
         private GuardSearch m_agentSearch;
-
-        private NavMeshAgent m_agent;
-
-
-        [SerializeField]
-        private List<GameObject> m_targets;
 
         private GameObject m_target;
 
@@ -51,12 +46,6 @@ namespace Assets.Scripts.Enemy
         private float m_alertSpeed;
 
         [SerializeField]
-        private float m_sightRange;
-
-        [SerializeField]
-        private float m_sightAngle;
-
-        [SerializeField]
         private TimeSpan m_searchTime;
 
         [SerializeField]
@@ -69,7 +58,6 @@ namespace Assets.Scripts.Enemy
         private float m_attackStopDistance;
 
         private GameObject m_alertedBy;
-
 
         public GuardState State
         {
@@ -95,22 +83,6 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        public float SightRange
-        {
-            get
-            {
-                return m_sightRange;
-            }
-        }
-
-        public float SightAngle
-        {
-            get
-            {
-                return m_sightAngle;
-            }
-        }
-
         public GameObject Target
         {
             get
@@ -120,18 +92,19 @@ namespace Assets.Scripts.Enemy
         }
 
         public GuardAI()
+            : base()
         {
             m_patrolPoints = new List<GameObject>();
-            m_sightRange = 30.0f;
-            m_sightAngle = 45.0f;
+            
             m_attackStopDistance = 8f;
             m_stopDistance = 3f;
+
+            this.SetSightParameters(30.0f, 45.0f);
         }
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
-            m_agent = this.GetComponent<NavMeshAgent>();
             m_agentAttack = this.AddComponent<GuardAttack>();
             m_agentPatrol = this.AddComponent<GuardPatrol>();
             m_agentSearch = this.AddComponent<GuardSearch>();
@@ -147,10 +120,12 @@ namespace Assets.Scripts.Enemy
 
             m_searchTime = TimeSpan.FromSeconds(60);
             m_state = GuardState.Patrol;
+
+            base.Start();
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             bool targetSeen = false;
 
@@ -158,7 +133,7 @@ namespace Assets.Scripts.Enemy
 
             foreach (var target in orderedTargets)
             {
-                targetSeen = this.QueryAlertedBy() || AIHelper.CanSeeObject(this.gameObject, target, m_sightRange, m_sightAngle, true);
+                targetSeen = this.QueryAlertedBy() || AIHelper.CanSeeObject(this.gameObject, target, this.SightRange, this.SightAngle, true);
 
                 if (targetSeen)
                 {
@@ -190,14 +165,14 @@ namespace Assets.Scripts.Enemy
 
         private List<GameObject> GetTargetsByDistance()
         {
-            return m_targets.OrderBy(x => (this.transform.position - x.transform.position).sqrMagnitude).ToList();
+            return this.Targets.OrderBy(x => (this.transform.position - x.transform.position).sqrMagnitude).ToList();
         }
 
         private bool WithinStoppingDistance()
         {
-            if (m_agent.remainingDistance <= m_agent.stoppingDistance)
+            if (this.NavAgent.remainingDistance <= this.NavAgent.stoppingDistance)
             {
-                if (!m_agent.hasPath || m_agent.velocity.sqrMagnitude == 0f)
+                if (!this.NavAgent.hasPath || this.NavAgent.velocity.sqrMagnitude == 0f)
                 {
                     return true;
                 }
@@ -217,11 +192,11 @@ namespace Assets.Scripts.Enemy
         {
             if (m_agentAttack.enabled)
             {
-                m_agent.stoppingDistance = m_attackStopDistance;
+                this.NavAgent.stoppingDistance = m_attackStopDistance;
             }
             else
             {
-                m_agent.stoppingDistance = m_stopDistance;
+                this.NavAgent.stoppingDistance = m_stopDistance;
             }
         }
 
@@ -259,7 +234,7 @@ namespace Assets.Scripts.Enemy
                 case SentryState.Alert:
                     if (sentry.CurrentLookAtTarget != null)
                     {
-                        return m_agent.SetDestination(sentry.CurrentLookAtTarget.transform.position);
+                        return this.NavAgent.SetDestination(sentry.CurrentLookAtTarget.transform.position);
                     }
                     break;
             }
@@ -276,7 +251,7 @@ namespace Assets.Scripts.Enemy
                     m_agentAttack.enabled = false;
                     m_agentSearch.enabled = false;
 
-                    m_agent.speed = m_patrolSpeed;
+                    this.NavAgent.speed = m_patrolSpeed;
 
                     break;
                 case GuardState.Search:
@@ -284,7 +259,7 @@ namespace Assets.Scripts.Enemy
                     m_agentAttack.enabled = false;
                     m_agentSearch.enabled = true;
 
-                    m_agent.speed = m_searchSpeed;
+                    this.NavAgent.speed = m_searchSpeed;
 
                     break;
                 case GuardState.Alert:
@@ -292,7 +267,7 @@ namespace Assets.Scripts.Enemy
                     m_agentAttack.enabled = true;
                     m_agentSearch.enabled = false;
 
-                    m_agent.speed = m_alertSpeed;
+                    this.NavAgent.speed = m_alertSpeed;
 
                     break;
             }

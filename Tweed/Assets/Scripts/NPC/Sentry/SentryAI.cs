@@ -17,18 +17,9 @@ namespace Assets.Scripts.NPC.Sentry
         Alert
     }
 
-    public class SentryAI : MonoBehaviour
+    public class SentryAI : NPCAgent
     {
-        [SerializeField]
-        private List<GameObject> m_targets;
-
         private GameObject m_target;
-
-        [SerializeField]
-        private float m_sightRange;
-
-        [SerializeField]
-        private float m_sightAngle;
 
         [SerializeField]
         private float m_passiveRotationSpeed;
@@ -54,22 +45,6 @@ namespace Assets.Scripts.NPC.Sentry
         private SentryState m_state;
         private Timer m_lookTimer;
 
-        public float SightRange
-        {
-            get
-            {
-                return m_sightRange;
-            }
-        }
-
-        public float SightAngle
-        {
-            get
-            {
-                return m_sightAngle;
-            }
-        }
-
         public SentryState State
         {
             get
@@ -86,20 +61,11 @@ namespace Assets.Scripts.NPC.Sentry
             }
         }
 
-        public List<GameObject> Targets
-        {
-            get
-            {
-                return m_targets;
-            }
-        }
-
         public SentryAI()
+            : base()
         {
             m_guardList = new List<GuardAI>();
             m_lookAtTargets = new List<GameObject>();
-            m_sightRange = 50.0f;
-            m_sightAngle = 45.0f;
             m_lookTimeout = 3.0f;
 
             m_currIdx = 0;
@@ -108,18 +74,19 @@ namespace Assets.Scripts.NPC.Sentry
             m_lookTimer.OnTimerElapsed += this.LookTimer_OnTimerElapsed;
 
             m_state = SentryState.Passive;
+            this.SetSightParameters(50.0f, 45.0f);
         }
 
-        private void Start()
+        protected override void Start()
         {
-            
+            base.Start();
         }
 
         private void Update()
         {
-            foreach (var target in m_targets)
+            foreach (var target in this.Targets)
             {
-                var canSeeTarget = AIHelper.CanSeeObject(this.gameObject, target, m_sightRange, m_sightAngle, true);
+                var canSeeTarget = AIHelper.CanSeeObject(this.gameObject, target, this.SightRange, this.SightAngle, true);
                 m_state = canSeeTarget ? SentryState.Alert : SentryState.Passive;
 
                 if (canSeeTarget)
