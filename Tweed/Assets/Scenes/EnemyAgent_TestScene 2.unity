@@ -1552,7 +1552,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_guardList.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1365186494}
     - target: {fileID: 918699690337266878, guid: 7f8584e2726855c468a17923ab9c3580,
         type: 3}
       propertyPath: m_guardList.Array.data[1]
@@ -3775,6 +3775,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 652129194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1365186494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7510320100906499474, guid: 940f2528fdb830240bbb730e983f06ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 975213899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcd8aa4a4bfa746488b3ce53e5c1b590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1433230172
 PrefabInstance:
   m_ObjectHideFlags: 0
