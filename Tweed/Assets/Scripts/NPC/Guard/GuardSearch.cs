@@ -21,20 +21,46 @@ namespace Assets.Scripts.Enemy
 
     internal class GuardSearch : MonoBehaviour
     {
+        /// <summary>
+        /// The guards current search area <see cref="SearchArea"/>
+        /// </summary>
         private SearchArea m_searchArea;
+
+        /// <summary>
+        /// The agents navmesh
+        /// </summary>
         private NavMeshAgent m_agent;
+
+        /// <summary>
+        /// The guards patrol behaviour.
+        /// </summary>
         private GuardPatrol m_patrol;
 
+        /// <summary>
+        /// The current list of earch points.
+        /// </summary>
         private List<GameObject> m_searchPoints;
 
+        /// <summary>
+        /// The queue of search positions.
+        /// </summary>
         private Queue<Vector3> m_searchQueue;
 
+        /// <summary>
+        /// The current target of the search function.
+        /// </summary>
         [SerializeField]
         private GameObject m_target;
 
+        /// <summary>
+        /// The local search radius. The size of the area the agent will search when <see cref="SearchArea"/> is in Local mode.
+        /// </summary>
         [SerializeField]
         private float m_localSearchRadius;
 
+        /// <summary>
+        /// Gets or sets the agents curreent target.
+        /// </summary>
         public GameObject Target
         {
             get
@@ -47,6 +73,9 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        /// <summary>
+        /// Gets or sets the agents current search area.
+        /// </summary>
         public SearchArea SearchArea
         {
             get
@@ -59,6 +88,9 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public GuardSearch()
         {
             m_searchQueue = new Queue<Vector3>();
@@ -66,6 +98,9 @@ namespace Assets.Scripts.Enemy
             m_searchArea = SearchArea.Local;
         }
 
+        /// <summary>
+        /// Called once, before the first frame on scene.
+        /// </summary>
         private void Start()
         {
             m_patrol = this.GetComponent<GuardPatrol>();
@@ -73,6 +108,9 @@ namespace Assets.Scripts.Enemy
             m_searchPoints = m_patrol.PatrolPoints;
         }
 
+        /// <summary>
+        /// Called every frame.
+        /// </summary>
         private void Update()
         {
             if (m_agent.remainingDistance <= m_agent.stoppingDistance)
@@ -107,9 +145,13 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        /// <summary>
+        /// Gets all patrol points within the scene.
+        /// </summary>
+        /// <returns>A list of all patrol/nav points.</returns>
         private List<GameObject> GetAllNavPoints()
         {
-            return FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None)
+            return GameObject.FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None)
                 .Where(x => x.GetComponent<PatrolPoint>() != null)
                 .ToList();
         }

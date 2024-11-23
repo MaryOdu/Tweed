@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.NPC.Sentry
@@ -17,34 +18,69 @@ namespace Assets.Scripts.NPC.Sentry
         Alert
     }
 
+    /// <summary>
+    /// A script for managing the behaviour of a given sentry entity.
+    /// </summary>
     public class SentryAI : NPCAgent
     {
+        /// <summary>
+        /// The target the sentry is currently after.
+        /// </summary>
         private GameObject m_target;
 
+        /// <summary>
+        /// The rotation speed of the sentry when in passive mode.
+        /// </summary>
         [SerializeField]
         private float m_passiveRotationSpeed;
 
+        /// <summary>
+        /// The rotation speed of the sentry when in alert mode.
+        /// </summary>
         [SerializeField]
         private float m_alertRotationSpeed;
 
+        /// <summary>
+        /// The amount of time (in seconds) the sentry will observe any one lookAt target.
+        /// </summary>
         [SerializeField]
         private float m_lookTimeout;
 
-        [SerializeField]
-        private TimeSpan m_searchTime;
-
+        /// <summary>
+        /// The list of guard agents that are tied to this sentry. When this sentry goes into 'alert' mode, it will notify the guards within this list.
+        /// </summary>
         [SerializeField]
         private List<GuardAI> m_guardList;
 
+        /// <summary>
+        /// The list of areas for the sentry to observe when in passive mode.
+        /// </summary>
         [SerializeField]
         private List<GameObject> m_lookAtTargets;
 
+        /// <summary>
+        /// The current 'lookAt' target the sentry is looking at.
+        /// </summary>
         private GameObject m_currentLookAtTarget;
+        
+        /// <summary>
+        /// The index of the current 'lookAt' target.
+        /// </summary>
         private int m_currIdx;
 
+        /// <summary>
+        /// The current sentry state. Passive/Alert.
+        /// </summary>
         private SentryState m_state;
+
+        /// <summary>
+        /// The timer for the amount of time the sentry will look at any particular 'lookAt' target
+        /// </summary>
         private Timer m_lookTimer;
 
+        /// <summary>
+        /// The sentry's current state.
+        /// </summary>
         public SentryState State
         {
             get
@@ -53,6 +89,9 @@ namespace Assets.Scripts.NPC.Sentry
             }
         }
 
+        /// <summary>
+        /// The current 'lookAt' target the sentry is looking toward.
+        /// </summary>
         public GameObject CurrentLookAtTarget
         {
             get
@@ -61,6 +100,9 @@ namespace Assets.Scripts.NPC.Sentry
             }
         }
 
+        /// <summary>
+        /// Constructor & Initialisation
+        /// </summary>
         public SentryAI()
             : base()
         {
@@ -77,11 +119,17 @@ namespace Assets.Scripts.NPC.Sentry
             this.SetSightParameters(50.0f, 45.0f);
         }
 
+        /// <summary>
+        /// Called before first frame in Unity scene.
+        /// </summary>
         protected override void Start()
         {
             base.Start();
         }
 
+        /// <summary>
+        /// Called every frame in Unity scene.
+        /// </summary>
         private void Update()
         {
             foreach (var target in this.Targets)
@@ -107,12 +155,18 @@ namespace Assets.Scripts.NPC.Sentry
             }
         }
 
+        /// <summary>
+        /// Sentry Alert behaviour. Will 1) Rotate to face target. 2) Alert all guards associated with this sentry.
+        /// </summary>
         private void UpdateSentryAlert()
         {
             this.RotateToFaceTarget(m_target, m_alertRotationSpeed);
             this.AlertGuards();
         }
 
+        /// <summary>
+        /// Sentry passive behaviour. Will cycle though all 'lookAt' targets until it finds a target that will put it into alert mode.
+        /// </summary>
         private void UpdateSentryPassive()
         {
             m_lookTimer.Tick();
@@ -139,7 +193,12 @@ namespace Assets.Scripts.NPC.Sentry
         }
 
         
-
+        /// <summary>
+        /// Causes the sentry to rotate to face the target supplied.
+        /// </summary>
+        /// <param name="target">The target to rotate the sentry toward.</param>
+        /// <param name="rotSpeed">The rotation speed by which to rotate.</param>
+        /// <returns></returns>
         private bool RotateToFaceTarget(GameObject target, float rotSpeed)
         {
             var deltaV = target.transform.position - this.transform.position;
@@ -153,6 +212,9 @@ namespace Assets.Scripts.NPC.Sentry
             return (qRot.eulerAngles.y - tgtRot.eulerAngles.y) < rotSpeed;
         }
 
+        /// <summary>
+        /// Allerts all assocaited guards.
+        /// </summary>
         private void AlertGuards()
         {
             foreach (var guard in m_guardList) 
@@ -161,6 +223,10 @@ namespace Assets.Scripts.NPC.Sentry
             }
         }
 
+        /// <summary>
+        /// Gets the next 'lookAt' target.
+        /// </summary>
+        /// <returns>'lookAt' target GameObject</returns>
         private GameObject GetNextLookatTarget()
         {
             m_currIdx = m_currIdx >= m_lookAtTargets.Count ? 0 : m_currIdx + 1;
@@ -173,6 +239,11 @@ namespace Assets.Scripts.NPC.Sentry
             return m_lookAtTargets[m_currIdx];
         }
 
+        /// <summary>
+        /// Fired after the sentry has looked at a particular 'lookAt' target for a fixed period of time.
+        /// </summary>
+        /// <param name="sender">Method invoker</param>
+        /// <param name="e">Event args</param>
         private void LookTimer_OnTimerElapsed(object sender, TimerElapsedEventArgs e)
         {
             m_currentLookAtTarget = this.GetNextLookatTarget();

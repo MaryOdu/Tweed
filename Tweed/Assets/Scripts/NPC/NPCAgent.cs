@@ -8,21 +8,42 @@ using UnityEngine.AI;
 
 namespace Assets.Scripts.NPC
 {
+    /// <summary>
+    /// Base calss for 'NPC/AI' behaviour scripts.
+    /// </summary>
     public class NPCAgent : MonoBehaviour
     {
+        /// <summary>
+        /// The navmesh agent - used for navigating between points along a given mesh.
+        /// </summary>
         private NavMeshAgent m_agent;
 
+        /// <summary>
+        /// The dictionary of targets that the NPC Agent will look out for.
+        /// </summary>
         private Dictionary<int, GameObject> m_targets;
 
+        /// <summary>
+        /// The 'NPCDirector' which will monitor this agent/npc.
+        /// </summary>
         [SerializeField]
         private NPCDirector m_director;
 
+        /// <summary>
+        /// The maximum sight range of this agent/npc.
+        /// </summary>
         [SerializeField]
         private float m_sightRange;
 
+        /// <summary>
+        /// The maximum sight angle of this agent/npc - in degrees. 
+        /// </summary>
         [SerializeField]
         private float m_sightAngle;
 
+        /// <summary>
+        /// Gets the maximum sight range of this agent/npc.
+        /// </summary>
         public float SightRange
         {
             get
@@ -31,6 +52,9 @@ namespace Assets.Scripts.NPC
             }
         }
 
+        /// <summary>
+        /// Gets the maximum sight angle of this agent/npc - in degrees. 
+        /// </summary>
         public float SightAngle
         {
             get
@@ -39,6 +63,9 @@ namespace Assets.Scripts.NPC
             }
         }
 
+        /// <summary>
+        /// Gets the navmesh agent.
+        /// </summary>
         protected NavMeshAgent NavAgent
         {
             get
@@ -47,6 +74,9 @@ namespace Assets.Scripts.NPC
             }
         }
 
+        /// <summary>
+        /// Gets the list of targets this agent is looking for.
+        /// </summary>
         protected List<GameObject> Targets
         {
             get
@@ -55,23 +85,43 @@ namespace Assets.Scripts.NPC
             }
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public NPCAgent()
         {
             m_targets = new Dictionary<int, GameObject>();
         }
 
+        /// <summary>
+        /// Unitys' Start method - called before first frame in scene.
+        /// </summary>
         protected virtual void Start()
         {
             m_agent = this.GetComponent<NavMeshAgent>();
-            m_director.RegisterAgent(this);
+
+            if (m_director != null)
+            {
+                m_director.RegisterAgent(this);
+            }
         }
 
+        /// <summary>
+        /// Sets the sight range and ange of this agent/npc.
+        /// </summary>
+        /// <param name="sightRange">the maximum sight range of this agent/npc</param>
+        /// <param name="sightAngle">the maximum sight angle of this agent/npc - in degrees</param>
         public void SetSightParameters(float sightRange, float sightAngle)
         {
             m_sightAngle = sightAngle;
             m_sightRange = sightRange;
         }
 
+        /// <summary>
+        /// Adds a target to the list of targets this agent is looking out for.
+        /// </summary>
+        /// <param name="target">Target to be added to this agents target dictionary.</param>
+        /// <returns>Added? (true/false)</returns>
         public bool AddTarget(GameObject target)
         {
             if (!m_targets.ContainsKey(target.GetInstanceID()))
@@ -81,6 +131,17 @@ namespace Assets.Scripts.NPC
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Removes the target from the list of targets this agent is looking out for.
+        /// </summary>
+        /// <param name="target">Target to be removed from this agents' target dictionary.</param>
+        /// <returns>Removed? (true/false)</returns>
+        public bool RemoveTarget(GameObject target)
+        {
+            var key = target.GetInstanceID();
+            return m_targets.Remove(key);
         }
     }
 }

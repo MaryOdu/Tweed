@@ -10,16 +10,31 @@ namespace Assets.Scripts.Enemy
 {
     public class GuardAttack : MonoBehaviour
     {
+        /// <summary>
+        /// The current target of this attack behaviour.
+        /// </summary>
         [SerializeField]
         private GameObject m_target;
 
+        /// <summary>
+        /// The current maximum attack range.
+        /// </summary>
         [SerializeField]
         private float m_attackRange;
 
+        /// <summary>
+        /// Is currently attacking? (true/false)
+        /// </summary>
         private bool m_isAttacking;
 
+        /// <summary>
+        /// The navmesh agent
+        /// </summary>
         private NavMeshAgent m_agent;
 
+        /// <summary>
+        /// Gets or sets this agents current target.
+        /// </summary>
         public GameObject Target
         {
             get
@@ -32,6 +47,9 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        /// <summary>
+        /// Gets whether this agent is currently attacking.
+        /// </summary>
         public bool IsAttacking
         {
             get
@@ -40,26 +58,41 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public GuardAttack()
         {
             m_attackRange = 2.0f;
         }
 
+        /// <summary>
+        /// Called before the entitys' first frame
+        /// </summary>
         private void Start()
         {
             m_agent = this.GetComponent<NavMeshAgent>();
         }
 
+        /// <summary>
+        /// Stops the agent dead in its tracks
+        /// </summary>
         private void Stop()
         {
             m_agent.SetDestination(this.transform.position);
         }
 
+        /// <summary>
+        /// Resumes the agents pursuit.
+        /// </summary>
         private void Resume()
         {
             m_agent.SetDestination(m_target.transform.position);
         }
 
+        /// <summary>
+        /// Called on every update / frame.
+        /// </summary>
         private void Update()
         {
             if (m_target != null)
@@ -68,7 +101,6 @@ namespace Assets.Scripts.Enemy
                 {
                     this.Resume();
                 }
-
 
                 m_agent.destination = m_target.transform.position;
 

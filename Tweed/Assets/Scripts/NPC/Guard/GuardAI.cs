@@ -22,43 +22,88 @@ namespace Assets.Scripts.Enemy
 
     public class GuardAI : NPCAgent
     {
-        private const int debugRayDistance = 100;
-
+        /// <summary>
+        /// The current state of the guard NPC/agent
+        /// </summary>
         [SerializeField]
         private GuardState m_state;
 
+        /// <summary>
+        /// The gauard NPCs' attack behaviour.
+        /// </summary>
         private GuardAttack m_agentAttack;
+        
+        /// <summary>
+        /// The guard NPCs' patrol behaviour.
+        /// </summary>
         private GuardPatrol m_agentPatrol;
+
+        /// <summary>
+        /// The guard NPCs' search behaviour.
+        /// </summary>
         private GuardSearch m_agentSearch;
 
+        /// <summary>
+        /// The NPCs' current target.
+        /// </summary>
         private GameObject m_target;
 
+        /// <summary>
+        /// The patrol points assigned to this NPC.
+        /// </summary>
         [SerializeField]
         private List<GameObject> m_patrolPoints;
 
+        /// <summary>
+        /// The movement speed of this NPC when on patrol.
+        /// </summary>
         [SerializeField]
         private float m_patrolSpeed;
 
+        /// <summary>
+        /// The movement speed of this NPC when searching for a target.
+        /// </summary>
         [SerializeField]
         private float m_searchSpeed;
 
+        /// <summary>
+        /// The movement speed of this NPC when alerted.
+        /// </summary>
         [SerializeField]
         private float m_alertSpeed;
 
+        /// <summary>
+        /// The amount of time this NPC will spend searching for a player before returning to its' patrol state.
+        /// </summary>
         [SerializeField]
         private TimeSpan m_searchTime;
 
+        /// <summary>
+        /// The time a target was last seen.
+        /// </summary>
         [SerializeField]
         private float m_targetLastSeenTime;
 
+        /// <summary>
+        /// The distance the agent will stop by when reaching its destination.
+        /// </summary>
         [SerializeField]
         private float m_stopDistance;
 
+        /// <summary>
+        /// The distance the agent will stop by when reaching its destination and is attacking.
+        /// </summary>
         [SerializeField]
         private float m_attackStopDistance;
 
+        /// <summary>
+        /// The last gameobject to put this agent into an 'alert' state.
+        /// </summary>
         private GameObject m_alertedBy;
 
+        /// <summary>
+        /// Gets the NPC agents current state.
+        /// </summary>
         public GuardState State
         {
             get
@@ -67,6 +112,9 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        /// <summary>
+        /// Gets the NPC agents remaining search time.
+        /// </summary>
         public float RemainingSearchTime
         {
             get
@@ -75,6 +123,9 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        /// <summary>
+        /// Gets whether the NPC agent is currently attacking something.
+        /// </summary>
         public bool IsAttacking
         {
             get
@@ -83,6 +134,9 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        /// <summary>
+        /// Gets the NPC agents' current target.
+        /// </summary>
         public GameObject Target
         {
             get
@@ -91,6 +145,9 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        /// <summary>
+        /// Constructor 
+        /// </summary>
         public GuardAI()
             : base()
         {
@@ -163,11 +220,19 @@ namespace Assets.Scripts.Enemy
             this.UpdateStopDsistance();
         }
 
+        /// <summary>
+        /// Gets the list of targets ordered by distance - closest first.
+        /// </summary>
+        /// <returns></returns>
         private List<GameObject> GetTargetsByDistance()
         {
             return this.Targets.OrderBy(x => (this.transform.position - x.transform.position).sqrMagnitude).ToList();
         }
 
+        /// <summary>
+        /// Checks to see whether the npc/agent is within stopping distance.
+        /// </summary>
+        /// <returns>is within stopping distance? (true/false)</returns>
         private bool WithinStoppingDistance()
         {
             if (this.NavAgent.remainingDistance <= this.NavAgent.stoppingDistance)
@@ -181,6 +246,10 @@ namespace Assets.Scripts.Enemy
             return false;
         }
 
+        /// <summary>
+        /// Sets the current target of the agent/npc.
+        /// </summary>
+        /// <param name="value">Target object</param>
         public void SetTarget(GameObject value)
         {
             m_target = value;
@@ -188,6 +257,9 @@ namespace Assets.Scripts.Enemy
             m_agentAttack.Target = m_target;
         }
 
+        /// <summary>
+        /// Updates the stopping distance of the navAgent depending on wether the NPC is attacking or not.
+        /// </summary>
         private void UpdateStopDsistance()
         {
             if (m_agentAttack.enabled)
@@ -200,14 +272,20 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-
-
+        /// <summary>
+        /// Will place this NPC/Agent into alert state.
+        /// </summary>
+        /// <param name="alertedBy">Entity which has alerted this guard.</param>
         public void AlertGuard(GameObject alertedBy)
         {
             m_alertedBy = alertedBy;
             m_state = GuardState.Alert;
         }
 
+        /// <summary>
+        /// Query's the sentry that has alerted this guard NPC/agent.
+        /// </summary>
+        /// <returns>Target in sight & is this guard in pursuit? (true / false)</returns>
         private bool QueryAlertedBy()
         {
             if (m_alertedBy != null)
@@ -223,6 +301,11 @@ namespace Assets.Scripts.Enemy
             return false;
         }
 
+        /// <summary>
+        /// Query's a specified sentry.
+        /// </summary>
+        /// <param name="sentry">Sentry to be queried.</param>
+        /// <returns>Target in sight & is this guard in pursuit? (true / false)</returns>
         private bool QuerySentry(SentryAI sentry)
         {
             switch (sentry.State)
@@ -242,6 +325,9 @@ namespace Assets.Scripts.Enemy
             return false;
         }
 
+        /// <summary>
+        /// Switches enabled behaviours based upon the guards current state <see cref="GuardState"/>
+        /// </summary>
         private void UpdateActiveBehaviour()
         {
             switch (m_state)

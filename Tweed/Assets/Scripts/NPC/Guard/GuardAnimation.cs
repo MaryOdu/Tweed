@@ -9,7 +9,14 @@ namespace Assets.Scripts.Enemy
 {
     public class GuardAnimation : MonoBehaviour
     {
+        /// <summary>
+        /// The animator associated with this guard/npc
+        /// </summary>
         private Animator m_animator;
+
+        /// <summary>
+        /// The AI/Behaviour/Agent associated with this guard/npc.
+        /// </summary>
         private GuardAI m_agent;
 
         public GuardAnimation()
@@ -17,12 +24,18 @@ namespace Assets.Scripts.Enemy
             
         }
 
+        /// <summary>
+        /// Called before the first frame is called of whatever scene this entity is instantiated in.
+        /// </summary>
         private void Start()
         {
             m_agent = this.GetComponent<GuardAI>();
             m_animator = this.GetComponent<Animator>();
         }
 
+        /// <summary>
+        /// Called every frame.
+        /// </summary>
         private void Update()
         {
             //m_animator.ResetTrigger("IsAttacking");

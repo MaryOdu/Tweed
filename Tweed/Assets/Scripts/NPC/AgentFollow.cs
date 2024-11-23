@@ -7,11 +7,20 @@ namespace Assets.Scripts.Enemy
 {
     public class AgentFollow : MonoBehaviour
     {
+        /// <summary>
+        /// The target of which this agent is to follow.
+        /// </summary>
         [SerializeField]
         private GameObject m_target;
 
+        /// <summary>
+        /// The navmesh agent of the agent/npc entity.
+        /// </summary>
         private NavMeshAgent m_agent;
 
+        /// <summary>
+        /// Gets or sets the current target
+        /// </summary>
         public GameObject Target
         {
             get

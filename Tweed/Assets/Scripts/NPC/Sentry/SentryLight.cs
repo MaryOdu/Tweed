@@ -5,14 +5,30 @@ using Assets.Scripts.Util;
 using Assets.Scripts.Enemy;
 using Assets.Scripts.NPC.Sentry;
 
+/// <summary>
+/// A behaviour script for managing the light of a given sentry entity.
+/// </summary>
 public class SentryLight : MonoBehaviour
 {
+    /// <summary>
+    /// The headlight 'Light' component of the sentry.
+    /// </summary>
     private Light m_headLight;
+
+    /// <summary>
+    /// The Agent / SentryAI component also attatched to this game object.
+    /// </summary>
     private SentryAI m_agent;
 
+    /// <summary>
+    /// The colour of the sentrys' light when in passive mode.
+    /// </summary>
     [SerializeField]
     private Color m_passiveColour;
 
+    /// <summary>
+    /// The colour of the sentrys' light when in alert mode.
+    /// </summary>
     [SerializeField]
     private Color m_alertColour;
 
@@ -49,6 +65,9 @@ public class SentryLight : MonoBehaviour
         this.UpdateLightRangeAndAngle();
     }
 
+    /// <summary>
+    /// Updates the lights' range, shape and angle.
+    /// </summary>
     private void UpdateLightRangeAndAngle()
     {
         m_headLight.range = m_agent.SightRange;

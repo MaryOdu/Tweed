@@ -6,21 +6,40 @@ using Assets.Scripts.Enemy;
 
 public class GuardLight : MonoBehaviour
 {
+    /// <summary>
+    /// The guards' headlight.
+    /// </summary>
     private Light m_headLight;
+
+    /// <summary>
+    /// The guards' behaviour/AI/Agent.
+    /// </summary>
     private GuardAI m_agent;
 
+    /// <summary>
+    /// The colour of the guards headlight when on patrol.
+    /// </summary>
     [SerializeField]
     private Color m_patrolColour;
 
+    /// <summary>
+    /// The colour of the guards headlight when searching for the player.
+    /// </summary>
     [SerializeField]
     private Color m_searchColour;
 
+    /// <summary>
+    /// The colour of the guards headlight when alerted.
+    /// </summary>
     [SerializeField]
     private Color m_alertColour;
 
     //[SerializeField]
     //private Color m_friendlyColour; <---------- to use when bots are friendly
 
+    /// <summary>
+    /// Constructor.
+    /// </summary>
     public GuardLight()
     {
         m_patrolColour = new Color(0.9f, 0.9f, 1.0f);
@@ -62,12 +81,18 @@ public class GuardLight : MonoBehaviour
         this.UpdateLightRangeAndAngle();
     }
 
+    /// <summary>
+    /// Updates the headlight paramets depending upon the Agents visability. The cone of the light is to reflect the agents cone of vision.
+    /// </summary>
     private void UpdateLightRangeAndAngle()
     {
         m_headLight.range = m_agent.SightRange;
         m_headLight.innerSpotAngle = m_agent.SightAngle;
     }
 
+    /// <summary>
+    /// Will blink the agents headlight between patrol and search colour when the agent is transitioning from search back to patrol.
+    /// </summary>
     private void BlinkSearchToPatrol()
     {
         var colour = (int)m_agent.RemainingSearchTime % 2 == 0 ? m_patrolColour : m_searchColour;

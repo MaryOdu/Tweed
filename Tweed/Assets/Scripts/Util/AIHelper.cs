@@ -9,13 +9,15 @@ namespace Assets.Scripts.Util
 {
     public static class AIHelper
     {
-        //public struct CanSeeResult
-        //{
-        //    public bool Success;
-        //    public Ray Ray;
-        //    public RaycastHit HitInfo;
-        //}
-
+        /// <summary>
+        /// Check to see whether a provided agent can see a given target.
+        /// </summary>
+        /// <param name="agent">The agent to be tested.</param>
+        /// <param name="target">The target game object</param>
+        /// <param name="sightRange">The agents' sight range.</param>
+        /// <param name="sightAngle">The agents' sight angle.</param>
+        /// <param name="drawDebug">Draws a debug line between the agent and the target.</param>
+        /// <returns>Can see object? (true/false)</returns>
         public static bool CanSeeObject(GameObject agent, GameObject target, float sightRange, float sightAngle, bool drawDebug = false)
         {
             var tgtPos = target.gameObject.transform.position;

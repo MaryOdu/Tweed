@@ -8,13 +8,30 @@ namespace Assets.Scripts.Enemy
 {
     public class GuardPatrol : MonoBehaviour
     {
+        /// <summary>
+        /// List of patrol points this guard has.
+        /// </summary>
         [SerializeField]
         private List<GameObject> m_patrolPoints;
 
+        /// <summary>
+        /// The navmesh agent.
+        /// </summary>
         private NavMeshAgent m_agent;
+
+        /// <summary>
+        /// The index of the current patrol point.
+        /// </summary>
         private int m_currIdx;
+
+        /// <summary>
+        /// The current destination patrol point.
+        /// </summary>
         private GameObject m_destObj;
 
+        /// <summary>
+        /// Gets or sets the list of patrol points this guard has.
+        /// </summary>
         public List<GameObject> PatrolPoints
         {
             get
@@ -27,7 +44,9 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public GuardPatrol()
         {
             m_patrolPoints = new List<GameObject>();
@@ -49,7 +68,7 @@ namespace Assets.Scripts.Enemy
                 {
                     Debug.Log($"{gameObject.GetInstanceID()} : Agent has reached destination.");
 
-                    var nextPoint = GetNextObject();
+                    var nextPoint = this.GetNextPatrolPointGameObject();
 
                     if (nextPoint != null)
                     {
@@ -59,7 +78,11 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        private GameObject GetNextObject()
+        /// <summary>
+        /// Gets the next patrol point
+        /// </summary>
+        /// <returns>Patrol point game object</returns>
+        private GameObject GetNextPatrolPointGameObject()
         {
             if (m_patrolPoints.Count < 1)
             {

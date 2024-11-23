@@ -6,11 +6,20 @@ using UnityEngine;
 
 public class NPCDirector : MonoBehaviour
 {
+    /// <summary>
+    /// The list of targets that this NPC Director is seeking to attack.
+    /// </summary>
     [SerializeField]
     private List<GameObject> m_targets;
 
+    /// <summary>
+    /// The list of NPC agents associated with this director.
+    /// </summary>
     private Dictionary<int, NPCAgent> m_agents;
 
+    /// <summary>
+    /// Gets the list of agent GameObjects' registered unto this director.
+    /// </summary>
     public List<GameObject> AgentGameObjects
     {
         get
@@ -19,6 +28,9 @@ public class NPCDirector : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Constructor
+    /// </summary>
     public NPCDirector()
     {
         m_targets = new List<GameObject>();
@@ -37,6 +49,11 @@ public class NPCDirector : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="agent"></param>
+    /// <returns></returns>
     public bool RegisterAgent(NPCAgent agent)
     {
         var key = agent.gameObject.GetInstanceID();
