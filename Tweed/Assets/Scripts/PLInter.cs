@@ -1,3 +1,5 @@
+using Assets.Scripts.Enemy;
+using Assets.Scripts.NPC;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +14,12 @@ public class PLInter : MonoBehaviour
     //[SerializeField] GameObject DoorL;
     //[SerializeField] GameObject DoorR;
     [SerializeField] bool Gates;
+    [SerializeField] bool TargetSwap;
     // public GameObject Door;
 
     public Gateway happen;
     public Gateway happen2;
+    public GuardAI ChangeAlly;
     void Start()
     {
         
@@ -53,6 +57,20 @@ public class PLInter : MonoBehaviour
                 {
                     InterOnce = true;
                     happen.Open(); happen2.Open();
+
+                }
+            }
+        }
+        if (TargetSwap == true)
+        {
+            if ((interactable == true) && (InterOnce == false))
+            {
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    InterOnce = true;
+                    ChangeAlly.targetSwitch();
+                    Debug.Log("change target");
 
                 }
             }

@@ -32,7 +32,7 @@ namespace Assets.Scripts.Enemy
         /// The gauard NPCs' attack behaviour.
         /// </summary>
         private GuardAttack m_agentAttack;
-        
+
         /// <summary>
         /// The guard NPCs' patrol behaviour.
         /// </summary>
@@ -162,6 +162,7 @@ namespace Assets.Scripts.Enemy
         // Start is called before the first frame update
         protected override void Start()
         {
+
             m_agentAttack = this.AddComponent<GuardAttack>();
             m_agentPatrol = this.AddComponent<GuardPatrol>();
             m_agentSearch = this.AddComponent<GuardSearch>();

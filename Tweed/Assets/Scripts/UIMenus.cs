@@ -25,4 +25,9 @@ public class UIMenus : MonoBehaviour
         SceneManager.LoadScene("Testing");
     }
 
+    public void LoadMainScenes(string Testing)
+    {
+        SceneManager.LoadScene("MainScenes");
+    }
+
 }

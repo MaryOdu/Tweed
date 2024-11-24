@@ -14,16 +14,16 @@ Respawn of player (Not started) <-- When caught dies and respawns.
 Player interaction (Done) <-- works as intended.
 
 Bot/Xeno animations (Done) <-- works as intended.
-Andy modal (Not started) <-- modal for the goal of the game.
-Gates (Done) <-- bug of one door opens fully the other just short.
+Andy modal (Not started) <-- modal for the goal of the game needed.
+Gates (Done) <-- works as intended.
 
 Bot/Xeno AI behavour towords player (Done) <-- needs damage function on player to kill
 
-Main Menu (early implamentation) <-- Game starts at main menu main menu.
+Main Menu (Implamented) <-- Game starts at main menu main menu.
 Win state (Not started) <--  you win Image shows then goes to main menu.
 Pause Menu (not started) <-- when player hits Esc game pauses
 
-Sentry <-- Sentry enemy AI & implementation
+Sentry <-- (Implamented) Sentry enemy AI & implementation
 
 --------
 -------- Bottem line Map related
@@ -69,7 +69,13 @@ Rotating sky box (Not started) <-- To make the world feel more alive
 ---------------- High End stretch goals
 ----------------
 
+Xeno Boss Animations (Early implamentation) <--
+Xeno Boss Mechanics (Not started) <-- to chase the player at end
+Xeno Boss Code (Not started) <--
 
+Robot Boss Animations (Early implamentation) <--
+Robot Boss Mechanics (Not started) <-- to confront the player, Afterwords interact and help the player
+Robot Boss Code (Not started) <--
 
 
 

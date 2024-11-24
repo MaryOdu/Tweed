@@ -1983,15 +1983,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd8aa4a4bfa746488b3ce53e5c1b590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_director: {fileID: 0}
+  m_sightRange: 15
+  m_sightAngle: 45
   m_state: 0
-  m_target: {fileID: 0}
-  m_patrolPoints: []
+  m_patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
   m_patrolSpeed: 2.9
   m_searchSpeed: 2.9
   m_alertSpeed: 5
-  m_sightRange: 15
-  m_sightAngle: 45
-  m_playerLastSeenTime: 0
+  m_targetLastSeenTime: 0
+  m_stopDistance: 3
+  m_attackStopDistance: 8
 --- !u!114 &6715716093232369421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2192,7 +2196,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1000
+  m_Intensity: 100
   m_Range: 30
   m_SpotAngle: 122.492386
   m_InnerSpotAngle: 45

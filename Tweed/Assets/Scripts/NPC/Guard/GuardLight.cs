@@ -34,8 +34,8 @@ public class GuardLight : MonoBehaviour
     [SerializeField]
     private Color m_alertColour;
 
-    //[SerializeField]
-    //private Color m_friendlyColour; <---------- to use when bots are friendly
+    [SerializeField]
+    private Color m_friendlyColour; //<---------- to use when bots are friendly
 
     /// <summary>
     /// Constructor.
@@ -45,7 +45,7 @@ public class GuardLight : MonoBehaviour
         m_patrolColour = new Color(0.9f, 0.9f, 1.0f);
         m_searchColour = new Color(0.75f, 0.75f, 0);
         m_alertColour = new Color(1.0f, 0, 0);
-        //m_friendlyColour = new Color(0, 0.5f, 0); <---------- to use when bots are friendly
+        m_friendlyColour = new Color(0, 0.5f, 0);// <---------- to use when bots are friendly
     }
 
     // Start is called before the first frame update
@@ -79,6 +79,12 @@ public class GuardLight : MonoBehaviour
         }
 
         this.UpdateLightRangeAndAngle();
+    }
+
+    public void friendLight() // <-- (Zac) this is so Patrol light now turns green to show it's friendly
+    {
+        m_patrolColour = m_friendlyColour;
+        Debug.Log("Patrol lights now green");
     }
 
     /// <summary>
