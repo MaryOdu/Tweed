@@ -51,7 +51,7 @@ Light:
   m_InnerSpotAngle: 45
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -258,8 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a26c8217a267f74da95b0c242a59d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_targets:
-  - {fileID: 0}
+  m_director: {fileID: 0}
   m_sightRange: 50
   m_sightAngle: 45
   m_passiveRotationSpeed: 3

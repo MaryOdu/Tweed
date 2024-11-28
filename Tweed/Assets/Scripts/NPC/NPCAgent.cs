@@ -29,11 +29,6 @@ namespace Assets.Scripts.NPC
         [SerializeField]
         private NPCDirector m_director;
 
-        
-        [SerializeField]
-        private NPCDirector new_director; // (zac) Holds NPCDirector on another object
-        private GuardLight new_Light; //
-
         /// <summary>
         /// The maximum sight range of this agent/npc.
         /// </summary>
@@ -82,7 +77,7 @@ namespace Assets.Scripts.NPC
         /// <summary>
         /// Gets the list of targets this agent is looking for.
         /// </summary>
-        protected List<GameObject> Targets
+        public List<GameObject> Targets
         {
             get
             {
@@ -105,19 +100,10 @@ namespace Assets.Scripts.NPC
         {
             m_agent = this.GetComponent<NavMeshAgent>();
 
-            new_Light = this.GetComponent<GuardLight>();
-
             if (m_director != null)
             {
                 m_director.RegisterAgent(this);
             }
-        }
-
-        public void targetSwitch() // <-- (Zac) added this, Can find in "PLinter" script
-        {
-            m_director = new_director;
-            Debug.Log("target should switch");
-            new_Light.friendLight(); // <-- (Zac) Calls the "Gaurd Light" script on current object to change patrol light.
         }
 
         /// <summary>
@@ -129,6 +115,14 @@ namespace Assets.Scripts.NPC
         {
             m_sightAngle = sightAngle;
             m_sightRange = sightRange;
+        }
+
+        /// <summary>
+        /// Clears all targets this agent is currently looking out for.
+        /// </summary>
+        public void ClearTargets()
+        {
+            m_targets.Clear();
         }
 
         /// <summary>

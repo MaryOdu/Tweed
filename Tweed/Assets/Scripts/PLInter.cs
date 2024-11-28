@@ -15,11 +15,15 @@ public class PLInter : MonoBehaviour
     //[SerializeField] GameObject DoorR;
     [SerializeField] bool Gates;
     [SerializeField] bool TargetSwap;
+
+    [SerializeField]
+    private NPCDirector npcDirector;
+    private GameObject currentPlayer;
+
     // public GameObject Door;
 
     public Gateway happen;
     public Gateway happen2;
-    public GuardAI ChangeAlly;
     void Start()
     {
         
@@ -28,19 +32,22 @@ public class PLInter : MonoBehaviour
    
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("MainCamera"))
+        if (other.CompareTag("Player"))
         {
             IntText.SetActive(true);
             interactable = true;
 
+            currentPlayer = other.gameObject;
         }
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("MainCamera"))
+        if (other.CompareTag("Player"))
         {
             IntText.SetActive(false);
             interactable = false;
+
+            currentPlayer = other.gameObject;
         }
     }
     private void Update()
@@ -69,7 +76,13 @@ public class PLInter : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     InterOnce = true;
-                    ChangeAlly.targetSwitch();
+
+                    if (currentPlayer != null)
+                    {
+                        npcDirector.RemoveTarget(currentPlayer);
+                    }
+
+                    
                     Debug.Log("change target");
 
                 }

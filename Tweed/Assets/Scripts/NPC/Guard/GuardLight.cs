@@ -35,7 +35,21 @@ public class GuardLight : MonoBehaviour
     private Color m_alertColour;
 
     [SerializeField]
-    private Color m_friendlyColour; //<---------- to use when bots are friendly
+    private Color m_passiveColour; //<---------- to use when bots are passive to the player
+
+    private bool m_isPassive;
+
+    public bool UsePassiveColour
+    {
+        get
+        {
+            return m_isPassive;
+        }
+        set
+        {
+            m_isPassive = value;
+        }
+    }
 
     /// <summary>
     /// Constructor.
@@ -45,7 +59,7 @@ public class GuardLight : MonoBehaviour
         m_patrolColour = new Color(0.9f, 0.9f, 1.0f);
         m_searchColour = new Color(0.75f, 0.75f, 0);
         m_alertColour = new Color(1.0f, 0, 0);
-        m_friendlyColour = new Color(0, 0.5f, 0);// <---------- to use when bots are friendly
+        m_passiveColour = new Color(0, 0.5f, 0);// <---------- to use when bots are passive to the player
     }
 
     // Start is called before the first frame update
@@ -61,7 +75,7 @@ public class GuardLight : MonoBehaviour
         switch (m_agent.State)
         {
             case GuardState.Patrol:
-                m_headLight.color = m_patrolColour;
+                m_headLight.color = this.UsePassiveColour ? m_passiveColour : m_patrolColour;
                 break;
             case GuardState.Search:
                 if (m_agent.RemainingSearchTime < 10.0f)
@@ -79,12 +93,6 @@ public class GuardLight : MonoBehaviour
         }
 
         this.UpdateLightRangeAndAngle();
-    }
-
-    public void friendLight() // <-- (Zac) this is so Patrol light now turns green to show it's friendly
-    {
-        m_patrolColour = m_friendlyColour;
-        Debug.Log("Patrol lights now green");
     }
 
     /// <summary>

@@ -51,7 +51,7 @@ Light:
   m_InnerSpotAngle: 45
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -265,6 +265,7 @@ MonoBehaviour:
   m_patrolColour: {r: 0.9, g: 0.9, b: 1, a: 1}
   m_searchColour: {r: 0.75, g: 0.75, b: 0, a: 1}
   m_alertColour: {r: 1, g: 0, b: 0, a: 1}
+  m_passiveColour: {r: 0, g: 0.5, b: 0, a: 1}
 --- !u!114 &5080025673884067935
 MonoBehaviour:
   m_ObjectHideFlags: 0

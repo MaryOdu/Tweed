@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class NPCDirector : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject m_player;
+
     /// <summary>
     /// The list of targets that this NPC Director is seeking to attack.
     /// </summary>
@@ -41,12 +44,13 @@ public class NPCDirector : MonoBehaviour
     void Start()
     {
         this.UpdateAgentTargets();
+        this.UpdateAllAgentLights();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     /// <summary>
@@ -68,8 +72,33 @@ public class NPCDirector : MonoBehaviour
         return false;
     }
 
+    public bool RemoveTarget(GameObject target)
+    {
+        var key = target.GetInstanceID();
+        var removedCount = m_targets.RemoveAll(x => x.GetInstanceID() == key);
+        this.UpdateAgentTargets();
+        this.UpdateAllAgentLights();
+
+        return removedCount > 0;
+    }
+
+    public void AddTarget(GameObject target)
+    {
+        foreach (var tgt in m_targets)
+        {
+            if (tgt.GetInstanceID() == target.GetInstanceID())
+            {
+                return;
+            }
+        }
+
+        m_targets.Add(target);
+    }
+
     private void UpdateAgentTargets(NPCAgent agent)
     {
+        agent.ClearTargets();
+
         foreach (var target in m_targets)
         {
             agent.AddTarget(target);
@@ -81,6 +110,28 @@ public class NPCDirector : MonoBehaviour
         foreach (var kvp in m_agents)
         {
             this.UpdateAgentTargets(kvp.Value);
+        }
+    }
+
+    public void UpdateAllAgentLights()
+    {
+        foreach (var kvp in m_agents)
+        {
+            var passive = !kvp.Value.Targets.Contains(m_player);
+            this.UpdateAgentLight(kvp.Value, passive);
+        }
+    }
+
+    private void UpdateAgentLight(NPCAgent agent, bool passive)
+    {
+        if (passive)
+        {
+            var lightCmp = agent.GetComponent<GuardLight>();
+
+            if (lightCmp != null)
+            {
+                lightCmp.UsePassiveColour = passive;
+            }
         }
     }
 }
