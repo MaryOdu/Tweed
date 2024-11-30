@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Animator animator;
     private bool WalkOn;
+
+    public UIMenus Pauseing;
+    public PlayerRespawn PlayerCaught;
     
 
     void Start()
@@ -36,14 +39,27 @@ public class PlayerMovement : MonoBehaviour
 
         m_rigidBody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+
+      
     }
 
     void Update()
     {
-        
-        
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            Pauseing.Pause();
+        }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("XenoAttack"))
+        {
+            
+            PlayerCaught.respawn();
+          
+        }
+    }
 
     private void FixedUpdate()
     {

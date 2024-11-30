@@ -32,7 +32,7 @@ public class PLInter : MonoBehaviour
    
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && (InterOnce == false))
         {
             IntText.SetActive(true);
             interactable = true;
