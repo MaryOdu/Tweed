@@ -48,6 +48,9 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private GameObject m_target;
 
+
+        [SerializeField] GameObject NPCAttHitBox;
+
         /// <summary>
         /// The patrol points assigned to this NPC.
         /// </summary>
@@ -172,7 +175,9 @@ namespace Assets.Scripts.Enemy
             m_agentSearch.enabled = false;
 
             m_agentSearch.Target = m_target;
+
             m_agentAttack.Target = m_target;
+            m_agentAttack.AttBox = NPCAttHitBox;
 
             m_agentPatrol.PatrolPoints = m_patrolPoints;
 

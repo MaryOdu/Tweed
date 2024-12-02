@@ -17,7 +17,7 @@ public class UIMenus : MonoBehaviour
     [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject CaughtMenu;
     [SerializeField] float RespawnTime = 3f;
-    //private bool Caught = false;
+    private bool Caught = false;
     //private bool WonTrue = false;
 
 
@@ -41,27 +41,23 @@ public class UIMenus : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
             }
         }*/
-        /*if (Caught == true)
+        if (Caught == true)
         {
+            CaughtMenu.SetActive(true);
             RespawnTime -= Time.deltaTime;
+
             if (RespawnTime <= 0)
             {
-                Caught = false;
                 CaughtMenu.SetActive(false);
+                RespawnTime = 3f;
+                Caught = false;
             }
-        }*/
+        }
     }
 
-    public void Caught()
+    public void CaughtScreen()
     {
-        CaughtMenu.SetActive(true);
-        RespawnTime -= Time.deltaTime;
-
-        if (RespawnTime <= 0)
-        {    
-            CaughtMenu.SetActive(false);
-
-        }
+        Caught = true;
     }
     public void Pause()
     {
