@@ -28,6 +28,13 @@ namespace Assets.Scripts.Enemy
         private bool m_isAttacking;
 
         /// <summary>
+        /// Sets Object with Collider, Timer value, and bool for if it should be used
+        /// </summary>
+        [SerializeField] GameObject NPCAttHitBox;
+        [SerializeField] float TimeToAttack = 1f;
+        private bool Att = false;
+
+        /// <summary>
         /// The navmesh agent
         /// </summary>
         private NavMeshAgent m_agent;
@@ -44,6 +51,21 @@ namespace Assets.Scripts.Enemy
             set
             {
                 m_target = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets and sets this agents Collider object.
+        /// </summary>
+        public GameObject AttBox
+        {
+            get
+            {
+                return NPCAttHitBox;
+            }
+            set
+            {
+                NPCAttHitBox = value;
             }
         }
 
@@ -72,6 +94,7 @@ namespace Assets.Scripts.Enemy
         private void Start()
         {
             m_agent = this.GetComponent<NavMeshAgent>();
+            NPCAttHitBox.GetComponent<BoxCollider>();
         }
 
         /// <summary>
@@ -109,13 +132,43 @@ namespace Assets.Scripts.Enemy
                     this.Stop();
                     m_isAttacking = true;
                     Debug.Log($"{this.gameObject.GetInstanceID()} : Agent has reached destination. Attacking target.");
+                    Att = true;  
                 }
                 else
                 {
                     this.Resume();
                     m_isAttacking = false;
+                    Att = false;
+                    
                 }
+
+                if (Att == true)
+                {
+                   
+                    TimeToAttack -= Time.deltaTime;
+                    if ((TimeToAttack <= 0.9f) && (TimeToAttack >= 0.8))
+                    {
+                       
+                        //NPCAttHitBox.GetComponent<BoxCollider>().enabled = true;
+                    }
+                    //else { NPCAttHitBox.GetComponent<BoxCollider>().enabled = false; }
+                   
+
+                    if (TimeToAttack <= 0f)
+                    {
+                        TimeToAttack = 1f;
+                    }
+                }
+                else
+                {
+                    //NPCAttHitBox.GetComponent<BoxCollider>().enabled = false;
+                    TimeToAttack = 1f;
+                }
+
             }
+
         }
+
+        
     }
 }

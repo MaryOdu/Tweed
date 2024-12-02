@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     private bool WalkOn;
 
-    public UIMenus Pauseing;
+    public UIMenus Canvas;
     public PlayerRespawn PlayerCaught;
     
 
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            Pauseing.Pause();
+            Canvas.Pause();
         }
     }
 
@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         {
             
             PlayerCaught.respawn();
+            Canvas.CaughtScreen();
           
         }
     }
