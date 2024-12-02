@@ -227,15 +227,6 @@ namespace Assets.Scripts.Enemy
         }
 
         /// <summary>
-        /// Gets the list of targets ordered by distance - closest first.
-        /// </summary>
-        /// <returns></returns>
-        private List<GameObject> GetTargetsByDistance()
-        {
-            return this.Targets.OrderBy(x => (this.transform.position - x.transform.position).sqrMagnitude).ToList();
-        }
-
-        /// <summary>
         /// Checks to see whether the npc/agent is within stopping distance.
         /// </summary>
         /// <returns>is within stopping distance? (true/false)</returns>

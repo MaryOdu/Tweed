@@ -151,5 +151,15 @@ namespace Assets.Scripts.NPC
             var key = target.GetInstanceID();
             return m_targets.Remove(key);
         }
+
+
+        /// <summary>
+        /// Gets the list of targets ordered by distance - closest first.
+        /// </summary>
+        /// <returns></returns>
+        protected List<GameObject> GetTargetsByDistance()
+        {
+            return this.Targets.OrderBy(x => (this.transform.position - x.transform.position).sqrMagnitude).ToList();
+        }
     }
 }
