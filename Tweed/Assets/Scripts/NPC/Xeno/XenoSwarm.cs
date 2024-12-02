@@ -2,6 +2,7 @@
 using Cinemachine.Utility;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,10 +63,16 @@ namespace Assets.Scripts.NPC.Xeno
         [Range(0, 1000)]
         private float m_rotationSpeed;
 
+        [SerializeField]
+        [ReadOnly(true)]
+        private float m_boredom;
+
         private float m_movementSpeed;
         private Rigidbody m_rigidBody;
 
         private List<XenoAI> m_swarm;
+
+        private Queue<Vector3> m_lastKnownPosition;
 
         private Timer m_thinkTimer;
 
@@ -99,10 +106,12 @@ namespace Assets.Scripts.NPC.Xeno
             m_collisionAvoidance = 100;
             m_noise = 10;
             m_objectSeperation = 5;
+            m_boredom = 0;
 
             m_thinkTimer = new Timer(TimeSpan.FromSeconds(m_updateInterval));
             m_thinkTimer.OnTimerElapsed += this.ThinkTimer_OnTimerElapsed;
             m_swarm = new List<XenoAI>();
+            m_lastKnownPosition = new Queue<Vector3>(10);
         }
 
         protected void Start()
@@ -120,16 +129,22 @@ namespace Assets.Scripts.NPC.Xeno
             var objSeparation = this.GetCollisionAvoidanceDirection();
             var swarmDir = this.GetSwarmDirection(m_swarm);
             var cohesion = this.GetCohesionDirection(m_swarm);
-            var noise = new Vector3(m_rigidBody.velocity.x + UnityEngine.Random.Range(-10f, 10f), 0, m_rigidBody.velocity.z +  UnityEngine.Random.Range(-10f, 10f)).normalized;
+            var noise = new Vector3(m_rigidBody.velocity.x + UnityEngine.Random.Range(-1, 1), 0, m_rigidBody.velocity.z +  UnityEngine.Random.Range(-1, 1)).normalized;
 
             var dir = Vector3.zero;
 
-            dir += separation * m_separation;
+            m_boredom -= 0.1f * Time.deltaTime;
+
+            m_boredom = Math.Clamp(m_boredom, 0, 1);
+
+            dir += separation * m_separation * (1f + m_boredom);
             dir += objSeparation * m_collisionAvoidance;
             dir += swarmDir * m_alignment;
-            dir += cohesion * m_coherance;
+            dir += (cohesion * m_coherance) * (1f - m_boredom);
             dir += noise * m_noise;
-
+            
+            m_swarmRadius += 0.01f;
+            m_swarmRadius = Mathf.Clamp(m_swarmRadius, 5, 100);
             this.MoveInDirection(dir.normalized);
             this.UpdateRotation();
         }
@@ -282,6 +297,32 @@ namespace Assets.Scripts.NPC.Xeno
             return result;
         }
 
+        private float GetBoredom()
+        {
+            float result = 0f;
+
+            var currPos = this.transform.position;
+
+            if (m_lastKnownPosition.Count >= 100)
+            {
+                m_lastKnownPosition.Dequeue();
+            }
+
+            m_lastKnownPosition.Enqueue(currPos);
+
+            foreach(var pos in m_lastKnownPosition)
+            {
+                var deltaV = pos - currPos;
+
+                if (deltaV.magnitude < (m_movementSpeed * Time.deltaTime))
+                {
+                    result += 0.02f;
+                }
+            }
+
+            return Mathf.Clamp(result, 0, 1f);
+        }
+
         /// <summary>
         /// Returns a list of all surrounding xenos'
         /// </summary>
@@ -307,7 +348,9 @@ namespace Assets.Scripts.NPC.Xeno
 
         private void ThinkTimer_OnTimerElapsed(object sender, TimerElapsedEventArgs e)
         {
+            m_boredom += this.GetBoredom();
             m_swarm = this.GetSurroundingXenos();
+            m_swarmRadius = 100 * (1f - m_boredom);
         }
 
     }
