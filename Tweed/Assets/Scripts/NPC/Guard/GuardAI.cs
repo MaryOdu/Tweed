@@ -2,14 +2,9 @@ using Assets.Scripts.NPC;
 using Assets.Scripts.NPC.Sentry;
 using Assets.Scripts.Util;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Unity.VisualScripting;
-//using UnityEditor.PackageManager; Was giveing an error when trying to build the project to get menus running <- ('ZAC')
 using UnityEngine;
-using UnityEngine.AI;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace Assets.Scripts.Enemy
 {
@@ -20,6 +15,9 @@ namespace Assets.Scripts.Enemy
         Alert,
     }
 
+    [RequireComponent(typeof(GuardAttack))]
+    [RequireComponent(typeof(GuardPatrol))]
+    [RequireComponent(typeof(GuardSearch))]
     public class GuardAI : NPCAgent
     {
         /// <summary>
@@ -104,6 +102,18 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private GameObject m_alertedBy;
 
+
+        /// <summary>
+        /// The amount of time between agent updates...
+        /// </summary>
+        [SerializeField]
+        private TimeSpan m_updateSpan;
+
+        /// <summary>
+        /// Simulates how long this agent takes to think between actions. As opposed to acting on every frame.
+        /// </summary>
+        private GameTimer m_thinkTimer;
+
         /// <summary>
         /// Gets the NPC agents current state.
         /// </summary>
@@ -159,16 +169,41 @@ namespace Assets.Scripts.Enemy
             m_attackStopDistance = 8f;
             m_stopDistance = 3f;
 
+            m_updateSpan = TimeSpan.FromSeconds(0.5);
+            m_thinkTimer = new GameTimer(m_updateSpan);
+            m_thinkTimer.AutoReset = true;
+            m_thinkTimer.OnTimerElapsed += ThinkTimer_OnTimerElapsed;
+
             this.SetSightParameters(30.0f, 45.0f);
         }
 
         // Start is called before the first frame update
         protected override void Start()
         {
+            m_thinkTimer.SetTimeSpan(m_updateSpan);
+            
+            m_thinkTimer.Start();
 
-            m_agentAttack = this.AddComponent<GuardAttack>();
-            m_agentPatrol = this.AddComponent<GuardPatrol>();
-            m_agentSearch = this.AddComponent<GuardSearch>();
+            m_agentAttack = this.GetComponent<GuardAttack>();
+            m_agentPatrol = this.GetComponent<GuardPatrol>();
+            m_agentSearch = this.GetComponent<GuardSearch>();
+
+            if (m_agentAttack == null)
+            {
+                m_agentAttack = this.AddComponent<GuardAttack>();
+            }
+
+            if (m_agentPatrol == null)
+            {
+                m_agentPatrol = this.AddComponent<GuardPatrol>();
+            }
+            
+            if (m_agentSearch == null)
+            {
+                m_agentSearch = this.AddComponent<GuardSearch>();
+            }
+
+            m_agentSearch.OnSearchComplete += this.SearchAgent_OnSearchComplete;
 
             m_agentPatrol.enabled = false;
             m_agentAttack.enabled = false;
@@ -177,7 +212,6 @@ namespace Assets.Scripts.Enemy
             m_agentSearch.Target = m_target;
 
             m_agentAttack.Target = m_target;
-            m_agentAttack.AttBox = NPCAttHitBox;
 
             m_agentPatrol.PatrolPoints = m_patrolPoints;
 
@@ -187,8 +221,21 @@ namespace Assets.Scripts.Enemy
             base.Start();
         }
 
+
         // Update is called once per frame
-        private void Update()
+        protected override void Update()
+        {
+            m_thinkTimer.Tick();
+            base.Update();
+        }
+
+        private void SearchAgent_OnSearchComplete(object sender, EventArgs e)
+        {
+            m_state = GuardState.Patrol;
+            m_searchTime = TimeSpan.Zero;
+        }
+
+        private void ThinkTimer_OnTimerElapsed(object sender, TimerElapsedEventArgs e)
         {
             bool targetSeen = false;
 
@@ -204,7 +251,7 @@ namespace Assets.Scripts.Enemy
                     break;
                 }
             }
-            
+
             if (targetSeen)
             {
                 m_agentAttack.Target = m_target;

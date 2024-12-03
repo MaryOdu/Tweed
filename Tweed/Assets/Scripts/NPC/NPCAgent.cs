@@ -81,7 +81,7 @@ namespace Assets.Scripts.NPC
         {
             get
             {
-                return m_targets.Values.ToList();
+                return m_targets.Values.Where(x => x != null).ToList();
             }
         }
 
@@ -103,6 +103,16 @@ namespace Assets.Scripts.NPC
             if (m_director != null)
             {
                 m_director.RegisterAgent(this);
+            }
+        }
+
+        protected virtual void Update()
+        {
+            var keys = m_targets.Where(x => x.Value == null).Select(x => x.Key).ToList();
+            
+            foreach(var key in keys)
+            {
+                m_targets.Remove(key);
             }
         }
 
@@ -150,6 +160,16 @@ namespace Assets.Scripts.NPC
         {
             var key = target.GetInstanceID();
             return m_targets.Remove(key);
+        }
+
+        /// <summary>
+        /// Checks whether the provided game object is a target of this agent.
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public bool CheckIfGameObjectIsTarget(GameObject target)
+        {
+            return m_targets.ContainsKey(target.GetInstanceID());
         }
 
 

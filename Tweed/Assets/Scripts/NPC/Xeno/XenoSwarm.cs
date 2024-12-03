@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Util.Timer;
+﻿using Assets.Scripts.Util;
 using Cinemachine.Utility;
 using System;
 using System.Collections.Generic;
@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
-using Timer = Assets.Scripts.Util.Timer.Timer;
 
 namespace Assets.Scripts.NPC.Xeno
 {
     public class XenoSwarm : MonoBehaviour
     {
+        private const int LastKnownPositionSize  = 10;
+
         [SerializeField]
         private float m_swarmRadius;
 
@@ -72,9 +72,9 @@ namespace Assets.Scripts.NPC.Xeno
 
         private List<XenoAI> m_swarm;
 
-        private Queue<Vector3> m_lastKnownPosition;
+        private Queue<Vector3> m_lastKnownPositions;
 
-        private Timer m_thinkTimer;
+        private GameTimer m_thinkTimer;
 
         [SerializeField]
         private float m_updateInterval;
@@ -108,10 +108,10 @@ namespace Assets.Scripts.NPC.Xeno
             m_objectSeperation = 5;
             m_boredom = 0;
 
-            m_thinkTimer = new Timer(TimeSpan.FromSeconds(m_updateInterval));
+            m_thinkTimer = new GameTimer(TimeSpan.FromSeconds(m_updateInterval));
             m_thinkTimer.OnTimerElapsed += this.ThinkTimer_OnTimerElapsed;
             m_swarm = new List<XenoAI>();
-            m_lastKnownPosition = new Queue<Vector3>(10);
+            m_lastKnownPositions = new Queue<Vector3>(LastKnownPositionSize);
         }
 
         protected void Start()
@@ -133,7 +133,7 @@ namespace Assets.Scripts.NPC.Xeno
 
             var dir = Vector3.zero;
 
-            m_boredom -= 0.1f * Time.deltaTime;
+            m_boredom -= 0.03f * Time.deltaTime;
 
             m_boredom = Math.Clamp(m_boredom, 0, 1);
 
@@ -303,14 +303,14 @@ namespace Assets.Scripts.NPC.Xeno
 
             var currPos = this.transform.position;
 
-            if (m_lastKnownPosition.Count >= 100)
+            if (m_lastKnownPositions.Count >= LastKnownPositionSize)
             {
-                m_lastKnownPosition.Dequeue();
+                m_lastKnownPositions.Dequeue();
             }
 
-            m_lastKnownPosition.Enqueue(currPos);
+            m_lastKnownPositions.Enqueue(currPos);
 
-            foreach(var pos in m_lastKnownPosition)
+            foreach(var pos in m_lastKnownPositions)
             {
                 var deltaV = pos - currPos;
 

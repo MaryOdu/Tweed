@@ -21,6 +21,8 @@ namespace Assets.Scripts.Enemy
 
     internal class GuardSearch : MonoBehaviour
     {
+        public event EventHandler OnSearchComplete;
+
         /// <summary>
         /// The guards current search area <see cref="SearchArea"/>
         /// </summary>
@@ -180,6 +182,9 @@ namespace Assets.Scripts.Enemy
             if (m_target == null)
             {
                 Debug.LogWarning("SearchPatrol -> Target is null!");
+
+                this.OnSearchComplete?.Invoke(this, EventArgs.Empty);
+
                 return;
             }
 

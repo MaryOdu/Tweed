@@ -19,7 +19,6 @@ public class NPC : MonoBehaviour
     [SerializeField] bool PlayInAttRange;
 
 
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();

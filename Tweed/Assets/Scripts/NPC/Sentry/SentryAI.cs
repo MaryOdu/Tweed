@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.Enemy;
 using Assets.Scripts.Util;
-using Assets.Scripts.Util.Timer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,7 +75,7 @@ namespace Assets.Scripts.NPC.Sentry
         /// <summary>
         /// The timer for the amount of time the sentry will look at any particular 'lookAt' target
         /// </summary>
-        private Timer m_lookTimer;
+        private GameTimer m_lookTimer;
 
         /// <summary>
         /// The sentry's current state.
@@ -112,7 +111,7 @@ namespace Assets.Scripts.NPC.Sentry
 
             m_currIdx = 0;
 
-            m_lookTimer = new Timer(TimeSpan.FromSeconds(m_lookTimeout));
+            m_lookTimer = new GameTimer(TimeSpan.FromSeconds(m_lookTimeout));
             m_lookTimer.OnTimerElapsed += this.LookTimer_OnTimerElapsed;
 
             m_state = SentryState.Passive;
@@ -130,10 +129,15 @@ namespace Assets.Scripts.NPC.Sentry
         /// <summary>
         /// Called every frame in Unity scene.
         /// </summary>
-        private void Update()
+        protected override void Update()
         {
             foreach (var target in this.Targets)
             {
+                if (target == null)
+                {
+                    continue;
+                }
+
                 var canSeeTarget = AIHelper.CanSeeObject(this.gameObject, target, this.SightRange, this.SightAngle, true);
                 m_state = canSeeTarget ? SentryState.Alert : SentryState.Passive;
 
@@ -153,6 +157,8 @@ namespace Assets.Scripts.NPC.Sentry
                     this.UpdateSentryAlert();
                     break;
             }
+
+            base.Update();
         }
 
         /// <summary>

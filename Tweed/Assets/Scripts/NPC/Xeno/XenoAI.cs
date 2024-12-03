@@ -88,6 +88,17 @@ public class XenoAI : NPCAgent
     private float m_attackStopDistance;
 
     /// <summary>
+    /// The amount of time between agent updates...
+    /// </summary>
+    [SerializeField]
+    private TimeSpan m_updateSpan;
+
+    /// <summary>
+    /// Simulates how long this agent takes to think between actions. As opposed to acting on every frame.
+    /// </summary>
+    private GameTimer m_thinkTimer;
+
+    /// <summary>
     /// The last gameobject to put this agent into an 'alert' state.
     /// </summary>
     private GameObject m_alertedBy;
@@ -147,11 +158,20 @@ public class XenoAI : NPCAgent
         m_stopDistance = 3f;
         m_attackStopDistance = 7f;
         this.SetSightParameters(20.0f, 35.0f);
+
+        m_updateSpan = TimeSpan.FromSeconds(0.5);
+        m_thinkTimer = new GameTimer(m_updateSpan);
+        m_thinkTimer.AutoReset = true;
+        m_thinkTimer.OnTimerElapsed += ThinkTimer_OnTimerElapsed;
     }
 
     // Start is called before the first frame update
     protected override void Start()
     {
+        m_thinkTimer.SetTimeSpan(m_updateSpan);
+
+        m_thinkTimer.Start();
+
         m_rigidBody = this.GetComponent<Rigidbody>();
 
         m_agentSwarm = this.GetComponent<XenoSwarm>();
@@ -184,7 +204,14 @@ public class XenoAI : NPCAgent
     }
 
     // Update is called once per frame
-    private void Update()
+    protected override void Update()
+    {
+        m_thinkTimer.Tick();
+
+        base.Update();
+    }
+
+    private void ThinkTimer_OnTimerElapsed(object sender, TimerElapsedEventArgs e)
     {
         bool targetSeen = false;
 

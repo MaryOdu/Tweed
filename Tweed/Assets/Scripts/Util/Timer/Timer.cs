@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Util.Timer
+namespace Assets.Scripts.Util
 {
-    public class Timer
+    public class GameTimer
     {
         private TimeSpan m_timerSpan = TimeSpan.MaxValue;
         private float m_currSeconds;
@@ -42,13 +42,13 @@ namespace Assets.Scripts.Util.Timer
             }
         }
 
-        public Timer()
+        public GameTimer()
         {
             m_autoReset = true;
             m_elapsed = false;
         }
 
-        public Timer(TimeSpan timeSpan)
+        public GameTimer(TimeSpan timeSpan)
             : this()
         {
             SetTimeSpan(timeSpan);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.NPC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,13 @@ using UnityEngine.AI;
 
 namespace Assets.Scripts.Enemy
 {
+    enum AttackMode
+    {
+        Melee,
+        Ranged
+    }
+
+    [RequireComponent(typeof(NPCMeleeAttack))]
     public class GuardAttack : MonoBehaviour
     {
         /// <summary>
@@ -28,11 +36,9 @@ namespace Assets.Scripts.Enemy
         private bool m_isAttacking;
 
         /// <summary>
-        /// Sets Object with Collider, Timer value, and bool for if it should be used
+        /// The attack mode this agent is currently in (currently only melee)
         /// </summary>
-        [SerializeField] GameObject NPCAttHitBox;
-        [SerializeField] float TimeToAttack = 1f;
-        private bool Att = false;
+        private AttackMode m_attackMode;
 
         /// <summary>
         /// The navmesh agent
@@ -55,21 +61,6 @@ namespace Assets.Scripts.Enemy
         }
 
         /// <summary>
-        /// Gets and sets this agents Collider object.
-        /// </summary>
-        public GameObject AttBox
-        {
-            get
-            {
-                return NPCAttHitBox;
-            }
-            set
-            {
-                NPCAttHitBox = value;
-            }
-        }
-
-        /// <summary>
         /// Gets whether this agent is currently attacking.
         /// </summary>
         public bool IsAttacking
@@ -79,6 +70,11 @@ namespace Assets.Scripts.Enemy
                 return m_isAttacking;
             }
         }
+
+        /// <summary>
+        /// Melee attacker component
+        /// </summary>
+        private NPCMeleeAttack m_meleeAtacker;
 
         /// <summary>
         /// Constructor
@@ -94,7 +90,14 @@ namespace Assets.Scripts.Enemy
         private void Start()
         {
             m_agent = this.GetComponent<NavMeshAgent>();
-            NPCAttHitBox.GetComponent<BoxCollider>();
+            m_meleeAtacker = this.GetComponent<NPCMeleeAttack>();
+
+            m_meleeAtacker.OnAttack += this.MeleeAtacker_OnAttack;
+        }
+
+        private void MeleeAtacker_OnAttack(object sender, EventArgs e)
+        {
+            m_isAttacking = true;
         }
 
         /// <summary>
@@ -111,6 +114,7 @@ namespace Assets.Scripts.Enemy
         private void Resume()
         {
             m_agent.SetDestination(m_target.transform.position);
+            m_agent.stoppingDistance = m_attackRange;
         }
 
         /// <summary>
@@ -127,44 +131,15 @@ namespace Assets.Scripts.Enemy
 
                 m_agent.destination = m_target.transform.position;
 
-                if (m_agent.remainingDistance <= m_attackRange)
+                if (m_agent.remainingDistance < m_attackRange)
                 {
                     this.Stop();
-                    m_isAttacking = true;
                     Debug.Log($"{this.gameObject.GetInstanceID()} : Agent has reached destination. Attacking target.");
-                    Att = true;  
                 }
                 else
                 {
                     this.Resume();
-                    m_isAttacking = false;
-                    Att = false;
-                    
                 }
-
-                if (Att == true)
-                {
-                   
-                    TimeToAttack -= Time.deltaTime;
-                    if ((TimeToAttack <= 0.9f) && (TimeToAttack >= 0.8))
-                    {
-                       
-                        //NPCAttHitBox.GetComponent<BoxCollider>().enabled = true;
-                    }
-                    //else { NPCAttHitBox.GetComponent<BoxCollider>().enabled = false; }
-                   
-
-                    if (TimeToAttack <= 0f)
-                    {
-                        TimeToAttack = 1f;
-                    }
-                }
-                else
-                {
-                    //NPCAttHitBox.GetComponent<BoxCollider>().enabled = false;
-                    TimeToAttack = 1f;
-                }
-
             }
 
         }

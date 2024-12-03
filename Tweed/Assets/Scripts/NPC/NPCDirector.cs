@@ -31,6 +31,8 @@ public class NPCDirector : MonoBehaviour
         }
     }
 
+    private int m_oldTargetCount;
+
     /// <summary>
     /// Constructor
     /// </summary>
@@ -50,7 +52,13 @@ public class NPCDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_oldTargetCount != m_targets.Count)
+        {
+            this.UpdateAgentTargets();
+            this.UpdateAllAgentLights();
+        }
 
+        m_oldTargetCount = m_targets.Count;
     }
 
     /// <summary>
