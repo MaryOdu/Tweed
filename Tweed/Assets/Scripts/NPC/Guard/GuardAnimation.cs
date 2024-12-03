@@ -13,6 +13,7 @@ namespace Assets.Scripts.Enemy
         /// The animator associated with this guard/npc
         /// </summary>
         private Animator m_animator;
+        private Rigidbody m_rigidBody;
 
         /// <summary>
         /// The AI/Behaviour/Agent associated with this guard/npc.
@@ -31,6 +32,7 @@ namespace Assets.Scripts.Enemy
         {
             m_agent = this.GetComponent<GuardAI>();
             m_animator = this.GetComponent<Animator>();
+            m_rigidBody = this.GetComponent<Rigidbody>();
         }
 
         /// <summary>
@@ -38,29 +40,37 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private void Update()
         {
-            //m_animator.ResetTrigger("IsAttacking");
-            m_animator.SetBool("IsAttacking", false);
-
-            switch (m_agent.State)
+            if (m_rigidBody.velocity.magnitude < 1)
             {
-                case GuardState.Patrol:
-                    m_animator.SetBool("IsPatroling", true);
-                    m_animator.SetBool("IsSearching", false);
-                    m_animator.SetBool("IsChasing", false);
-                    break;
-                case GuardState.Search:
-                    m_animator.SetBool("IsSearching", true);
-                    m_animator.SetBool("IsPatroling", false);
-                    m_animator.SetBool("IsChasing", false);
-                    break;
-                case GuardState.Alert:
-
-                    m_animator.SetBool("IsChasing", !m_agent.IsAttacking);
-                    m_animator.SetBool("IsAttacking", m_agent.IsAttacking);
-                    m_animator.SetBool("IsPatroling", false);
-                    m_animator.SetBool("IsSearching", false);
-                    break;
+                m_animator.SetBool("IsIdle", true);
             }
+            else
+            {
+                m_animator.SetBool("IsIdle", false);
+                m_animator.SetBool("IsAttacking", false);
+
+                switch (m_agent.State)
+                {
+                    case GuardState.Patrol:
+                        m_animator.SetBool("IsPatroling", true);
+                        m_animator.SetBool("IsSearching", false);
+                        m_animator.SetBool("IsChasing", false);
+                        break;
+                    case GuardState.Search:
+                        m_animator.SetBool("IsSearching", true);
+                        m_animator.SetBool("IsPatroling", false);
+                        m_animator.SetBool("IsChasing", false);
+                        break;
+                    case GuardState.Alert:
+
+                        m_animator.SetBool("IsChasing", !m_agent.IsAttacking);
+                        m_animator.SetBool("IsAttacking", m_agent.IsAttacking);
+                        m_animator.SetBool("IsPatroling", false);
+                        m_animator.SetBool("IsSearching", false);
+                        break;
+                }
+            }
+
         }
     }
 }

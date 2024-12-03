@@ -344,8 +344,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
   m_attackRange: 2
-  NPCAttHitBox: {fileID: 0}
-  TimeToAttack: 1
 --- !u!114 &5500452792099961758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +430,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfdef563eade1b4d89d9209f54b023c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_attackRange: 0
   m_attackDamage: 10
   m_attackCooldown: 0
 --- !u!4 &998186713580892704 stripped
