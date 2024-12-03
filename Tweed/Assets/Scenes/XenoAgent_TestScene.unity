@@ -249,6 +249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -266,6 +271,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -299,8 +314,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -567,6 +587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -584,6 +609,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -617,8 +652,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -745,6 +785,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -762,6 +807,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -795,8 +850,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -1067,6 +1127,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -1084,6 +1149,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -1117,8 +1192,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -1251,6 +1331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -1268,6 +1353,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -1301,8 +1396,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -1703,6 +1803,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -1720,6 +1825,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -1753,8 +1868,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -1881,6 +2001,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -1898,6 +2023,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -1931,8 +2066,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -2059,6 +2199,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -2076,6 +2221,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -2109,8 +2264,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -2243,6 +2403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -2260,6 +2425,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -2293,8 +2468,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -2750,6 +2930,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -2767,6 +2952,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -2800,8 +2995,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -2928,6 +3128,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -2945,6 +3150,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -2978,8 +3193,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -3106,6 +3326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -3123,6 +3348,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -3156,8 +3391,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -3284,6 +3524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -3301,6 +3546,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -3334,8 +3589,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -3468,6 +3728,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -3485,6 +3750,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -3518,8 +3793,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -4066,6 +4346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -4083,6 +4368,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -4116,8 +4411,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -4244,6 +4544,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -4261,6 +4566,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -4294,8 +4609,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -4562,6 +4882,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -4579,6 +4904,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -4612,8 +4947,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -4740,6 +5080,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -4757,6 +5102,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -4790,8 +5145,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -4918,6 +5278,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -4935,6 +5300,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -4968,8 +5343,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -5108,6 +5488,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -5125,6 +5510,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -5158,8 +5553,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -6114,6 +6514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -6131,6 +6536,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -6164,8 +6579,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -6298,6 +6718,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -6315,6 +6740,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -6348,8 +6783,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -6774,6 +7214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -6791,6 +7236,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -6824,8 +7279,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -6952,6 +7412,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -6969,6 +7434,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -7002,8 +7477,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -7130,6 +7610,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -7147,6 +7632,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -7180,8 +7675,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -7308,6 +7808,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -7325,6 +7830,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -7358,8 +7873,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -7761,6 +8281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -7778,6 +8303,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -7811,8 +8346,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -7951,6 +8491,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -7968,6 +8513,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -8001,8 +8556,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -8135,6 +8695,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -8152,6 +8717,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -8185,8 +8760,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -8679,6 +9259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -8696,6 +9281,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -8729,8 +9324,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -8857,6 +9457,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -8874,6 +9479,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -8907,8 +9522,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -9035,6 +9655,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -9052,6 +9677,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -9085,8 +9720,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -9225,6 +9865,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -9242,6 +9887,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -9275,8 +9930,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -9403,6 +10063,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -9420,6 +10085,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -9453,8 +10128,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -9581,6 +10261,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -9598,6 +10283,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -9631,8 +10326,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -9870,6 +10570,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -9887,6 +10592,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -9920,8 +10635,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -10054,6 +10774,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -10071,6 +10796,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -10104,8 +10839,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -10354,6 +11094,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -10371,6 +11116,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -10404,8 +11159,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -10532,6 +11292,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -10549,6 +11314,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -10582,8 +11357,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -10956,6 +11736,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -10973,6 +11758,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -11006,8 +11801,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -11134,6 +11934,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -11151,6 +11956,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -11184,8 +11999,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -11312,6 +12132,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -11329,6 +12154,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -11362,8 +12197,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -11490,6 +12330,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -11507,6 +12352,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -11540,8 +12395,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -11802,6 +12662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -11819,6 +12684,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -11852,8 +12727,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -11980,6 +12860,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -11997,6 +12882,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -12030,8 +12925,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -12164,6 +13064,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -12181,6 +13086,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -12214,8 +13129,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -12342,6 +13262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -12359,6 +13284,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -12392,8 +13327,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -12642,6 +13582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -12659,6 +13604,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -12692,8 +13647,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -12826,6 +13786,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -12843,6 +13808,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -12876,8 +13851,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -13115,6 +14095,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -13132,6 +14117,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -13165,8 +14160,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -13299,6 +14299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -13316,6 +14321,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -13349,8 +14364,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -13483,6 +14503,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -13500,6 +14525,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -13533,8 +14568,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -13740,6 +14780,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -13757,6 +14802,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -13790,8 +14845,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -14119,6 +15179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -14136,6 +15201,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -14169,8 +15244,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -14303,6 +15383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -14320,6 +15405,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -14353,8 +15448,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -14725,6 +15825,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -14742,6 +15847,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -14775,8 +15890,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -14903,6 +16023,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -14920,6 +16045,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -14953,8 +16088,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -15087,6 +16227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -15104,6 +16249,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -15137,8 +16292,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -15265,6 +16425,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -15282,6 +16447,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -15315,8 +16490,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -15443,6 +16623,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -15460,6 +16645,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -15493,8 +16688,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -15706,6 +16906,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -15723,6 +16928,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -15756,8 +16971,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -15890,6 +17110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -15907,6 +17132,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -15940,8 +17175,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -16190,6 +17430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -16207,6 +17452,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -16240,8 +17495,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -16368,6 +17628,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -16385,6 +17650,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -16418,8 +17693,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -16546,6 +17826,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -16563,6 +17848,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -16596,8 +17891,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -16730,6 +18030,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -16747,6 +18052,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -16780,8 +18095,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -16914,6 +18234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -16931,6 +18256,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -16964,8 +18299,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -17092,6 +18432,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -17109,6 +18454,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -17142,8 +18497,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -17381,6 +18741,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -17398,6 +18763,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -17431,8 +18806,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -17687,6 +19067,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -17704,6 +19089,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -17737,8 +19132,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -18011,6 +19411,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -18028,6 +19433,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -18061,8 +19476,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -18189,6 +19609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -18206,6 +19631,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -18239,8 +19674,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -18451,6 +19891,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -18468,6 +19913,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -18501,8 +19956,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -18751,6 +20211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -18768,6 +20233,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -18801,8 +20276,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -19002,6 +20482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_smell
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_alignment
       value: 10
       objectReference: {fileID: 0}
@@ -19019,6 +20504,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableNoise
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_smellRadius
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
+      propertyPath: m_swarmRadius
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -19052,8 +20547,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
+      propertyPath: m_objectSightRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
+        type: 3}
       propertyPath: m_collisionAvoidance
-      value: 150
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8062492330034990024, guid: e4d2d8f985e029645b6c4f9965599476,
         type: 3}
@@ -19077,6 +20577,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 527105636}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2146381116
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2961051194909276095, guid: 00930aca8de82cf41a3028196e2ea051,
+        type: 3}
+      propertyPath: m_Name
+      value: Scent_Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020852662482620592, guid: 00930aca8de82cf41a3028196e2ea051,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -149.20271
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020852662482620592, guid: 00930aca8de82cf41a3028196e2ea051,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020852662482620592, guid: 00930aca8de82cf41a3028196e2ea051,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 119.18983
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020852662482620592, guid: 00930aca8de82cf41a3028196e2ea051,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020852662482620592, guid: 00930aca8de82cf41a3028196e2ea051,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020852662482620592, guid: 00930aca8de82cf41a3028196e2ea051,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020852662482620592, guid: 00930aca8de82cf41a3028196e2ea051,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020852662482620592, guid: 00930aca8de82cf41a3028196e2ea051,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020852662482620592, guid: 00930aca8de82cf41a3028196e2ea051,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020852662482620592, guid: 00930aca8de82cf41a3028196e2ea051,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00930aca8de82cf41a3028196e2ea051, type: 3}
 --- !u!1 &2146720940
 GameObject:
   m_ObjectHideFlags: 0
@@ -19300,3 +20868,4 @@ SceneRoots:
   - {fileID: 277321930}
   - {fileID: 5388017333679100258}
   - {fileID: 1173496292}
+  - {fileID: 2146381116}
