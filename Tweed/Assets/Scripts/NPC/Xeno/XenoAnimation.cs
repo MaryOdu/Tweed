@@ -36,7 +36,7 @@ namespace Assets.Scripts.NPC.Xeno
         {
             if (m_rigidBody.velocity.magnitude < 1)
             {
-                m_animator.SetBool("IsIdle", true);
+               m_animator.SetBool("IsIdle", false);
             }
             else
             {

@@ -19,6 +19,9 @@ namespace Assets.Scripts
 
         private bool m_isDead;
 
+        public UIMenus Canvas;
+        public PlayerRespawn PlayerCaught;
+
         public bool IsDead
         {
             get
@@ -51,7 +54,9 @@ namespace Assets.Scripts
             if (m_currHealth <= 0 && m_isDead == false)
             {
                 m_isDead = true;
-                this.OnDeath?.Invoke(this, EventArgs.Empty);
+                //this.OnDeath?.Invoke(this, EventArgs.Empty);
+                PlayerCaught.respawn();
+                Canvas.CaughtScreen();
             }
         }
     }

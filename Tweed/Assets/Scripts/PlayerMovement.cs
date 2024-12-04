@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private bool WalkOn;
 
     public UIMenus Canvas;
-    public PlayerRespawn PlayerCaught;
+   // public PlayerRespawn PlayerCaught;
     
 
     void Start()
@@ -56,8 +56,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("XenoAttack"))
         {
             
-            PlayerCaught.respawn();
-            Canvas.CaughtScreen();
+            //PlayerCaught.respawn();
+            //Canvas.CaughtScreen();
           
         }
     }

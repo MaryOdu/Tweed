@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class PlayerRespawn : MonoBehaviour
     public PlayerMovement PlayerMove;
     [SerializeField] float TimeToRespawn = 3f;
     [SerializeField] bool PlSpawn;
+
+    
 
     // Start is called before the first frame update
     void Start()
