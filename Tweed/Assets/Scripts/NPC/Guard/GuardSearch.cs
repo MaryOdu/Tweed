@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Util;
+﻿using Assets.Scripts.Environment;
+using Assets.Scripts.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,6 +61,13 @@ namespace Assets.Scripts.Enemy
         [SerializeField]
         private float m_localSearchRadius;
 
+        [SerializeField]
+        private float m_searchRadius;
+
+        private float m_updateTime;
+
+        private GameTimer m_updateTimer;
+
         /// <summary>
         /// Gets or sets the agents curreent target.
         /// </summary>
@@ -97,7 +105,13 @@ namespace Assets.Scripts.Enemy
         {
             m_searchQueue = new Queue<Vector3>();
             m_localSearchRadius = 10.0f;
+            m_searchRadius = 100.0f;
             m_searchArea = SearchArea.Local;
+
+
+            m_updateTimer = new GameTimer();
+            m_updateTimer.OnTimerElapsed += this.UpdateTimer_OnTimerElapsed;
+            m_updateTime = 1.0f;
         }
 
         /// <summary>
@@ -105,6 +119,9 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private void Start()
         {
+            m_updateTimer.SetTimeSpan(TimeSpan.FromSeconds(m_updateTime));
+            m_updateTimer.Start();
+
             m_patrol = this.GetComponent<GuardPatrol>();
             m_agent = this.GetComponent<NavMeshAgent>();
             m_searchPoints = m_patrol.PatrolPoints;
@@ -115,47 +132,16 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private void Update()
         {
-            if (m_agent.remainingDistance <= m_agent.stoppingDistance)
-            {
-                if (!m_agent.hasPath || m_agent.velocity.sqrMagnitude == 0f)
-                {
-                    Debug.Log($"{gameObject.GetInstanceID()} : Agent has reached destination.");
-
-                    if (m_searchQueue.Count > 0)
-                    {
-                        var nextPoint = m_searchQueue.Dequeue();
-                        m_agent.destination = nextPoint;
-                    }
-                    else if (m_searchArea == SearchArea.Local)
-                    {
-                        Debug.Log("Searching Local Area");
-                        this.LookAround();
-                        m_searchArea = SearchArea.Patrol;
-                    }
-                    else if (m_searchArea == SearchArea.Patrol)
-                    {
-                        Debug.Log("Searching Patrol");
-                        this.SearchPatrol();
-                    }
-                    //else
-                    //{
-                    //    Debug.Log("Searching Level");
-                    //    this.SearchLevel();
-                    //    m_searchArea = SearchArea.Local;
-                    //}
-                }
-            }
+            m_updateTimer.Tick();
         }
 
         /// <summary>
         /// Gets all patrol points within the scene.
         /// </summary>
         /// <returns>A list of all patrol/nav points.</returns>
-        private List<GameObject> GetAllNavPoints()
+        private List<GameObject> GetNavPointsInRadius(float radius)
         {
-            return GameObject.FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None)
-                .Where(x => x.GetComponent<PatrolPoint>() != null)
-                .ToList();
+            return Physics.OverlapSphere(this.transform.position, radius, LayerMask.GetMask("NavPoint")).Select(x => x.gameObject).ToList();
         }
 
         /// <summary>
@@ -207,10 +193,44 @@ namespace Assets.Scripts.Enemy
         /// <summary>
         /// Agent will search through the entire level.
         /// </summary>
-        public void SearchLevel()
+        public void SearchLargeArea()
         {
-            m_searchPoints = this.GetAllNavPoints();
+            m_searchPoints = this.GetNavPointsInRadius(m_searchRadius);
             this.SearchPatrol();
+        }
+
+        private void UpdateTimer_OnTimerElapsed(object sender, TimerElapsedEventArgs e)
+        {
+            if (m_agent.remainingDistance <= m_agent.stoppingDistance)
+            {
+                if (!m_agent.hasPath || m_agent.velocity.sqrMagnitude == 0f)
+                {
+                    Debug.Log($"{gameObject.GetInstanceID()} : Agent has reached destination.");
+
+                    if (m_searchQueue.Count > 0)
+                    {
+                        var nextPoint = m_searchQueue.Dequeue();
+                        m_agent.destination = nextPoint;
+                    }
+                    else if (m_searchArea == SearchArea.Local)
+                    {
+                        Debug.Log("Searching Local Area");
+                        this.LookAround();
+                        m_searchArea = SearchArea.Patrol;
+                    }
+                    else if (m_searchArea == SearchArea.Patrol)
+                    {
+                        Debug.Log("Searching local area");
+                        this.SearchLargeArea();
+                    }
+                    else
+                    {
+                        Debug.Log("Searching Level");
+                        this.SearchLargeArea();
+                        m_searchArea = SearchArea.Local;
+                    }
+                }
+            }
         }
     }
 }

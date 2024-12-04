@@ -40,13 +40,13 @@ namespace Assets.Scripts
 
         public void AddHealth(float amount)
         {
-            m_currHealth += amount;
+            m_currHealth += Math.Abs(amount);
             m_isDead = m_currHealth <= 0;
         }
 
         public void RemoveHealth(float amount)
         {
-            m_currHealth -= amount;
+            m_currHealth -= Math.Abs(amount);
 
             if (m_currHealth <= 0 && m_isDead == false)
             {

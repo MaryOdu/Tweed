@@ -43,6 +43,11 @@ namespace Assets.Scripts.Enemy
             if (m_rigidBody.velocity.magnitude < 1)
             {
                 m_animator.SetBool("IsIdle", true);
+
+                m_animator.SetBool("IsPatroling", false);
+                m_animator.SetBool("IsSearching", false);
+                m_animator.SetBool("IsChasing", false);
+                m_animator.SetBool("IsAttacking", m_agent.IsAttacking);
             }
             else
             {

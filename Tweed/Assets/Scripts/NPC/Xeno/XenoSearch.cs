@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Environment;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -118,7 +119,7 @@ namespace Assets.Scripts.NPC.Xeno
         private List<GameObject> GetAllNavPoints()
         {
             return GameObject.FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None)
-                .Where(x => x.GetComponent<PatrolPoint>() != null)
+                .Where(x => x.GetComponent<NavPoint>() != null)
                 .ToList();
         }
     }

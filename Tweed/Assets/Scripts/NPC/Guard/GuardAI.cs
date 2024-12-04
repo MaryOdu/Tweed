@@ -46,9 +46,6 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private GameObject m_target;
 
-
-        [SerializeField] GameObject NPCAttHitBox;
-
         /// <summary>
         /// The patrol points assigned to this NPC.
         /// </summary>
