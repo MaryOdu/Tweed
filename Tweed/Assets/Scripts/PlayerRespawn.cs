@@ -1,59 +1,69 @@
 using Assets.Scripts;
+using Assets.Scripts.Util;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    [SerializeField] GameObject Player;
-    [SerializeField] GameObject PlayerBod;
-    [SerializeField] GameObject RL1;
+    [SerializeField] 
+    private GameObject m_player;
+    [SerializeField]
+    private GameObject[] m_spawnPoints;
 
-    public PlayerMovement PlayerMove;
+    private GameObject m_playerBody;
+
+    private PlayerMovement m_plyerMove;
     [SerializeField] float TimeToRespawn = 3f;
-    [SerializeField] bool PlSpawn;
+    private bool m_playerSpawn;
 
-    
+    [SerializeField]
+    private UIMenus m_canvas;
+
+    public PlayerRespawn()
+    {
+        
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("Player");
-        PlayerBod = GameObject.Find("SK_SpiderBot");
-        RL1 = GameObject.Find("Respawn1Start");
-        Vector3 RL1Pos = RL1.transform.position;
-        PlSpawn = false;
+        m_playerBody = m_player.FindChild("SK_SpiderBot");
+        m_plyerMove = m_player.GetComponent<PlayerMovement>();
+        m_playerSpawn = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-         Vector3 PlayerPos = Player.transform.position;
+         Vector3 playerPos = m_player.transform.position;
 
-        if (PlSpawn == true)
+        if (m_playerSpawn == true)
         {
-          
             TimeToRespawn -= Time.deltaTime;
             if (TimeToRespawn <= 0.1f)
             {
-                Player.transform.position = RL1.transform.position;
+                var rndIdx = Random.Range(0, m_spawnPoints.Length);
+                var spawnPoint = m_spawnPoints[rndIdx];
+
+                m_player.transform.position = spawnPoint.transform.position;
                 if (TimeToRespawn <= 0f)
                 {
 
-                    PlayerMove.enabled = true;
-                    PlayerBod.SetActive(true);
-                    PlSpawn = false;
+                    m_plyerMove.enabled = true;
+                    m_playerBody.SetActive(true);
+                    m_playerSpawn = false;
                     TimeToRespawn = 3f;
                 }
             }
         }
     }
 
-    public void respawn()
+    public void Respawn()
     {
-        PlayerMove.enabled = false;
-        PlayerBod.SetActive(false);
-        PlSpawn = true;
-
+        m_canvas.CaughtScreen();
+        m_plyerMove.enabled = false;
+        m_playerBody.SetActive(false);
+        m_playerSpawn = true;
     }
 }

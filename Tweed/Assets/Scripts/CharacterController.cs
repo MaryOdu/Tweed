@@ -11,6 +11,9 @@ namespace Assets.Scripts
     [RequireComponent(typeof(Health))]
     public class CharacterController : MonoBehaviour
     {
+        [SerializeField]
+        private PlayerRespawn m_spawner;
+
         private Health m_health;
 
         public CharacterController()
@@ -32,7 +35,9 @@ namespace Assets.Scripts
 
         private void Health_OnDeath(object sender, EventArgs e)
         {
-            GameObject.Destroy(this.gameObject);
+            //GameObject.Destroy(this.gameObject);
+            m_health.SetHealth(100);
+            m_spawner.Respawn();
         }
     }
 }

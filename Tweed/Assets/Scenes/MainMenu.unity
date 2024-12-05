@@ -22373,6 +22373,9 @@ MonoBehaviour:
   MapScene: MainScenes
   PlayerScene: Testing
   NPCScene: EnemyAgent_Test
+  PauseMenu: {fileID: 0}
+  CaughtMenu: {fileID: 0}
+  RespawnTime: 3
 --- !u!114 &1993916198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25115,6 +25118,9 @@ MonoBehaviour:
   MapScene: MainScenes
   PlayerScene: Testing
   NPCScene: EnemyAgent_Test
+  PauseMenu: {fileID: 0}
+  CaughtMenu: {fileID: 0}
+  RespawnTime: 3
 --- !u!1 &2074357775
 GameObject:
   m_ObjectHideFlags: 0

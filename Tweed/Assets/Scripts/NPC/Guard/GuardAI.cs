@@ -155,6 +155,14 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        public bool IsStopped
+        {
+            get
+            {
+                return (m_agentAttack.RemainingDistance + m_agentPatrol.RemainingDistance + m_agentSearch.RemainingDistance) < 1;
+            }
+        }
+
         /// <summary>
         /// Constructor 
         /// </summary>
@@ -201,6 +209,7 @@ namespace Assets.Scripts.Enemy
             }
 
             m_agentSearch.OnSearchComplete += this.SearchAgent_OnSearchComplete;
+            m_agentAttack.OnAttackComplete += this.AgentAttack_OnAttackComplete;
 
             m_agentPatrol.enabled = false;
             m_agentAttack.enabled = false;
@@ -232,6 +241,12 @@ namespace Assets.Scripts.Enemy
             m_searchTime = TimeSpan.Zero;
         }
 
+        private void AgentAttack_OnAttackComplete(object sender, EventArgs e)
+        {
+            m_state = GuardState.Patrol;
+            m_searchTime = TimeSpan.Zero;
+        }
+
         private void ThinkTimer_OnTimerElapsed(object sender, TimerElapsedEventArgs e)
         {
             bool targetSeen = false;
@@ -244,6 +259,14 @@ namespace Assets.Scripts.Enemy
 
                 if (targetSeen)
                 {
+                    var health = target.GetComponent<Health>();
+
+                    if (health && health.IsDead)
+                    {
+                        targetSeen = false;
+                        continue;
+                    }
+
                     this.SetTarget(target);
                     break;
                 }

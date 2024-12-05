@@ -18,6 +18,8 @@ namespace Assets.Scripts.Enemy
     [RequireComponent(typeof(NPCMeleeAttack))]
     public class GuardAttack : MonoBehaviour
     {
+        public event EventHandler OnAttackComplete;
+
         /// <summary>
         /// The current target of this attack behaviour.
         /// </summary>
@@ -68,6 +70,14 @@ namespace Assets.Scripts.Enemy
             get
             {
                 return m_isAttacking;
+            }
+        }
+
+        public float RemainingDistance
+        {
+            get
+            {
+                return m_agent?.remainingDistance ?? 0;
             }
         }
 
@@ -124,6 +134,18 @@ namespace Assets.Scripts.Enemy
         {
             if (m_target != null)
             {
+                var health = m_target.GetComponent<Health>();
+
+                if (health)
+                {
+                    if (health.IsDead)
+                    {
+                        this.OnAttackComplete?.Invoke(this, EventArgs.Empty);
+                        m_target = null;
+                        return;
+                    }
+                }
+
                 if (m_target.transform.position != m_agent.destination)
                 {
                     this.Resume();
@@ -140,6 +162,8 @@ namespace Assets.Scripts.Enemy
                 {
                     this.Resume();
                 }
+
+                
             }
 
         }

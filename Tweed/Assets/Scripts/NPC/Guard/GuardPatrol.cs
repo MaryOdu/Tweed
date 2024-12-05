@@ -44,6 +44,14 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        public float RemainingDistance
+        {
+            get
+            {
+                return m_agent?.remainingDistance ?? 0;
+            }
+        }
+
         /// <summary>
         /// Constructor.
         /// </summary>
