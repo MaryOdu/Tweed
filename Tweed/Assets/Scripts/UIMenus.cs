@@ -87,7 +87,7 @@ public class UIMenus : MonoBehaviour
 
     public void LoadMainScenes(string Testing)
     {
-        SceneManager.LoadScene("MainScenes");
+        SceneManager.LoadScene("Prototype_Level");
     }
 
     public void LoadLeaveGame(string ExitGame)

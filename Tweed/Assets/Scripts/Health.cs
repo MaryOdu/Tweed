@@ -19,9 +19,6 @@ namespace Assets.Scripts
 
         private bool m_isDead;
 
-        public UIMenus Canvas;
-        public PlayerRespawn PlayerCaught;
-
         public bool IsDead
         {
             get
@@ -43,20 +40,24 @@ namespace Assets.Scripts
 
         public void AddHealth(float amount)
         {
-            m_currHealth += amount;
+            m_currHealth += Math.Abs(amount);
+            m_isDead = m_currHealth <= 0;
+        }
+
+        public void SetHealth(float amount)
+        {
+            m_currHealth = amount;
             m_isDead = m_currHealth <= 0;
         }
 
         public void RemoveHealth(float amount)
         {
-            m_currHealth -= amount;
+            m_currHealth -= Math.Abs(amount);
 
             if (m_currHealth <= 0 && m_isDead == false)
             {
                 m_isDead = true;
-                //this.OnDeath?.Invoke(this, EventArgs.Empty);
-                PlayerCaught.respawn();
-                Canvas.CaughtScreen();
+                this.OnDeath?.Invoke(this, EventArgs.Empty);
             }
         }
     }

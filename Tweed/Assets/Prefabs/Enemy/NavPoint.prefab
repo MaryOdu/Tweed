@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2965538317905942512}
   - component: {fileID: 4091751418145945674}
   - component: {fileID: 5751680552597091488}
-  - component: {fileID: 6153973849079786670}
-  m_Layer: 0
+  - component: {fileID: 3659223545196139176}
+  - component: {fileID: 5328998790674045922}
+  m_Layer: 11
   m_Name: NavPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6153973849079786670
+--- !u!135 &3659223545196139176
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5423669449821684851}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5328998790674045922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,7 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5423669449821684851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a3248bcf60073d4380cb708d30722fa, type: 3}
+  m_Script: {fileID: 11500000, guid: fbefff32b477666438538d34d81ba2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_showAtRuntime: 0

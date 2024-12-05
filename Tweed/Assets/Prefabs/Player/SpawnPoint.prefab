@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2965538317905942512}
   - component: {fileID: 4091751418145945674}
   - component: {fileID: 5751680552597091488}
-  - component: {fileID: 1911154137918049746}
+  - component: {fileID: 3659223545196139176}
+  - component: {fileID: 3494648280260343005}
   m_Layer: 11
-  m_Name: LookAtPoint
+  m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eca616e64bb113345a2274a4a4e18e74, type: 2}
+  - {fileID: 2100000, guid: 91894c8857c34ad45b3c614a314c40c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,7 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1911154137918049746
+--- !u!135 &3659223545196139176
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5423669449821684851}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3494648280260343005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,7 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5423669449821684851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbefff32b477666438538d34d81ba2b6, type: 3}
+  m_Script: {fileID: 11500000, guid: b7f9b3e6f9cd07946b516cae9e09b875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_showAtRuntime: 0

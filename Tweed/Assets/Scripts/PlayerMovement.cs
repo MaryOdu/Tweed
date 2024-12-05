@@ -47,7 +47,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            Canvas.Pause();
+            if (this.Canvas != null)
+            {
+                Canvas.Pause();
+            }
         }
     }
 
