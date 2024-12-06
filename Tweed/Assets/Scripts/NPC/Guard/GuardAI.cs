@@ -159,7 +159,7 @@ namespace Assets.Scripts.Enemy
         {
             get
             {
-                return (m_agentAttack.RemainingDistance + m_agentPatrol.RemainingDistance + m_agentSearch.RemainingDistance) < 1;
+                return (m_agentAttack.Velocity + m_agentPatrol.Velocity + m_agentSearch.Velocity) < 1;
             }
         }
 

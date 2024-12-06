@@ -44,11 +44,11 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        public float RemainingDistance
+        public float Velocity
         {
             get
             {
-                return m_agent?.remainingDistance ?? 0;
+                return m_agent?.velocity.magnitude ?? 0;
             }
         }
 

@@ -100,7 +100,7 @@ public class GuardLight : MonoBehaviour
     /// </summary>
     private void UpdateLightRangeAndAngle()
     {
-        m_headLight.range = m_agent.SightRange;
+        m_headLight.range = m_agent.SightRange * 1.5f;
         m_headLight.innerSpotAngle = m_agent.SightAngle;
     }
 

@@ -84,7 +84,7 @@ namespace Assets.Scripts.Enemy
 
                         if (m_agent.IsAttacking)
                         {
-                            m_animator.Play("Attack1Armed Player");
+                            m_animator.Play("Attack1Armed_Player");
                         }
                         else
                         {

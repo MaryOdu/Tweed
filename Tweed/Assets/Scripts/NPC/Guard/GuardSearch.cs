@@ -98,11 +98,11 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        public float RemainingDistance
+        public float Velocity
         {
             get
             {
-                return m_agent?.remainingDistance ?? 0;
+                return m_agent?.velocity.magnitude ?? 0;
             }
         }
 
@@ -209,6 +209,23 @@ namespace Assets.Scripts.Enemy
 
         private void UpdateTimer_OnTimerElapsed(object sender, TimerElapsedEventArgs e)
         {
+            if (m_target == null)
+            {
+                return;
+            }
+
+            var health = m_target.GetComponent<Health>();
+
+            if (health)
+            {
+                if (health.IsDead)
+                {
+                    this.OnSearchComplete?.Invoke(this, EventArgs.Empty);
+                    m_target = null;
+                    return;
+                }
+            }
+
             if (m_agent.remainingDistance <= m_agent.stoppingDistance)
             {
                 if (!m_agent.hasPath || m_agent.velocity.sqrMagnitude == 0f)

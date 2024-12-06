@@ -24,8 +24,15 @@ public class UIMenus : MonoBehaviour
     void Start()
     {
         //too be an audio function call
-        CaughtMenu.SetActive(false);
-        PauseMenu.SetActive(false);
+        if (CaughtMenu != null)
+        {
+            CaughtMenu.SetActive(false);
+        }
+
+        if (PauseMenu != null)
+        {
+            PauseMenu.SetActive(false);
+        }
         //WonGame.SetActive(false);
     }
 
@@ -41,7 +48,7 @@ public class UIMenus : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
             }
         }*/
-        if (Caught == true)
+        if (CaughtMenu != null && Caught == true)
         {
             CaughtMenu.SetActive(true);
             RespawnTime -= Time.deltaTime;
@@ -78,7 +85,7 @@ public class UIMenus : MonoBehaviour
 
     public void LoadMainMenu(string MainMenu)
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenu");
     }
     public void LoadPlayerScene(string Testing)
     {

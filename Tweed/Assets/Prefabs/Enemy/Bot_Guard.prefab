@@ -170,6 +170,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1643320677684156965, guid: c92f1a90c6546394eb97fd1155ab6eda,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -242,7 +247,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 994335665098628220}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1.5
   m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
@@ -271,7 +276,6 @@ MonoBehaviour:
   m_sightRange: 30
   m_sightAngle: 45
   m_state: 0
-  NPCAttHitBox: {fileID: 0}
   m_patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -373,6 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
   m_localSearchRadius: 10
+  m_searchRadius: 100
 --- !u!65 &4773015108710291228
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -420,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ec1fdbf2727744986c148b2636f802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spawner: {fileID: 0}
 --- !u!114 &9181167947491436275
 MonoBehaviour:
   m_ObjectHideFlags: 0
