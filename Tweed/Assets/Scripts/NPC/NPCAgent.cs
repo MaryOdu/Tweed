@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Assets.Scripts.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.XR;
 
 namespace Assets.Scripts.NPC
 {
@@ -40,6 +42,12 @@ namespace Assets.Scripts.NPC
         /// </summary>
         [SerializeField]
         private float m_sightAngle;
+
+        /// <summary>
+        /// The list of game objects representing this agents eyes.
+        /// </summary>
+        [SerializeField]
+        private List<GameObject> m_eyes;
 
         /// <summary>
         /// Gets the maximum sight range of this agent/npc.
@@ -99,6 +107,7 @@ namespace Assets.Scripts.NPC
         public NPCAgent()
         {
             m_targets = new Dictionary<int, GameObject>();
+            m_eyes = new List<GameObject>();
         }
 
         /// <summary>
@@ -193,6 +202,25 @@ namespace Assets.Scripts.NPC
         protected List<GameObject> GetTargetsByDistance()
         {
             return this.Targets.OrderBy(x => (this.transform.position - x.transform.position).sqrMagnitude).ToList();
+        }
+
+        protected bool CanSeeTarget(GameObject target, LayerMask layerMask)
+        {
+            if (m_eyes.Count < 1)
+            {
+                return AIHelper.CanSeeObject(this.gameObject, target, m_sightRange, m_sightAngle, layerMask, true);
+            }
+
+
+            foreach (var eye in m_eyes)
+            {
+                if (AIHelper.CanSeeObject(eye, target, m_sightRange, m_sightAngle, layerMask, true))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

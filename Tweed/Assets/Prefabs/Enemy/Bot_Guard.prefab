@@ -760,6 +760,8 @@ MonoBehaviour:
   m_director: {fileID: 0}
   m_sightRange: 30
   m_sightAngle: 45
+  m_eyes:
+  - {fileID: 9157146309196987319}
   m_state: 0
   m_patrolPoints: []
   m_patrolSpeed: 2

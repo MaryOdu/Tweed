@@ -264,7 +264,7 @@ namespace Assets.Scripts.Enemy
 
             foreach (var target in orderedTargets)
             {
-                targetSeen = this.QueryAlertedBy() || AIHelper.CanSeeObject(this.gameObject, target, this.SightRange, this.SightAngle, LayerMask.GetMask("Default"), true);
+                targetSeen = this.QueryAlertedBy() || this.CanSeeTarget(target, LayerMask.GetMask("Default"));
 
                 if (targetSeen)
                 {
