@@ -83,14 +83,6 @@ namespace Assets.Scripts.NPC
                 return;
             }
 
-            var health = m_target.GetComponent<Health>();
-
-            if (health != null)
-            {
-                // ATTACK!
-                health.RemoveHealth(m_attackDamage);
-            }
-
             var dist = (m_target.transform.position - this.transform.position).magnitude;
             m_isAttacking = dist <= m_attackRange;
 
@@ -99,6 +91,13 @@ namespace Assets.Scripts.NPC
                 m_attackCooldownTimer.Start();
                 m_canAttack = false;
 
+                var health = m_target.GetComponent<Health>();
+
+                if (health != null)
+                {
+                    // ATTACK!
+                    health.RemoveHealth(m_attackDamage);
+                }
             }
         }
 
