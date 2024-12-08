@@ -274,17 +274,17 @@ PrefabInstance:
     - target: {fileID: 5542455040620243308, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_attackRange
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6023313754671518964, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_Radius
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6023313754671518964, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_StoppingDistance
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7510320100906499474, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
@@ -5028,17 +5028,17 @@ PrefabInstance:
     - target: {fileID: 5542455040620243308, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_attackRange
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6023313754671518964, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_Radius
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6023313754671518964, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_StoppingDistance
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7510320100906499474, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
@@ -7003,17 +7003,17 @@ PrefabInstance:
     - target: {fileID: 5542455040620243308, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_attackRange
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6023313754671518964, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_Radius
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6023313754671518964, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_StoppingDistance
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7510320100906499474, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
@@ -7265,17 +7265,17 @@ PrefabInstance:
     - target: {fileID: 5542455040620243308, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_attackRange
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6023313754671518964, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_Radius
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6023313754671518964, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_StoppingDistance
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7510320100906499474, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
@@ -7913,17 +7913,17 @@ PrefabInstance:
     - target: {fileID: 5542455040620243308, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_attackRange
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6023313754671518964, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_Radius
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6023313754671518964, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
       propertyPath: m_StoppingDistance
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7510320100906499474, guid: 940f2528fdb830240bbb730e983f06ac,
         type: 3}
