@@ -78,6 +78,11 @@ namespace Assets.Scripts.Enemy
         // Update is called once per frame
         private void Update()
         {
+            if (!m_navAgent.enabled)
+            {
+                m_navAgent.enabled = true;
+            }
+
             if (m_navAgent.remainingDistance <= m_navAgent.stoppingDistance)
             {
                 if (!m_navAgent.hasPath || m_navAgent.velocity.sqrMagnitude == 0f)

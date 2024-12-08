@@ -67,7 +67,7 @@ namespace Assets.Scripts.NPC
         {
             get
             {
-                return (m_navAgent?.velocity ?? Vector3.zero).magnitude < 1;
+                return (m_navAgent?.velocity ?? Vector3.zero).magnitude < 0.5f;
             }
         }
 
