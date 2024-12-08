@@ -210,8 +210,8 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_StandbyUpdate: 2
-  m_LookAt: {fileID: 5708805664066980163}
+  m_StandbyUpdate: 1
+  m_LookAt: {fileID: 4379810504025340444}
   m_Follow: {fileID: 5708805664066980163}
   m_CommonLens: 1
   m_Lens:
@@ -235,8 +235,8 @@ MonoBehaviour:
   m_YAxis:
     Value: 0.40908453
     m_SpeedMode: 0
-    m_MaxSpeed: 2
-    m_AccelTime: 0.2
+    m_MaxSpeed: 4
+    m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
@@ -571,7 +571,6 @@ MonoBehaviour:
   CamDir: {fileID: 884972588374213430}
   animator: {fileID: 1654079010314849460}
   Canvas: {fileID: 0}
-  PlayerCaught: {fileID: 0}
 --- !u!65 &5682537369978716465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -619,6 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ec1fdbf2727744986c148b2636f802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spawner: {fileID: 0}
 --- !u!1 &3101865929349327735
 GameObject:
   m_ObjectHideFlags: 0
