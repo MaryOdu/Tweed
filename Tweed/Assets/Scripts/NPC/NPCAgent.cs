@@ -16,7 +16,7 @@ namespace Assets.Scripts.NPC
         /// <summary>
         /// The navmesh agent - used for navigating between points along a given mesh.
         /// </summary>
-        private NavMeshAgent m_agent;
+        private NavMeshAgent m_navAgent;
 
         /// <summary>
         /// The dictionary of targets that the NPC Agent will look out for.
@@ -63,6 +63,14 @@ namespace Assets.Scripts.NPC
             }
         }
 
+        public virtual bool IsStopped
+        {
+            get
+            {
+                return (m_navAgent?.velocity ?? Vector3.zero).magnitude < 1;
+            }
+        }
+
         /// <summary>
         /// Gets the navmesh agent.
         /// </summary>
@@ -70,7 +78,7 @@ namespace Assets.Scripts.NPC
         {
             get
             {
-                return m_agent;
+                return m_navAgent;
             }
         }
 
@@ -98,7 +106,7 @@ namespace Assets.Scripts.NPC
         /// </summary>
         protected virtual void Start()
         {
-            m_agent = this.GetComponent<NavMeshAgent>();
+            m_navAgent = this.GetComponent<NavMeshAgent>();
 
             if (m_director != null)
             {
@@ -142,6 +150,11 @@ namespace Assets.Scripts.NPC
         /// <returns>Added? (true/false)</returns>
         public bool AddTarget(GameObject target)
         {
+            if (target == null)
+            {
+                return false;
+            }
+
             if (!m_targets.ContainsKey(target.GetInstanceID()))
             {
                 m_targets.Add(target.GetInstanceID(), target);

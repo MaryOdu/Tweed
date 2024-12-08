@@ -18,6 +18,8 @@ public enum XenoState
 
 public class XenoAI : NPCAgent
 {
+    public event EventHandler<EventArgs> OnMeleeAttack;
+
     /// <summary>
     /// The current state of the xeno NPC/Agent
     /// </summary>
@@ -38,7 +40,7 @@ public class XenoAI : NPCAgent
     /// <summary>
     /// The xeno NPCs' search behaviour.
     /// </summary>
-    private XenoSearch m_agentSearch;
+    private NPCSearch m_agentSearch;
 
     /// <summary>
     /// The NPCs' current target.
@@ -68,6 +70,12 @@ public class XenoAI : NPCAgent
     /// </summary>
     [SerializeField]
     private TimeSpan m_searchTime;
+
+    /// <summary>
+    /// The amount of time this NPC will spend in an attack state after losing sight of the target.
+    /// </summary>
+    [SerializeField]
+    private TimeSpan m_attackTime;
 
     /// <summary>
     /// The time a target was last seen.
@@ -111,6 +119,34 @@ public class XenoAI : NPCAgent
         }
     }
 
+    public override bool IsStopped
+    {
+        get
+        {
+            switch (m_state)
+            {
+                case XenoState.Swarm:
+                    return m_rigidBody.velocity.magnitude < 1;
+                case XenoState.Search:
+                case XenoState.Alert:
+                    return base.IsStopped;
+            }
+
+            return true;
+        }
+    }
+
+    /// <summary>
+    /// Gets the NPC agents remaining search time.
+    /// </summary>
+    public float RemainingAttackTime
+    {
+        get
+        {
+            return (float)m_attackTime.TotalSeconds - (Time.time - m_targetLastSeenTime);
+        }
+    }
+
     /// <summary>
     /// Gets the NPC agents remaining search time.
     /// </summary>
@@ -119,17 +155,6 @@ public class XenoAI : NPCAgent
         get
         {
             return (float)m_searchTime.TotalSeconds - (Time.time - m_targetLastSeenTime);
-        }
-    }
-
-    /// <summary>
-    /// Gets whether the NPC agent is currently attacking something.
-    /// </summary>
-    public bool IsAttacking
-    {
-        get
-        {
-            return m_agentAttack.IsAttacking;
         }
     }
 
@@ -159,7 +184,7 @@ public class XenoAI : NPCAgent
         m_attackStopDistance = 7f;
         this.SetSightParameters(20.0f, 35.0f);
 
-        m_updateSpan = TimeSpan.FromSeconds(0.5);
+        m_updateSpan = TimeSpan.FromSeconds(0.3);
         m_thinkTimer = new GameTimer(m_updateSpan);
         m_thinkTimer.AutoReset = true;
         m_thinkTimer.OnTimerElapsed += ThinkTimer_OnTimerElapsed;
@@ -175,29 +200,33 @@ public class XenoAI : NPCAgent
         m_rigidBody = this.GetComponent<Rigidbody>();
 
         m_agentSwarm = this.GetComponent<XenoSwarm>();
-        m_agentSearch = this.GetComponent<XenoSearch>();
+        m_agentSearch = this.GetComponent<NPCSearch>();
         m_agentAttack = this.GetComponent<XenoAttack>();
 
-        if (m_agentSwarm == null)
-        {
-            m_agentSwarm = this.AddComponent<XenoSwarm>();
-        }
+        //if (m_agentSwarm == null)
+        //{
+        //    m_agentSwarm = this.AddComponent<XenoSwarm>();
+        //}
 
-        if (m_agentSearch == null)
-        {
-            m_agentSearch = this.AddComponent<XenoSearch>();
-        }
+        //if (m_agentSearch == null)
+        //{
+        //    m_agentSearch = this.AddComponent<NPCSearch>();
+        //}
         
-        if (m_agentAttack == null)
-        {
-            m_agentAttack = this.AddComponent<XenoAttack>();
-        }
+        //if (m_agentAttack == null)
+        //{
+        //    m_agentAttack = this.AddComponent<XenoAttack>();
+        //}
         
         m_agentSwarm.enabled = true;
         m_agentSearch.enabled = false;
         m_agentAttack.enabled = false;
 
+        m_agentSearch.OnSearchComplete += AgentSearch_OnSearchComplete;
+
         m_searchTime = TimeSpan.FromSeconds(30);
+        m_attackTime = TimeSpan.FromSeconds(0.1f);
+
         m_state = XenoState.Swarm;
 
         base.Start();
@@ -207,6 +236,11 @@ public class XenoAI : NPCAgent
     protected override void Update()
     {
         m_thinkTimer.Tick();
+
+        if (m_agentAttack.IsMeleeAttacking)
+        {
+            this.OnMeleeAttack?.Invoke(this, EventArgs.Empty);
+        }
 
         base.Update();
     }
@@ -219,12 +253,28 @@ public class XenoAI : NPCAgent
 
         foreach (var target in orderedTargets)
         {
-            targetSeen = this.QueryAlertedBy() || AIHelper.CanSeeObject(this.gameObject, target, this.SightRange, this.SightAngle, true);
+            var sightAngle = m_state == XenoState.Alert ? this.SightAngle * 2 : this.SightAngle;
+            targetSeen = this.QueryAlertedBy() || AIHelper.CanSeeObject(this.gameObject, target, this.SightRange, sightAngle, LayerMask.GetMask("Default"), true);
 
             if (targetSeen)
             {
                 this.SetTarget(target);
+                m_state = XenoState.Alert;
+                m_targetLastSeenTime = Time.time;
                 break;
+            }
+            else
+            {
+                if (m_state == XenoState.Alert && this.RemainingAttackTime <= 0)
+                {
+                    m_state = XenoState.Search;
+                    
+                }
+
+                if (m_state == XenoState.Search && this.RemainingSearchTime <= 0)
+                {
+                    m_state = XenoState.Swarm;
+                }
             }
         }
 
@@ -340,5 +390,10 @@ public class XenoAI : NPCAgent
         {
             this.NavAgent.stoppingDistance = m_stopDistance;
         }
+    }
+
+    private void AgentSearch_OnSearchComplete(object sender, EventArgs e)
+    {
+        m_state = XenoState.Swarm;
     }
 }

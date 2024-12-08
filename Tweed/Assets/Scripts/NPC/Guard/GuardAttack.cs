@@ -33,11 +33,6 @@ namespace Assets.Scripts.Enemy
         private float m_attackRange;
 
         /// <summary>
-        /// Is currently attacking? (true/false)
-        /// </summary>
-        private bool m_isAttacking;
-
-        /// <summary>
         /// The attack mode this agent is currently in (currently only melee)
         /// </summary>
         private AttackMode m_attackMode;
@@ -45,7 +40,7 @@ namespace Assets.Scripts.Enemy
         /// <summary>
         /// The navmesh agent
         /// </summary>
-        private NavMeshAgent m_agent;
+        private NavMeshAgent m_navAgent;
 
         /// <summary>
         /// Gets or sets this agents current target.
@@ -65,26 +60,18 @@ namespace Assets.Scripts.Enemy
         /// <summary>
         /// Gets whether this agent is currently attacking.
         /// </summary>
-        public bool IsAttacking
+        public bool IsMeleeAttacking
         {
             get
             {
-                return m_isAttacking;
-            }
-        }
-
-        public float Velocity
-        {
-            get
-            {
-                return m_agent?.velocity.magnitude ?? 0;
+                return m_melee?.IsAttacking ?? false;
             }
         }
 
         /// <summary>
         /// Melee attacker component
         /// </summary>
-        private NPCMeleeAttack m_meleeAtacker;
+        private NPCMeleeAttack m_melee;
 
         /// <summary>
         /// Constructor
@@ -99,15 +86,9 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private void Start()
         {
-            m_agent = this.GetComponent<NavMeshAgent>();
-            m_meleeAtacker = this.GetComponent<NPCMeleeAttack>();
-
-            m_meleeAtacker.OnAttack += this.MeleeAtacker_OnAttack;
-        }
-
-        private void MeleeAtacker_OnAttack(object sender, EventArgs e)
-        {
-            m_isAttacking = true;
+            m_navAgent = this.GetComponent<NavMeshAgent>();
+            m_melee = this.GetComponent<NPCMeleeAttack>();
+            m_melee.AttackRange = m_attackRange;
         }
 
         /// <summary>
@@ -115,7 +96,7 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private void Stop()
         {
-            m_agent.SetDestination(this.transform.position);
+            m_navAgent.SetDestination(this.transform.position);
         }
 
         /// <summary>
@@ -123,8 +104,27 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private void Resume()
         {
-            m_agent.SetDestination(m_target.transform.position);
-            m_agent.stoppingDistance = m_attackRange;
+            m_navAgent.SetDestination(m_target.transform.position);
+        }
+
+        private void OnEnable()
+        {
+            if (m_melee == null)
+            {
+                m_melee = this.GetComponent<NPCMeleeAttack>();
+            }
+
+            m_melee.enabled = true;
+        }
+
+        private void OnDisable()
+        {
+            if (m_melee == null)
+            {
+                m_melee = this.GetComponent<NPCMeleeAttack>();
+            }
+
+            m_melee.enabled = false;
         }
 
         /// <summary>
@@ -132,42 +132,66 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private void Update()
         {
-            if (m_target != null)
+            if (!m_navAgent.enabled)
             {
-                var health = m_target.GetComponent<Health>();
-
-                if (health)
-                {
-                    if (health.IsDead)
-                    {
-                        this.OnAttackComplete?.Invoke(this, EventArgs.Empty);
-                        m_target = null;
-                        return;
-                    }
-                }
-
-                if (m_target.transform.position != m_agent.destination)
-                {
-                    this.Resume();
-                }
-
-                m_agent.destination = m_target.transform.position;
-
-                if (m_agent.remainingDistance < m_attackRange)
-                {
-                    this.Stop();
-                    Debug.Log($"{this.gameObject.GetInstanceID()} : Agent has reached destination. Attacking target.");
-                }
-                else
-                {
-                    this.Resume();
-                }
-
-                
+                m_navAgent.enabled = true;
             }
 
+            var cmpHealth = m_target.GetComponent<Health>();
+
+            if (cmpHealth && cmpHealth.IsDead)
+            {
+                this.OnAttackComplete.Invoke(this, EventArgs.Empty);
+                return;
+            }
+
+            if (m_target != null)
+            {
+                m_melee.Target = m_target;
+                var dPos = this.transform.position - m_target.transform.position;
+                m_navAgent.enabled = dPos.magnitude > m_attackRange;
+
+                if (m_navAgent.enabled)
+                {
+                    m_navAgent.SetDestination(m_target.transform.position);
+                }
+
+                this.RotateToFaceTarget();
+            }
         }
 
-        
+        private void PerformMeleeAttack()
+        {
+            var cmpHealth = m_target.GetComponent<Health>();
+
+            if (cmpHealth && cmpHealth.IsDead)
+            {
+                this.OnAttackComplete.Invoke(this, EventArgs.Empty);
+                return;
+            }
+
+            m_navAgent.stoppingDistance = m_attackRange;
+
+            m_melee.Target = m_target;
+            var dPos = this.transform.position - m_target.transform.position;
+            m_navAgent.enabled = dPos.magnitude > m_attackRange;
+
+            if (m_navAgent.enabled)
+            {
+                m_navAgent.SetDestination(m_target.transform.position);
+            }
+
+            this.RotateToFaceTarget();
+        }
+
+        private void RotateToFaceTarget()
+        {
+            var dPos = (m_target.transform.position - this.transform.position).normalized;
+            dPos.y = 0;
+            var qRot = Quaternion.LookRotation(dPos);
+
+            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, qRot, Time.deltaTime);
+        }
+
     }
 }

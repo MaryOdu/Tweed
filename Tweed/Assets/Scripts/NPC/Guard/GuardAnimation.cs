@@ -33,6 +33,13 @@ namespace Assets.Scripts.Enemy
             m_agent = this.GetComponent<GuardAI>();
             m_animator = this.GetComponent<Animator>();
             m_rigidBody = this.GetComponent<Rigidbody>();
+
+            m_agent.OnMeleeAttack += this.Agent_OnMeleeAttack;
+        }
+
+        private void Agent_OnMeleeAttack(object sender, EventArgs e)
+        {
+            m_animator.Play("Attack1Armed");
         }
 
         /// <summary>
@@ -40,19 +47,16 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private void Update()
         {
+            if (m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1 && !m_animator.IsInTransition(0))
+            {
+                return;
+            }
+
             //var planarVel = new Vector3(m_rigidBody.velocity.x, 0, m_rigidBody.velocity.z); // FML - Apparently agents have a vertical velocity of +600
             
             if (m_agent.IsStopped)
             {
-                if (m_agent.IsAttacking)
-                {
-                    m_animator.Play("Attack1Armed_Player");
-                }
-                else
-                {
-                    m_animator.Play("Idle");
-                }
-               
+                m_animator.Play("Idle");
 
                 //m_animator.SetBool("IsIdle", true);
 
@@ -82,14 +86,7 @@ namespace Assets.Scripts.Enemy
                         break;
                     case GuardState.Alert:
 
-                        if (m_agent.IsAttacking)
-                        {
-                            m_animator.Play("Attack1Armed_Player");
-                        }
-                        else
-                        {
-                            m_animator.Play("RunArmed");
-                        }
+                        m_animator.Play("RunArmed");
 
                         //m_animator.SetBool("IsChasing", !m_agent.IsAttacking);
                         //m_animator.SetBool("IsAttacking", m_agent.IsAttacking);

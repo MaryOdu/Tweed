@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Assets.Scripts.Enemy.GuardAI" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiSAAAIAASiBIACCAJAAACAQAGkgEQBAAAgAhQAJABI=</HashCode>
+      <FileName>Assets\Scripts\NPC\Guard\GuardAI.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_agentAttack" />
+      <Field Name="m_agentPatrol" />
+      <Field Name="m_agentSearch" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assets.Scripts.Enemy.GuardAttack" Collapsed="true">
+    <Position X="10.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACgAAAAAAABAACAEIAAAAQQAJAAAAggEAAA=</HashCode>
+      <FileName>Assets\Scripts\NPC\Guard\GuardAttack.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_agent" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assets.Scripts.Enemy.GuardPatrol" Collapsed="true">
+    <Position X="10.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAIIAAAAEAQCAAAAAAAAAAAAMAAA=</HashCode>
+      <FileName>Assets\Scripts\NPC\Guard\GuardPatrol.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_agent" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assets.Scripts.Enemy.GuardSearch" Collapsed="true">
+    <Position X="10.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAQAAACAAAAASAgAQACAEAAAAAQEAhAAAEABEAAA=</HashCode>
+      <FileName>Assets\Scripts\NPC\Guard\GuardSearch.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_agent" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="UnityEngine.AI.NavMeshAgent" Collapsed="true">
+    <Position X="15" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="Assets.Scripts.Enemy.GuardState" Collapsed="true">
+    <Position X="1.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgAAI=</HashCode>
+      <FileName>Assets\Scripts\NPC\Guard\GuardAI.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

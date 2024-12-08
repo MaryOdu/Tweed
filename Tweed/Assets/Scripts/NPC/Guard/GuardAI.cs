@@ -17,9 +17,11 @@ namespace Assets.Scripts.Enemy
 
     [RequireComponent(typeof(GuardAttack))]
     [RequireComponent(typeof(GuardPatrol))]
-    [RequireComponent(typeof(GuardSearch))]
+    [RequireComponent(typeof(NPCSearch))]
     public class GuardAI : NPCAgent
     {
+        public event EventHandler<EventArgs> OnMeleeAttack;
+
         /// <summary>
         /// The current state of the guard NPC/agent
         /// </summary>
@@ -39,7 +41,7 @@ namespace Assets.Scripts.Enemy
         /// <summary>
         /// The guard NPCs' search behaviour.
         /// </summary>
-        private GuardSearch m_agentSearch;
+        private NPCSearch m_agentSearch;
 
         /// <summary>
         /// The NPCs' current target.
@@ -75,6 +77,12 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         [SerializeField]
         private TimeSpan m_searchTime;
+
+        /// <summary>
+        /// The amount of time this NPC will spend in an attack state after losing sight of the target.
+        /// </summary>
+        [SerializeField]
+        private TimeSpan m_attackTime;
 
         /// <summary>
         /// The time a target was last seen.
@@ -134,15 +142,17 @@ namespace Assets.Scripts.Enemy
         }
 
         /// <summary>
-        /// Gets whether the NPC agent is currently attacking something.
+        /// Gets the NPC agents remaining search time.
         /// </summary>
-        public bool IsAttacking
+        public float RemainingAttackTime
         {
             get
             {
-                return m_agentAttack.IsAttacking;
+                return (float)m_attackTime.TotalSeconds - (Time.time - m_targetLastSeenTime);
             }
         }
+
+        public bool IsMeleeAttacking => m_agentAttack.IsMeleeAttacking;
 
         /// <summary>
         /// Gets the NPC agents' current target.
@@ -155,14 +165,6 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        public bool IsStopped
-        {
-            get
-            {
-                return (m_agentAttack.Velocity + m_agentPatrol.Velocity + m_agentSearch.Velocity) < 1;
-            }
-        }
-
         /// <summary>
         /// Constructor 
         /// </summary>
@@ -171,7 +173,7 @@ namespace Assets.Scripts.Enemy
         {
             m_patrolPoints = new List<GameObject>();
             
-            m_attackStopDistance = 8f;
+            m_attackStopDistance = 3f;
             m_stopDistance = 3f;
 
             m_updateSpan = TimeSpan.FromSeconds(0.5);
@@ -191,22 +193,22 @@ namespace Assets.Scripts.Enemy
 
             m_agentAttack = this.GetComponent<GuardAttack>();
             m_agentPatrol = this.GetComponent<GuardPatrol>();
-            m_agentSearch = this.GetComponent<GuardSearch>();
+            m_agentSearch = this.GetComponent<NPCSearch>();
 
-            if (m_agentAttack == null)
-            {
-                m_agentAttack = this.AddComponent<GuardAttack>();
-            }
+            //if (m_agentAttack == null)
+            //{
+            //    m_agentAttack = this.AddComponent<GuardAttack>();
+            //}
 
-            if (m_agentPatrol == null)
-            {
-                m_agentPatrol = this.AddComponent<GuardPatrol>();
-            }
+            //if (m_agentPatrol == null)
+            //{
+            //    m_agentPatrol = this.AddComponent<GuardPatrol>();
+            //}
             
-            if (m_agentSearch == null)
-            {
-                m_agentSearch = this.AddComponent<GuardSearch>();
-            }
+            //if (m_agentSearch == null)
+            //{
+            //    m_agentSearch = this.AddComponent<NPCSearch>();
+            //}
 
             m_agentSearch.OnSearchComplete += this.SearchAgent_OnSearchComplete;
             m_agentAttack.OnAttackComplete += this.AgentAttack_OnAttackComplete;
@@ -222,6 +224,8 @@ namespace Assets.Scripts.Enemy
             m_agentPatrol.PatrolPoints = m_patrolPoints;
 
             m_searchTime = TimeSpan.FromSeconds(60);
+            m_attackTime = TimeSpan.FromSeconds(0.1f);
+
             m_state = GuardState.Patrol;
 
             base.Start();
@@ -231,6 +235,11 @@ namespace Assets.Scripts.Enemy
         // Update is called once per frame
         protected override void Update()
         {
+            if (m_agentAttack.IsMeleeAttacking)
+            {
+                this.OnMeleeAttack?.Invoke(this, EventArgs.Empty);
+            }
+
             m_thinkTimer.Tick();
             base.Update();
         }
@@ -255,7 +264,7 @@ namespace Assets.Scripts.Enemy
 
             foreach (var target in orderedTargets)
             {
-                targetSeen = this.QueryAlertedBy() || AIHelper.CanSeeObject(this.gameObject, target, this.SightRange, this.SightAngle, true);
+                targetSeen = this.QueryAlertedBy() || AIHelper.CanSeeObject(this.gameObject, target, this.SightRange, this.SightAngle, LayerMask.GetMask("Default"), true);
 
                 if (targetSeen)
                 {
@@ -282,7 +291,7 @@ namespace Assets.Scripts.Enemy
             {
                 m_state = m_targetLastSeenTime == 0 || this.RemainingSearchTime <= 0.0f ? GuardState.Patrol : GuardState.Search;
 
-                if (this.WithinStoppingDistance() && this.RemainingSearchTime <= 0.0f)
+                if (this.RemainingSearchTime <= 0.0f)
                 {
                     m_state = GuardState.Patrol;
                     m_searchTime = TimeSpan.FromSeconds(60);
@@ -293,22 +302,6 @@ namespace Assets.Scripts.Enemy
             this.UpdateStopDsistance();
         }
 
-        /// <summary>
-        /// Checks to see whether the npc/agent is within stopping distance.
-        /// </summary>
-        /// <returns>is within stopping distance? (true/false)</returns>
-        private bool WithinStoppingDistance()
-        {
-            if (this.NavAgent.remainingDistance <= this.NavAgent.stoppingDistance)
-            {
-                if (!this.NavAgent.hasPath || this.NavAgent.velocity.sqrMagnitude == 0f)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
 
         /// <summary>
         /// Sets the current target of the agent/npc.
@@ -381,7 +374,9 @@ namespace Assets.Scripts.Enemy
                 case SentryState.Alert:
                     if (sentry.CurrentLookAtTarget != null)
                     {
-                        return this.NavAgent.SetDestination(sentry.CurrentLookAtTarget.transform.position);
+                        m_agentAttack.Target = sentry.CurrentLookAtTarget;
+                        m_state = GuardState.Alert;
+                        return true;
                     }
                     break;
             }

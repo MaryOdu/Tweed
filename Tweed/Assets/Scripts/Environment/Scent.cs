@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,17 +18,24 @@ namespace Assets.Scripts.Environment
         [Range(0f, 1f)]
         private float m_strength;
 
-        public float XenoAttraction
-        {
-            get
-            {
-                return m_xenoAttraction * m_strength;
-            }
-        }
+        [SerializeField]
+        private float m_radius;
 
         public Scent()
         {
             m_xenoAttraction = 0.0f;
+        }
+
+        public float GetXenoAttraction(GameObject gameObj)
+        {
+            var baseAttraction = m_xenoAttraction * m_strength;
+            var withinSmellRadius = this.GetSmellSphere().IsWithinBounds(gameObj.transform.position);
+            return withinSmellRadius ? 0 : baseAttraction;
+        }
+
+        private BoundingSphere GetSmellSphere()
+        {
+            return new BoundingSphere(this.transform.position, m_radius);
         }
     }
 }

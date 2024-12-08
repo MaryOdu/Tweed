@@ -63,14 +63,14 @@ public class PLInter : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     InterOnce = true;
-                    happen.Open(); happen2.Open();
-
+                    happen.Open(); 
+                    happen2.Open();
                 }
             }
         }
         if (TargetSwap == true)
         {
-            if ((interactable == true) && (InterOnce == false))
+            if ((interactable == true) /*&& (InterOnce == false)*/)
             {
 
                 if (Input.GetKeyDown(KeyCode.E))

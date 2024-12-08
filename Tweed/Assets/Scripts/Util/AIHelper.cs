@@ -18,18 +18,29 @@ namespace Assets.Scripts.Util
         /// <param name="sightAngle">The agents' sight angle.</param>
         /// <param name="drawDebug">Draws a debug line between the agent and the target.</param>
         /// <returns>Can see object? (true/false)</returns>
-        public static bool CanSeeObject(GameObject agent, GameObject target, float sightRange, float sightAngle, bool drawDebug = false)
+        public static bool CanSeeObject(GameObject agent, GameObject target, float sightRange, float sightAngle, LayerMask layerMask, bool drawDebug = false)
         {
             var tgtPos = target.gameObject.transform.position;
             var deltaV = tgtPos - agent.transform.position;
+
+            if (deltaV.magnitude > sightRange)
+            {
+                return false;
+            }
+
             var a = agent.transform.forward.normalized;
             var b = (deltaV).normalized;
             var angle = Vector3.Angle(a, b);
 
-            var ray = new Ray(agent.transform.position, b);
-            var rayHit = Physics.Raycast(ray, out var hitInfo, float.PositiveInfinity, LayerMask.GetMask("Default"));
+            if (angle > sightAngle)
+            {
+                return false;
+            }
 
-            var result = rayHit && hitInfo.collider.gameObject == target && hitInfo.distance < sightRange && angle < sightAngle;
+            var ray = new Ray(agent.transform.position, b);
+            var rayHit = Physics.Raycast(ray, out var hitInfo, deltaV.magnitude, layerMask);
+
+            var result = rayHit && hitInfo.collider.gameObject == target; //&& hitInfo.distance < sightRange && angle < sightAngle;
 
             if (drawDebug)
             {

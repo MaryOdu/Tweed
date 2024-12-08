@@ -8,8 +8,11 @@ using UnityEngine;
 
 namespace Assets.Scripts.NPC.Xeno
 {
+    [RequireComponent(typeof(NPCMeleeAttack))]
     public class XenoAttack : MonoBehaviour
     {
+        public event EventHandler<EventArgs> OnAttackComplete;
+
         /// <summary>
         /// The current target of this attack behaviour.
         /// </summary>
@@ -23,14 +26,10 @@ namespace Assets.Scripts.NPC.Xeno
         private float m_attackRange;
 
         /// <summary>
-        /// Is currently attacking? (true/false)
-        /// </summary>
-        private bool m_isAttacking;
-
-        /// <summary>
         /// The navmesh agent
         /// </summary>
-        private NavMeshAgent m_agent;
+        private NavMeshAgent m_navAgent;
+        private NPCMeleeAttack m_melee;
 
         /// <summary>
         /// Gets or sets this agents current target.
@@ -50,11 +49,11 @@ namespace Assets.Scripts.NPC.Xeno
         /// <summary>
         /// Gets whether this agent is currently attacking.
         /// </summary>
-        public bool IsAttacking
+        public bool IsMeleeAttacking
         {
             get
             {
-                return m_isAttacking;
+                return m_melee?.IsAttacking ?? false;
             }
         }
 
@@ -71,7 +70,9 @@ namespace Assets.Scripts.NPC.Xeno
         /// </summary>
         protected void Start()
         {
-            m_agent = this.GetComponent<NavMeshAgent>();
+            m_navAgent = this.GetComponent<NavMeshAgent>();
+            m_melee = this.GetComponent<NPCMeleeAttack>();
+            m_melee.AttackRange = m_attackRange;
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Assets.Scripts.NPC.Xeno
         /// </summary>
         private void Stop()
         {
-            m_agent.SetDestination(this.transform.position);
+            m_navAgent.SetDestination(this.transform.position);
         }
 
         /// <summary>
@@ -87,7 +88,22 @@ namespace Assets.Scripts.NPC.Xeno
         /// </summary>
         private void Resume()
         {
-            m_agent.SetDestination(m_target.transform.position);
+            m_navAgent.SetDestination(m_target.transform.position);
+        }
+
+        private void OnEnable()
+        {
+            if (m_melee == null)
+            {
+                m_melee = this.GetComponent<NPCMeleeAttack>();
+            }
+
+            m_melee.enabled = true;
+        }
+
+        private void OnDisable()
+        {
+            m_melee.enabled = false;
         }
 
         /// <summary>
@@ -95,27 +111,43 @@ namespace Assets.Scripts.NPC.Xeno
         /// </summary>
         private void Update()
         {
+            if (!m_navAgent.enabled)
+            {
+                m_navAgent.enabled = true;
+            }
+
             if (m_target != null)
             {
-                if (m_target.transform.position != m_agent.destination)
+                var cmpHealth = m_target.GetComponent<Health>();
+
+                if (cmpHealth && cmpHealth.IsDead)
                 {
-                    this.Resume();
+                    this.OnAttackComplete.Invoke(this, EventArgs.Empty);
+                    return;
                 }
 
-                m_agent.destination = m_target.transform.position;
+                m_navAgent.stoppingDistance = m_attackRange;
 
-                if (m_agent.remainingDistance <= m_attackRange)
+                m_melee.Target = m_target;
+                var dPos = this.transform.position - m_target.transform.position;
+                m_navAgent.enabled = dPos.magnitude > m_attackRange;
+
+                if (m_navAgent.enabled)
                 {
-                    this.Stop();
-                    m_isAttacking = true;
-                    Debug.Log($"{this.gameObject.GetInstanceID()} : Agent has reached destination. Attacking target.");
+                    m_navAgent.SetDestination(m_target.transform.position);
                 }
-                else
-                {
-                    this.Resume();
-                    m_isAttacking = false;
-                }
+
+                this.RotateToFaceTarget();
             }
+        }
+
+        private void RotateToFaceTarget()
+        {
+            var dPos = (m_target.transform.position - this.transform.position).normalized;
+            dPos.y = 0;
+            var qRot = Quaternion.LookRotation(dPos);
+
+            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, qRot, Time.deltaTime);
         }
     }
 }

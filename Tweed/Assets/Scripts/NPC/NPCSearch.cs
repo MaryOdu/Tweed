@@ -20,7 +20,7 @@ namespace Assets.Scripts.Enemy
         Level
     }
 
-    internal class GuardSearch : MonoBehaviour
+    internal class NPCSearch : MonoBehaviour
     {
         public event EventHandler OnSearchComplete;
 
@@ -33,11 +33,6 @@ namespace Assets.Scripts.Enemy
         /// The agents navmesh
         /// </summary>
         private NavMeshAgent m_agent;
-
-        /// <summary>
-        /// The guards patrol behaviour.
-        /// </summary>
-        private GuardPatrol m_patrol;
 
         /// <summary>
         /// The current list of earch points.
@@ -98,24 +93,15 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        public float Velocity
-        {
-            get
-            {
-                return m_agent?.velocity.magnitude ?? 0;
-            }
-        }
-
         /// <summary>
         /// Constructor
         /// </summary>
-        public GuardSearch()
+        public NPCSearch()
         {
             m_searchQueue = new Queue<Vector3>();
             m_localSearchRadius = 10.0f;
             m_searchRadius = 100.0f;
             m_searchArea = SearchArea.Local;
-
 
             m_updateTimer = new GameTimer();
             m_updateTimer.OnTimerElapsed += this.UpdateTimer_OnTimerElapsed;
@@ -130,9 +116,7 @@ namespace Assets.Scripts.Enemy
             m_updateTimer.SetTimeSpan(TimeSpan.FromSeconds(m_updateTime));
             m_updateTimer.Start();
 
-            m_patrol = this.GetComponent<GuardPatrol>();
             m_agent = this.GetComponent<NavMeshAgent>();
-            m_searchPoints = m_patrol.PatrolPoints;
         }
 
         /// <summary>
@@ -141,6 +125,22 @@ namespace Assets.Scripts.Enemy
         private void Update()
         {
             m_updateTimer.Tick();
+        }
+
+        private void OnEnable()
+        {
+            if (m_agent != null)
+            {
+                m_agent.enabled = true;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (m_agent != null)
+            {
+                m_agent.enabled = false;
+            }
         }
 
         /// <summary>
@@ -201,9 +201,30 @@ namespace Assets.Scripts.Enemy
         /// <summary>
         /// Agent will search through the entire level.
         /// </summary>
-        public void SearchLargeArea()
+        public void SearchNearbyArea()
         {
             m_searchPoints = this.GetNavPointsInRadius(m_searchRadius);
+
+            if (m_searchPoints.Count < 1)
+            {
+                this.OnSearchComplete.Invoke(this, EventArgs.Empty);
+            }
+
+            this.SearchPatrol();
+        }
+
+        /// <summary>
+        /// Agent will search through the entire level.
+        /// </summary>
+        public void SearchLargeArea()
+        {
+            m_searchPoints = this.GetNavPointsInRadius(m_searchRadius * 3);
+
+            if (m_searchPoints.Count < 1)
+            {
+                this.OnSearchComplete.Invoke(this, EventArgs.Empty);
+            }
+
             this.SearchPatrol();
         }
 
@@ -246,7 +267,7 @@ namespace Assets.Scripts.Enemy
                     else if (m_searchArea == SearchArea.Patrol)
                     {
                         Debug.Log("Searching local area");
-                        this.SearchLargeArea();
+                        this.SearchNearbyArea();
                     }
                     else
                     {

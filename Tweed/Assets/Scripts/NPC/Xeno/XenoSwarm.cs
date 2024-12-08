@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.NPC.Xeno
 {
@@ -75,19 +77,22 @@ namespace Assets.Scripts.NPC.Xeno
         private float m_rotationSpeed;
 
         [SerializeField]
+        [Range(0, 180)]
+        private float m_sightAngle;
+
+        [SerializeField]
         [ReadOnly(true)]
         private float m_boredom;
 
         private float m_movementSpeed;
         private Rigidbody m_rigidBody;
-
+        private NavMeshAgent m_agent;
         private List<XenoAI> m_swarm;
         private List<Scent> m_smells;
         private Queue<Vector3> m_lastKnownPositions;
 
         private GameTimer m_thinkTimer;
 
-        [SerializeField]
         private float m_updateInterval;
 
 
@@ -105,11 +110,11 @@ namespace Assets.Scripts.NPC.Xeno
 
         public XenoSwarm()
         {
-            m_swarmRadius = 100.0f;
+            m_swarmRadius = 20.0f;
             m_swarmSeperation = 3.0f;
             m_rotationSpeed = 10.0f;
             m_movementSpeed = 1.0f;
-            m_updateInterval = 1.0f;
+            m_updateInterval = 0.5f;
 
             m_coherance = 20;
             m_alignment = 20;
@@ -120,30 +125,42 @@ namespace Assets.Scripts.NPC.Xeno
             m_objectSightRange = 10;
             m_boredom = 0;
             m_smellRadius = 100.0f;
+            m_sightAngle = 45f;
 
-            m_thinkTimer = new GameTimer(TimeSpan.FromSeconds(m_updateInterval));
-            m_thinkTimer.OnTimerElapsed += this.ThinkTimer_OnTimerElapsed;
             m_swarm = new List<XenoAI>();
             m_smells = new List<Scent>();
             m_lastKnownPositions = new Queue<Vector3>(LastKnownPositionSize);
+
+            m_thinkTimer = new GameTimer(TimeSpan.FromSeconds(m_updateInterval));
+            m_thinkTimer.OnTimerElapsed += this.ThinkTimer_OnTimerElapsed;
         }
 
         protected void Start()
         {
             m_rigidBody = this.GetComponent<Rigidbody>();
 
+            m_agent = this.GetComponent<NavMeshAgent>();
+
+            m_thinkTimer.SetTimeSpan(TimeSpan.FromSeconds(m_updateInterval + Random.value));
             m_thinkTimer.Start();
         }
 
         private void Update()
         {
+            if (m_agent.enabled)
+            {
+                m_agent.enabled = false;
+            }
+
             m_thinkTimer.Tick();
 
+            var forward = this.transform.forward;
             var separation = this.GetSeperationDirection(m_swarm);
             var objSeparation = this.GetCollisionAvoidanceDirection();
             var swarmDir = this.GetSwarmDirection(m_swarm);
             var cohesion = this.GetCohesionDirection(m_swarm);
-            var noise = new Vector3(m_rigidBody.velocity.x + UnityEngine.Random.Range(-1, 1), 0, m_rigidBody.velocity.z +  UnityEngine.Random.Range(-1, 1)).normalized;
+            var fwd = m_rigidBody.velocity.magnitude > 0.0f ? m_rigidBody.velocity : this.transform.forward;
+            var noise = new Vector3(fwd.x + UnityEngine.Random.Range(-1, 1), 0, fwd.z +  UnityEngine.Random.Range(-1, 1)).normalized;
             var smell = this.GetSmellDirection(m_smells);
 
             var dir = Vector3.zero;
@@ -156,8 +173,8 @@ namespace Assets.Scripts.NPC.Xeno
             dir += objSeparation * m_collisionAvoidance;
             dir += swarmDir * m_alignment;
             dir += (cohesion * m_coherance) * (1f - m_boredom);
-            dir += noise * m_noise;
-            dir += smell * m_smell;
+            dir += noise * m_noise * (1f + m_boredom);
+            dir += smell * m_smell * (1f - m_boredom);
 
             m_swarmRadius += 0.01f;
             m_swarmRadius = Mathf.Clamp(m_swarmRadius, 5, 100);
@@ -175,7 +192,7 @@ namespace Assets.Scripts.NPC.Xeno
                 {
                     var deltaV = scent.transform.position - this.transform.position;
                     var distance = deltaV.sqrMagnitude;
-                    result += (scent.XenoAttraction * 1/distance) * deltaV;
+                    result += (scent.GetXenoAttraction(this.gameObject) * 1/distance) * deltaV;
                 }
 
             }
@@ -215,22 +232,21 @@ namespace Assets.Scripts.NPC.Xeno
             {
                 var dV = this.transform.position - hitInfo1.point;
                 var distance = dV.magnitude;
-                result += (dV * 1/distance);
-
+                result += (dV * 1 / distance);
             }
 
             if (hitfr)
             {
-                var dV = this.transform.position - hitInfo2.point;
-                var distance = dV.magnitude;
-                result += (dV * 1 / distance);
-            }
-
-            if (hitfl)
-            {
                 var dV = this.transform.position - hitInfo3.point;
                 var distance = dV.magnitude;
+
                 result += (dV * 1 / distance);
+            }
+            else if (hitfl)
+            {
+                var dV = this.transform.position - hitInfo2.point;
+                var distance = dV.magnitude;
+                result += this.transform.right;
             }
 
             return result.normalized;
@@ -378,11 +394,16 @@ namespace Assets.Scripts.NPC.Xeno
 
             foreach (var obj in nearByXenoObjects)
             {
-                var xAi = obj.GetComponent<XenoAI>();
+                var canSeeFriendly = AIHelper.CanSeeObject(this.gameObject, obj.gameObject, m_swarmRadius, m_sightAngle, LayerMask.GetMask("Xeno"), true);
 
-                if (xAi != null)
+                if (canSeeFriendly)
                 {
-                    result.Add(xAi);
+                    var xAi = obj.GetComponent<XenoAI>();
+
+                    if (xAi != null)
+                    {
+                        result.Add(xAi);
+                    }
                 }
             }
 

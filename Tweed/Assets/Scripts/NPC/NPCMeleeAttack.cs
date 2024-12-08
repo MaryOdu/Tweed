@@ -11,12 +11,7 @@ namespace Assets.Scripts.NPC
 {
     public class NPCMeleeAttack : MonoBehaviour
     {
-        public event EventHandler OnAttack;
-
-        private NPCAgent m_agent;
-
-        //[SerializeField]
-        //private float m_attackRange;
+        private GameObject m_target;
 
         [SerializeField]
         private float m_attackDamage;
@@ -24,9 +19,38 @@ namespace Assets.Scripts.NPC
         [SerializeField]
         private float m_attackCooldown;
 
+        private float m_attackRange;
+
         private GameTimer m_attackCooldownTimer;
 
         private bool m_canAttack;
+        private bool m_isAttacking;
+
+        public GameObject Target
+        {
+            get
+            {
+                return m_target;
+            }
+            set
+            {
+                m_target = value;
+            }
+        }
+
+        public float AttackRange
+        {
+            get
+            {
+                return m_attackRange;
+            }
+            set
+            {
+                m_attackRange = value;
+            }
+        }
+
+        public bool IsAttacking => m_isAttacking;
 
         public NPCMeleeAttack()
         {
@@ -40,37 +64,60 @@ namespace Assets.Scripts.NPC
         private void Start()
         {
             m_canAttack = true;
-
             m_attackCooldownTimer.SetTimeSpan(TimeSpan.FromSeconds(m_attackCooldown));
-
-            m_agent = this.GetComponent<NPCAgent>();
         }
 
         private void Update()
         {
+            
             m_attackCooldownTimer.Tick();
+
+            this.ProcessAttack();
+        }
+
+        private void ProcessAttack()
+        {
+            if (!m_canAttack || m_target == null)
+            {
+                m_isAttacking = false;
+                return;
+            }
+
+            var health = m_target.GetComponent<Health>();
+
+            if (health != null)
+            {
+                // ATTACK!
+                health.RemoveHealth(m_attackDamage);
+            }
+
+            var dist = (m_target.transform.position - this.transform.position).magnitude;
+            m_isAttacking = dist <= m_attackRange;
+
+            if (m_isAttacking)
+            {
+                m_attackCooldownTimer.Start();
+                m_canAttack = false;
+
+            }
         }
 
         private void AttackCooldownTimer_OnTimerElapsed(object sender, TimerElapsedEventArgs e)
         {
-            m_canAttack = true;
             m_attackCooldownTimer.ResetTimer();
-            m_attackCooldownTimer.Stop();
-        }
 
-        private void OnTriggerStay(Collider other)
-        {
-            var rhsObj = other.gameObject;
-            var isTarget = m_agent.CheckIfGameObjectIsTarget(rhsObj);
-            var health = rhsObj.GetComponent<Health>();
-
-            if (isTarget && m_canAttack && health != null)
+            if (m_target == null)
             {
-                // ATTACK!
-                m_canAttack = false;
-                health.RemoveHealth(m_attackDamage);
-                m_attackCooldownTimer.Start();
-                this.OnAttack?.Invoke(this, EventArgs.Empty);
+                return;
+            }
+
+            var dirV = m_target.transform.position - this.transform.position;
+            m_canAttack = dirV.magnitude < m_attackRange;
+
+            if (m_canAttack)
+            {
+                m_attackCooldownTimer.Stop();
+                m_canAttack = true;
             }
         }
     }

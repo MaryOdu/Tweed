@@ -138,7 +138,7 @@ namespace Assets.Scripts.NPC.Sentry
                     continue;
                 }
 
-                var canSeeTarget = AIHelper.CanSeeObject(this.gameObject, target, this.SightRange, this.SightAngle, true);
+                var canSeeTarget = AIHelper.CanSeeObject(this.gameObject, target, this.SightRange, this.SightAngle, LayerMask.GetMask("Default"), true);
                 m_state = canSeeTarget ? SentryState.Alert : SentryState.Passive;
 
                 if (canSeeTarget)
@@ -166,6 +166,7 @@ namespace Assets.Scripts.NPC.Sentry
         /// </summary>
         private void UpdateSentryAlert()
         {
+            m_currentLookAtTarget = m_target;
             this.RotateToFaceTarget(m_target, m_alertRotationSpeed);
             this.AlertGuards();
         }

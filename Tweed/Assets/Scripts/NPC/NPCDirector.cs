@@ -83,7 +83,7 @@ public class NPCDirector : MonoBehaviour
     public bool RemoveTarget(GameObject target)
     {
         var key = target.GetInstanceID();
-        var removedCount = m_targets.RemoveAll(x => x.GetInstanceID() == key);
+        var removedCount = m_targets.RemoveAll(x => x == null || x.GetInstanceID() == key);
         this.UpdateAgentTargets();
         this.UpdateAllAgentLights();
 
@@ -109,7 +109,10 @@ public class NPCDirector : MonoBehaviour
 
         foreach (var target in m_targets)
         {
-            agent.AddTarget(target);
+            if (target != null)
+            {
+                agent.AddTarget(target);
+            }
         }
     }
 

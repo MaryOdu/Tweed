@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/XenoAgent_TestScene.unity
+    path: Assets/Scenes/TestScenes/XenoSwarm_TestScene.unity
     guid: 9cc858d7dbad1b344a14d48467e914e0
   - enabled: 1
     path: Assets/Scenes/MainScenes.unity

@@ -1,3 +1,4 @@
+using Assets.Scripts.NPC;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Assets.Scripts.Enemy
         /// <summary>
         /// The navmesh agent.
         /// </summary>
-        private NavMeshAgent m_agent;
+        private NavMeshAgent m_navAgent;
 
         /// <summary>
         /// The index of the current patrol point.
@@ -44,14 +45,6 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        public float Velocity
-        {
-            get
-            {
-                return m_agent?.velocity.magnitude ?? 0;
-            }
-        }
-
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -63,16 +56,31 @@ namespace Assets.Scripts.Enemy
         // Start is called before the first frame update
         private void Start()
         {
-            m_agent = GetComponent<NavMeshAgent>();
+            m_navAgent = GetComponent<NavMeshAgent>();
             m_patrolPoints = m_patrolPoints.Where(x => x != null).ToList();
+        }
+
+        private void OnEnable()
+        {
+            if (m_navAgent == null)
+            {
+                m_navAgent = GetComponent<NavMeshAgent>();
+            }
+
+            m_navAgent.enabled = true;
+        }
+
+        private void OnDisable()
+        {
+            m_navAgent.enabled = false;
         }
 
         // Update is called once per frame
         private void Update()
         {
-            if (m_agent.remainingDistance <= m_agent.stoppingDistance)
+            if (m_navAgent.remainingDistance <= m_navAgent.stoppingDistance)
             {
-                if (!m_agent.hasPath || m_agent.velocity.sqrMagnitude == 0f)
+                if (!m_navAgent.hasPath || m_navAgent.velocity.sqrMagnitude == 0f)
                 {
                     Debug.Log($"{gameObject.GetInstanceID()} : Agent has reached destination.");
 
@@ -80,7 +88,7 @@ namespace Assets.Scripts.Enemy
 
                     if (nextPoint != null)
                     {
-                        m_agent.destination = nextPoint.transform.position;
+                        m_navAgent.destination = nextPoint.transform.position;
                     }
                 }
             }
