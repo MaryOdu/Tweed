@@ -18,8 +18,13 @@ namespace Assets.Scripts.Environment
         [Range(0f, 1f)]
         private float m_strength;
 
+        /// <summary>
+        /// This is a bit mis-leading. The inner radius is defines the radius of the smell when the xeno is *in* the smell. 
+        /// At this point, the smell no longer has its attractive pull, because they have reached their destination...
+        /// The range at which a xeno can pick up smells is set within the 'XenoSwarm' behaviour.
+        /// </summary>
         [SerializeField]
-        private float m_radius;
+        private float m_innerRadius;
 
         public Scent()
         {
@@ -35,7 +40,7 @@ namespace Assets.Scripts.Environment
 
         private BoundingSphere GetSmellSphere()
         {
-            return new BoundingSphere(this.transform.position, m_radius);
+            return new BoundingSphere(this.transform.position, m_innerRadius);
         }
     }
 }
