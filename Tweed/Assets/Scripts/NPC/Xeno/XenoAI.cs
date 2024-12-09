@@ -254,7 +254,7 @@ public class XenoAI : NPCAgent
         foreach (var target in orderedTargets)
         {
             var sightAngle = m_state == XenoState.Alert ? this.SightAngle * 2 : this.SightAngle;
-            targetSeen = this.QueryAlertedBy() || AIHelper.CanSeeObject(this.gameObject, target, this.SightRange, sightAngle, LayerMask.GetMask("Default"), true);
+            targetSeen = this.QueryAlertedBy() || this.CanSeeTarget(target, LayerMask.GetMask("Default"));
 
             if (targetSeen)
             {

@@ -173,7 +173,7 @@ namespace Assets.Scripts.Enemy
         {
             m_patrolPoints = new List<GameObject>();
             
-            m_attackStopDistance = 3f;
+            m_attackStopDistance = 2f;
             m_stopDistance = 3f;
 
             m_updateSpan = TimeSpan.FromSeconds(0.5);

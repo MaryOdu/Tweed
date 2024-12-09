@@ -16,6 +16,11 @@ namespace Assets.Scripts.Enemy
         private List<GameObject> m_patrolPoints;
 
         /// <summary>
+        /// List of patrol points that form a complete route back and forth
+        /// </summary>
+        private List<GameObject> m_completePatrol;
+
+        /// <summary>
         /// The navmesh agent.
         /// </summary>
         private NavMeshAgent m_navAgent;
@@ -42,6 +47,7 @@ namespace Assets.Scripts.Enemy
             set
             {
                 m_patrolPoints = value;
+                m_completePatrol =  this.CreateCompletePatrol();
             }
         }
 
@@ -58,6 +64,7 @@ namespace Assets.Scripts.Enemy
         {
             m_navAgent = GetComponent<NavMeshAgent>();
             m_patrolPoints = m_patrolPoints.Where(x => x != null).ToList();
+            m_completePatrol = this.CreateCompletePatrol();
         }
 
         private void OnEnable()
@@ -99,18 +106,41 @@ namespace Assets.Scripts.Enemy
             }
         }
 
+        private List<GameObject> CreateCompletePatrol()
+        {
+            var result = new List<GameObject>();
+
+            if (!m_patrolPoints.Any())
+            {
+                return result;
+            }
+
+            var patrolPoints = new List<GameObject>(m_patrolPoints);
+
+            var startEnd = m_patrolPoints[0];
+            var middle = m_patrolPoints[m_patrolPoints.Count - 1];
+
+            result.AddRange(patrolPoints);
+            patrolPoints.Remove(startEnd);
+            patrolPoints.Remove(middle);
+            patrolPoints.Reverse();
+            result.AddRange(patrolPoints);
+
+            return result;
+        }
+
         /// <summary>
         /// Gets the next patrol point
         /// </summary>
         /// <returns>Patrol point game object</returns>
         private GameObject GetNextPatrolPointGameObject()
         {
-            if (m_patrolPoints.Count < 1)
+            if (m_completePatrol.Count < 1)
             {
                 return null;
             }
 
-            if (m_currIdx >= m_patrolPoints.Count - 1)
+            if (m_currIdx >= m_completePatrol.Count - 1)
             {
                 m_currIdx = 0;
             }
@@ -118,13 +148,13 @@ namespace Assets.Scripts.Enemy
             {
                 m_currIdx++;
 
-                while (m_patrolPoints[m_currIdx] == null) // Shouldn't be null, but hey-ho : Might as well check.
+                while (m_completePatrol[m_currIdx] == null) // Shouldn't be null, but hey-ho : Might as well check.
                 {
                     m_currIdx++;
                 }
             }
 
-            return m_patrolPoints[m_currIdx];
+            return m_completePatrol[m_currIdx];
         }
     }
 }
