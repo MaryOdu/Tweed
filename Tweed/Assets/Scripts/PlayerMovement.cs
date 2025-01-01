@@ -28,8 +28,40 @@ public class PlayerMovement : MonoBehaviour
     private bool WalkOn;
 
     public UIMenus Canvas;
-   // public PlayerRespawn PlayerCaught;
-    
+    // public PlayerRespawn PlayerCaught;
+
+    [SerializeField] float WalkableAngleUnder = 40f;
+    [SerializeField] float SlideingSpeed = 20f;
+    private Vector3 floorAngle;
+    private bool IsSliding
+    {
+        get
+        {
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit slopeHit, 1f))
+            {
+                floorAngle = slopeHit.normal;
+                return Vector3.Angle(floorAngle, Vector3.up) > WalkableAngleUnder;
+                /*float groundAngle = Vector3.Angle(slopeHit.normal, Vector3.up);
+
+                Debug.DrawRay(transform.position, Vector3.down, Color.red);
+                if (groundAngle > WalkableAngle)
+                {
+                    Vector3 slideDirection = Vector3.Project(Vector3.down, hit.normal).normalized;
+
+                    m_velocity = slideDirection * Slideing;
+
+                }
+                else
+                {
+
+                }*/
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 
     void Start()
     {
@@ -52,6 +84,9 @@ public class PlayerMovement : MonoBehaviour
                 Canvas.Pause();
             }
         }
+
+     
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -98,6 +133,16 @@ public class PlayerMovement : MonoBehaviour
             SpeedUp = 1.6f;
         }
         if (WalkOn == false || Input.GetKeyUp(KeyCode.LeftShift)) { animator.SetBool("IsRunning", false); SpeedUp = 0.8f;}
+
+        //
+        //When on a slope call bool
+        //
+        if (IsSliding)
+        {
+            m_velocity = new Vector3(floorAngle.x, -floorAngle.y, floorAngle.z) * SlideingSpeed;
+            Debug.Log("Am Slideing");
+        }
+        
     }
 
 }
