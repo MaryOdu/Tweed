@@ -64,6 +64,7 @@ public class UIMenus : MonoBehaviour
 
     public void CaughtScreen()
     {
+        Debug.Log("Player was caught: UI Script");
         Caught = true;
     }
     public void Pause()

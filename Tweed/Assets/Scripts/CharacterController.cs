@@ -35,6 +35,7 @@ namespace Assets.Scripts
 
         private void Health_OnDeath(object sender, EventArgs e)
         {
+            Debug.Log("This calling Respawn: Character controler script");
             //GameObject.Destroy(this.gameObject);
             m_health.SetHealth(100);
             m_spawner.Respawn();
