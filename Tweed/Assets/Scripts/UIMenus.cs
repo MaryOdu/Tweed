@@ -7,11 +7,13 @@ using UnityEngine.UI;
 
 public class UIMenus : MonoBehaviour
 {
-
+    
     [SerializeField] string MainMenu = "Main Menu";
     [SerializeField] string MapScene = "MainScenes";
     [SerializeField] string PlayerScene = "Testing";
     [SerializeField] string NPCScene = "EnemyAgent_Test";
+    private MMAudioContainer MMMusic;
+    private UIMenus m_canvas;
 
     //[SerializeField] GameObject WonGame;
     [SerializeField] GameObject PauseMenu;
@@ -23,6 +25,7 @@ public class UIMenus : MonoBehaviour
 
     void Start()
     {
+
         //too be an audio function call
         if (CaughtMenu != null)
         {
@@ -86,6 +89,7 @@ public class UIMenus : MonoBehaviour
 
     public void LoadMainMenu(string MainMenu)
     {
+        MMMusic.MainMenuAmb();
         SceneManager.LoadScene("MainMenu");
     }
     public void LoadPlayerScene(string Testing)
