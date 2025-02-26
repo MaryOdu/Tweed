@@ -14,7 +14,8 @@ namespace Assets.Scripts.Enemy
         /// </summary>
         private Animator m_animator;
         private Rigidbody m_rigidBody;
-
+        [SerializeField] AudioSource WalkSound;
+        [SerializeField] AudioSource RunSound;
         /// <summary>
         /// The AI/Behaviour/Agent associated with this guard/npc.
         /// </summary>
@@ -57,6 +58,8 @@ namespace Assets.Scripts.Enemy
             if (m_agent.IsStopped)
             {
                 m_animator.Play("Idle");
+                WalkSound.Pause();
+                //RunSound.Pause();
 
                 //m_animator.SetBool("IsIdle", true);
 
@@ -74,12 +77,16 @@ namespace Assets.Scripts.Enemy
                 {
                     case GuardState.Patrol:
                         m_animator.Play("WalkForwardArmed");
+                        WalkSound.Play();
+                        RunSound.Pause();
                         //m_animator.SetBool("IsPatroling", true);
                         //m_animator.SetBool("IsSearching", false);
                         //m_animator.SetBool("IsChasing", false);
                         break;
                     case GuardState.Search:
                         m_animator.Play("WalkForwardAiming");
+                        WalkSound.Play();
+                        //RunSound.Pause();
                         //m_animator.SetBool("IsSearching", true);
                         //m_animator.SetBool("IsPatroling", false);
                         //m_animator.SetBool("IsChasing", false);
@@ -87,7 +94,8 @@ namespace Assets.Scripts.Enemy
                     case GuardState.Alert:
 
                         m_animator.Play("RunArmed");
-
+                        //RunSound.Play();
+                        //WalkSound.Pause();
                         //m_animator.SetBool("IsChasing", !m_agent.IsAttacking);
                         //m_animator.SetBool("IsAttacking", m_agent.IsAttacking);
                         //m_animator.SetBool("IsPatroling", false);

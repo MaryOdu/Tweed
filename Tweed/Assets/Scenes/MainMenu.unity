@@ -16506,7 +16506,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2072697491}
         m_TargetAssemblyTypeName: UIMenus, Assembly-CSharp
-        m_MethodName: LoadMainScenes
+        m_MethodName: LoadMainGameScenes
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19425,7 +19425,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
