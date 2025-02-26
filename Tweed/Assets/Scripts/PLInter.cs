@@ -11,16 +11,13 @@ public class PLInter : MonoBehaviour
     [SerializeField] bool interactable;
 
     [SerializeField] bool InterOnce = false;
-    //[SerializeField] GameObject DoorL;
-    //[SerializeField] GameObject DoorR;
     [SerializeField] bool Gates;
     [SerializeField] bool TargetSwap;
+    [SerializeField] AudioSource InteractingSound;
 
     [SerializeField]
     private NPCDirector npcDirector;
     private GameObject currentPlayer;
-
-    // public GameObject Door;
 
     public Gateway happen;
     public Gateway happen2;
@@ -52,9 +49,6 @@ public class PLInter : MonoBehaviour
     }
     private void Update()
     {
-
-        //need to call only the one gate in question
-
         if (Gates == true)
         {
             if ((interactable == true) && (InterOnce == false))
@@ -62,6 +56,7 @@ public class PLInter : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    InteractingSound.Play();
                     InterOnce = true;
                     happen.Open(); 
                     happen2.Open();
@@ -76,18 +71,15 @@ public class PLInter : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     InterOnce = true;
+                    InteractingSound.Play();
 
                     if (currentPlayer != null)
                     {
                         npcDirector.RemoveTarget(currentPlayer);
                     }
-
-                    
                     Debug.Log("change target");
-
                 }
             }
         }
-
     }
 }
