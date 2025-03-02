@@ -13,7 +13,8 @@ public class UIMenus : MonoBehaviour
     [SerializeField] string Testing = "AnimationTesting";
     [SerializeField] string Prototype_Level = "EnemyAgent_Test";
     public MMAudioCon MMMusic;
- 
+    public MGAudioCon MGMusic;
+
 
     //[SerializeField] GameObject WonGame;
     [SerializeField] GameObject PauseMenu;
@@ -76,7 +77,7 @@ public class UIMenus : MonoBehaviour
 
     public void LoadMainMenu(string MainMenu){SceneManager.LoadScene("MainMenu");}
     // MMMusic.PlayMainMenu();
-    public void LoadMainGameScenes(string MainScenes) {SceneManager.LoadScene("MainScenes"); MMMusic.PuaseMainMenu(); }
+    public void LoadMainGameScenes(string MainScenes) {SceneManager.LoadScene("MainScenes"); MMMusic.PuaseMainMenu(); MGMusic.PlayGameAmbiance(); }
     public void LoadAnimationTesting(string Testing){SceneManager.LoadScene("Testing");}
     public void LoadPrototype_Level(string Prototype_Level) {SceneManager.LoadScene("Prototype_Level");}
     public void LoadLeaveGame(string ExitGame){Application.Quit();}

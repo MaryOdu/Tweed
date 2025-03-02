@@ -11,23 +11,12 @@ public class MMAudioCon : MonoBehaviour
     //In the player/mobs call their respective audio scrips and when action performs call the named function in them to play
 
 
-    public void PlayButtonGoSound()
-    {
-        ButtonGoSound.Play();
-    }
-    public void PauseButtonGoSound()
-    {
-        ButtonGoSound.Pause();
-    }
+    public void PlayButtonGoSound(){ButtonGoSound.Play();}
+    public void PauseButtonGoSound(){ButtonGoSound.Pause();}
 
-    public void PlayMainMenu()
-    {
-        MainMenuAmb.Play();
-    }
-    public void PuaseMainMenu()
-    {
-        MainMenuAmb.Pause();
-    }
+    public void PlayMainMenu(){ MainMenuAmb.Play();}
+    public void PuaseMainMenu(){ MainMenuAmb.Pause();}
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +27,6 @@ public class MMAudioCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //AmbiantSound.GetComponent<PlayerMovement>().AmbiantS();
-        // WalkingSound.GetComponent<PlayerMovement>().WalkingS();
-        //EatingSound.GetComponent<PlayerAnimations>().EatS();
+
     }
 }
