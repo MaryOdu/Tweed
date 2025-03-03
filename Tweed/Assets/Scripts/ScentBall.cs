@@ -1,0 +1,43 @@
+using Assets.Scripts.Util;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ScentBall : MonoBehaviour
+{
+    [SerializeField] GameObject Player;
+    [SerializeField] GameObject ScentBomb;
+    [SerializeField] GameObject BallSpawn;
+    private GameObject Canister;
+
+    private bool OneBall = false;
+    private float RotateXSpeed = 80f;
+    private float RotateZSpeed = 32f;
+
+
+
+    void Start()
+    {
+       
+        
+        Canister = Player.FindChild("ScentOrbPos");
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && OneBall == false)
+        {
+            transform.SetParent(Canister.transform);
+
+            transform.localPosition = Vector3.zero;
+            OneBall = true;
+        }
+    }
+
+    // Update is called once per frame
+    void LateUpdate()
+    {
+        ScentBomb.transform.Rotate(Vector3.right, RotateXSpeed * Time.deltaTime);
+        ScentBomb.transform.Rotate(Vector3.up, RotateZSpeed * Time.deltaTime);
+    }
+}
