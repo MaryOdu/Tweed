@@ -1,0 +1,57 @@
+# Blender 4.2.0 MTL File: 'None'
+# www.blender.org
+
+newmtl RoofSG
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/RoofSG_baseColor.png
+map_Bump -bm 1.000000 C:/RoofSG_normal.png
+
+newmtl WallSG
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/WallSG_baseColor.png
+map_Bump -bm 1.000000 C:/WallSG_normal.png
+
+newmtl WoodSG
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/WoodSG_baseColor.png
+map_Bump -bm 1.000000 C:/WoodSG_normal.png
+
+newmtl initialShadingGroup
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/initialShadingGroup_baseColor.png
+map_d C:/initialShadingGroup_baseColor.png
+map_Bump -bm 1.000000 C:/initialShadingGroup_normal.png
+
+newmtl polySurface3SG
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/polySurface3SG_baseColor.png
+map_Bump -bm 1.000000 C:/polySurface3SG_normal.png
