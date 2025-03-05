@@ -7,10 +7,11 @@ public class ScentBall : MonoBehaviour
 {
     [SerializeField] GameObject Player;
     [SerializeField] GameObject ScentBomb;
-    [SerializeField] GameObject BallSpawn;
+    [SerializeField] GameObject BallSpawner;
     private GameObject Canister;
+    //private CharacterController PlayerControls;
 
-    private bool OneBall = false;
+    public bool OneBall = false;
     private float RotateXSpeed = 80f;
     private float RotateZSpeed = 32f;
 
@@ -30,6 +31,8 @@ public class ScentBall : MonoBehaviour
             transform.SetParent(Canister.transform);
 
             transform.localPosition = Vector3.zero;
+
+            //Send player controls value that they still hold a ball PlayerControls
             OneBall = true;
         }
     }
@@ -39,5 +42,13 @@ public class ScentBall : MonoBehaviour
     {
         ScentBomb.transform.Rotate(Vector3.right, RotateXSpeed * Time.deltaTime);
         ScentBomb.transform.Rotate(Vector3.up, RotateZSpeed * Time.deltaTime);
+    }
+
+    public void BallReturn()
+    {
+        transform.SetParent(BallSpawner.transform);
+
+        transform.localPosition = Vector3.zero;
+        OneBall = false;
     }
 }

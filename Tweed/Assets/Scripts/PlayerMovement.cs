@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float WalkableAngleUnder = 40f;
     [SerializeField] float SlideingSpeed = 20f;
     private Vector3 floorAngle;
+
+    public ScentBall ScentShot;
     private bool IsSliding
     {
         get
@@ -72,8 +74,9 @@ public class PlayerMovement : MonoBehaviour
         m_rigidBody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 
-      
-    }
+        ScentShot.GetComponent<ScentBall>();
+
+}
 
     void Update()
     {
@@ -85,8 +88,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-     
-        
+        if (Input.GetMouseButtonDown(0) && ScentShot.OneBall == true)
+        {
+            ScentShot.BallReturn();
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
