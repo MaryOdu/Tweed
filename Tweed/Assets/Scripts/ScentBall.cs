@@ -12,6 +12,12 @@ public class ScentBall : MonoBehaviour
     private GameObject Canister;
     [SerializeField] PlayerMovement PlayerControls;
 
+    [SerializeField] float ShotStrength = 10f;
+    [SerializeField] Transform FirePoint;
+    //private Vector3 FireDirection = Vector3.up;
+    private float YPlus = 1f;
+    private float ZPlus = -1f;
+
     public bool OneBall = false;
     private float RotateXSpeed = 80f;
     private float RotateZSpeed = 32f;
@@ -20,12 +26,10 @@ public class ScentBall : MonoBehaviour
 
     void Start()
     {
-       
-        
+
         Canister = Player.FindChild("ScentOrbPos");
         PlayerControls.GetComponent<PlayerMovement>();
 
-        //BallSpawner = BallSpawner.FindParent()
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -40,6 +44,18 @@ public class ScentBall : MonoBehaviour
             //Send player controls value that they still hold a ball PlayerControls
 
         }
+
+        if (other.CompareTag("Turrain"))
+        {
+            transform.SetParent(BallSpawner.transform);
+
+            transform.localPosition = Vector3.zero;
+            Rigidbody rb = ScentBomb.GetComponent<Rigidbody>();
+            rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+            //rb.constraints = RigidbodyConstraints.FreezePositionY;
+            //rb.constraints = RigidbodyConstraints.FreezePositionZ;
+           
+        }
     }
 
     // Update is called once per frame
@@ -47,13 +63,23 @@ public class ScentBall : MonoBehaviour
     {
         ScentBomb.transform.Rotate(Vector3.right, RotateXSpeed * Time.deltaTime);
         ScentBomb.transform.Rotate(Vector3.up, RotateZSpeed * Time.deltaTime);
+
+        
     }
 
     public void BallReturn()
     {
-        transform.SetParent(BallSpawner.transform);
+        Vector3 FireDirection = new Vector3(0f, YPlus, ZPlus);
+        Rigidbody rb = ScentBomb.GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.None;
+        Vector3 FireAngle = FirePoint.TransformDirection(FireDirection);
+        if (rb != null)
+        {
 
-        transform.localPosition = Vector3.zero;
-        
+            transform.SetParent(null);
+            rb.AddForce(FireAngle * ShotStrength, ForceMode.Impulse);
+        }
+
+
     }
 }
