@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 floorAngle;
 
     public ScentBall ScentShot;
+    public bool PlayerShot = false;
     private bool IsSliding
     {
         get
@@ -74,10 +75,15 @@ public class PlayerMovement : MonoBehaviour
         m_rigidBody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 
-        ScentShot.GetComponent<ScentBall>();
+        //ScentShot.GetComponent<ScentBall>();
 
-}
+    }
 
+    public void YouHaveBall()
+    {
+        PlayerShot = true;
+        ScentShot = GetComponentInChildren<ScentBall>();
+    }
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -88,13 +94,15 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0) && ScentShot.OneBall == true)
+        if (Input.GetMouseButtonDown(0) && PlayerShot == true)
         {
             ScentShot.BallReturn();
+            PlayerShot = false;
+            ScentShot = null;
         }
 
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("XenoAttack"))

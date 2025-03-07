@@ -1,4 +1,5 @@
 using Assets.Scripts.Util;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class ScentBall : MonoBehaviour
     [SerializeField] GameObject ScentBomb;
     [SerializeField] GameObject BallSpawner;
     private GameObject Canister;
-    //private CharacterController PlayerControls;
+    [SerializeField] PlayerMovement PlayerControls;
 
     public bool OneBall = false;
     private float RotateXSpeed = 80f;
@@ -22,18 +23,22 @@ public class ScentBall : MonoBehaviour
        
         
         Canister = Player.FindChild("ScentOrbPos");
+        PlayerControls.GetComponent<PlayerMovement>();
 
+        //BallSpawner = BallSpawner.FindParent()
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && OneBall == false)
+        if (other.CompareTag("Player") && PlayerControls.PlayerShot == false)
         {
             transform.SetParent(Canister.transform);
 
             transform.localPosition = Vector3.zero;
+           
 
+            PlayerControls.YouHaveBall();
             //Send player controls value that they still hold a ball PlayerControls
-            OneBall = true;
+
         }
     }
 
@@ -49,6 +54,6 @@ public class ScentBall : MonoBehaviour
         transform.SetParent(BallSpawner.transform);
 
         transform.localPosition = Vector3.zero;
-        OneBall = false;
+        
     }
 }
