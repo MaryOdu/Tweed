@@ -23,7 +23,7 @@ public class SpawnEffect : MonoBehaviour {
         var main = ps.main;
         main.duration = spawnEffectTime;
 
-        ps.Play();
+        //ps.Play();
 
     }
 	
@@ -35,12 +35,17 @@ public class SpawnEffect : MonoBehaviour {
         }
         else
         {
-            ps.Play();
+            //ps.Play();
             timer = 0;
         }
 
 
         _renderer.material.SetFloat(shaderProperty, fadeIn.Evaluate( Mathf.InverseLerp(0, spawnEffectTime, timer)));
         
+    }
+
+    public void PlayEffect()
+    {
+        ps.Play();
     }
 }
