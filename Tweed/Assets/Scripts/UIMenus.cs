@@ -7,11 +7,14 @@ using UnityEngine.UI;
 
 public class UIMenus : MonoBehaviour
 {
-
+    
     [SerializeField] string MainMenu = "Main Menu";
-    [SerializeField] string MapScene = "MainScenes";
-    [SerializeField] string PlayerScene = "Testing";
-    [SerializeField] string NPCScene = "EnemyAgent_Test";
+    [SerializeField] string MainScenes = "MainGameScene";
+    [SerializeField] string Testing = "AnimationTesting";
+    [SerializeField] string Prototype_Level = "EnemyAgent_Test";
+    public MMAudioCon MMMusic;
+    public MGAudioCon MGMusic;
+
 
     //[SerializeField] GameObject WonGame;
     [SerializeField] GameObject PauseMenu;
@@ -38,16 +41,6 @@ public class UIMenus : MonoBehaviour
 
     private void Update()
     {
-        /*if (WonTrue == true)
-        {
-            EndTime -= Time.deltaTime;
-            if (EndTime <= 0)
-            {
-                SceneManager.LoadScene("MainMenu");
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-            }
-        }*/
         if (CaughtMenu != null && Caught == true)
         {
             CaughtMenu.SetActive(true);
@@ -64,6 +57,7 @@ public class UIMenus : MonoBehaviour
 
     public void CaughtScreen()
     {
+        Debug.Log("Player was caught: UI Script");
         Caught = true;
     }
     public void Pause()
@@ -73,8 +67,6 @@ public class UIMenus : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-
-
     public void Continue()
     {
         PauseMenu.SetActive(false);
@@ -83,23 +75,11 @@ public class UIMenus : MonoBehaviour
         Cursor.visible = false;
     }
 
-    public void LoadMainMenu(string MainMenu)
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-    public void LoadPlayerScene(string Testing)
-    {
-        SceneManager.LoadScene("Testing");
-    }
-
-    public void LoadMainScenes(string Testing)
-    {
-        SceneManager.LoadScene("Prototype_Level");
-    }
-
-    public void LoadLeaveGame(string ExitGame)
-    {
-        Application.Quit();
-    }
+    public void LoadMainMenu(string MainMenu){SceneManager.LoadScene("MainMenu");}
+    // MMMusic.PlayMainMenu();
+    public void LoadMainGameScenes(string MainScenes) {SceneManager.LoadScene("MainScenes"); MMMusic.PuaseMainMenu(); MGMusic.PlayGameAmbiance(); }
+    public void LoadAnimationTesting(string Testing){SceneManager.LoadScene("Testing");}
+    public void LoadPrototype_Level(string Prototype_Level) {SceneManager.LoadScene("Prototype_Level");}
+    public void LoadLeaveGame(string ExitGame){Application.Quit();}
 
 }

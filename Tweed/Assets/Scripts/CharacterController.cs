@@ -15,6 +15,7 @@ namespace Assets.Scripts
         private PlayerRespawn m_spawner;
 
         private Health m_health;
+        
 
         public CharacterController()
         {
@@ -24,6 +25,9 @@ namespace Assets.Scripts
         private void Start()
         {
             m_health = this.GetComponent<Health>();
+            
+
+           
 
             if (m_health == null)
             {
@@ -35,9 +39,12 @@ namespace Assets.Scripts
 
         private void Health_OnDeath(object sender, EventArgs e)
         {
+            Debug.Log("This calling Respawn: Character controler script");
             //GameObject.Destroy(this.gameObject);
             m_health.SetHealth(100);
             m_spawner.Respawn();
         }
+
+      
     }
 }

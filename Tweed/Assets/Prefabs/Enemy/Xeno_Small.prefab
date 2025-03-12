@@ -1993,8 +1993,8 @@ MonoBehaviour:
   m_director: {fileID: 0}
   m_sightRange: 15
   m_sightAngle: 45
+  m_eyes: []
   m_state: 0
-  NPCAttHitBox: {fileID: 0}
   m_patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -2003,7 +2003,7 @@ MonoBehaviour:
   m_alertSpeed: 5
   m_targetLastSeenTime: 0
   m_stopDistance: 3
-  m_attackStopDistance: 8
+  m_attackStopDistance: 3
 --- !u!114 &6715716093232369421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2032,6 +2032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f13b0e4dd261469991b2b8b0568e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WalkSound: {fileID: 0}
+  RunSound: {fileID: 0}
 --- !u!114 &4746852071042935833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2073,6 +2075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
   m_localSearchRadius: 10
+  m_searchRadius: 100
 --- !u!65 &1315786695704769037
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2120,6 +2123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ec1fdbf2727744986c148b2636f802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spawner: {fileID: 0}
 --- !u!114 &8280467572845395525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2352,7 +2356,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 5639
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.82e-43, y: 1.16e-43, z: 0, w: -30214.234}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0

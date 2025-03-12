@@ -19,11 +19,12 @@ public class PlayerRespawn : MonoBehaviour
 
     [SerializeField]
     private UIMenus m_canvas;
+    [SerializeField] SpawnEffect Effect;
 
-    public PlayerRespawn()
-    {
-        
-    }
+    //public PlayerRespawn()
+    //{
+
+    //}
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +50,7 @@ public class PlayerRespawn : MonoBehaviour
                 m_player.transform.position = spawnPoint.transform.position;
                 if (TimeToRespawn <= 0f)
                 {
-
+                    Effect.PlayEffect();
                     m_plyerMove.enabled = true;
                     m_playerBody.SetActive(true);
                     m_playerSpawn = false;
@@ -61,6 +62,7 @@ public class PlayerRespawn : MonoBehaviour
 
     public void Respawn()
     {
+        Debug.Log("Calling caught screen: Player Respawn script");
         m_canvas.CaughtScreen();
         m_plyerMove.enabled = false;
         m_playerBody.SetActive(false);
