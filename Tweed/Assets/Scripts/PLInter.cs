@@ -15,9 +15,9 @@ public class PLInter : MonoBehaviour
     [SerializeField] bool TargetSwap;
     [SerializeField] AudioSource InteractingSound;
 
-    [SerializeField]
-    private NPCDirector npcDirector;
-    private GameObject currentPlayer;
+    [SerializeField] NPCDirector npcDirector;
+    [SerializeField] GameObject currentPlayer;
+    //[SerializeField] NPCDirector NewDirector;
 
     public Gateway happen;
     public Gateway happen2;
@@ -34,7 +34,7 @@ public class PLInter : MonoBehaviour
             IntText.SetActive(true);
             interactable = true;
 
-            currentPlayer = other.gameObject;
+            //currentPlayer = other.gameObject;
         }
     }
     void OnTriggerExit(Collider other)
@@ -44,7 +44,7 @@ public class PLInter : MonoBehaviour
             IntText.SetActive(false);
             interactable = false;
 
-            currentPlayer = other.gameObject;
+            //currentPlayer = other.gameObject;
         }
     }
     private void Update()
@@ -65,7 +65,7 @@ public class PLInter : MonoBehaviour
         }
         if (TargetSwap == true)
         {
-            if ((interactable == true) /*&& (InterOnce == false)*/)
+            if ((interactable == true) && (InterOnce == false))
             {
 
                 if (Input.GetKeyDown(KeyCode.E))
@@ -73,10 +73,13 @@ public class PLInter : MonoBehaviour
                     InterOnce = true;
                     InteractingSound.Play();
 
-                    if (currentPlayer != null)
+                    //npcDirector = NewDirector;
+                    npcDirector.RemoveTarget(currentPlayer);
+                    //npcDirector.AddTarget(NewDirector.AddTarget);
+                    /*if (currentPlayer != null)
                     {
                         npcDirector.RemoveTarget(currentPlayer);
-                    }
+                    }*/
                     Debug.Log("change target");
                 }
             }
