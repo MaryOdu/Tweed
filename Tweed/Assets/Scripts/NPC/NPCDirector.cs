@@ -74,22 +74,10 @@ public class NPCDirector : MonoBehaviour
         {
             m_agents.Add(key, agent);
             this.UpdateAgentTargets(agent);
-            this.UpdateAllAgentLights();
             return true;
         }
 
         return false;
-    }
-
-    public void ClearAgents()
-    {
-        m_agents.Clear();
-    }
-
-
-    public void ClearTargets()
-    {
-        m_targets.Clear(); 
     }
 
     public bool RemoveTarget(GameObject target)
@@ -147,11 +135,14 @@ public class NPCDirector : MonoBehaviour
 
     private void UpdateAgentLight(NPCAgent agent, bool passive)
     {
-        var lightCmp = agent.GetComponent<GuardLight>();
-
-        if (lightCmp != null)
+        if (passive)
         {
-            lightCmp.UsePassiveColour = passive;
+            var lightCmp = agent.GetComponent<GuardLight>();
+
+            if (lightCmp != null)
+            {
+                lightCmp.UsePassiveColour = passive;
+            }
         }
     }
 }
