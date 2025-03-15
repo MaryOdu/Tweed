@@ -261,6 +261,8 @@ MonoBehaviour:
   m_director: {fileID: 0}
   m_sightRange: 50
   m_sightAngle: 45
+  m_eyes:
+  - {fileID: 3508451474171146227}
   m_passiveRotationSpeed: 3
   m_alertRotationSpeed: 20
   m_lookTimeout: 3

@@ -1,157 +1,50 @@
-using Assets.Scripts.NPC;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
 
-public class NPCDirector : MonoBehaviour
+namespace Assets.Scripts.NPC
 {
-    [SerializeField]
-    private GameObject m_player;
-
-    /// <summary>
-    /// The list of targets that this NPC Director is seeking to attack.
-    /// </summary>
-    [SerializeField]
-    private List<GameObject> m_targets;
-
-    /// <summary>
-    /// The list of NPC agents associated with this director.
-    /// </summary>
-    private Dictionary<int, NPCAgent> m_agents;
-
-    /// <summary>
-    /// Gets the list of agent GameObjects' registered unto this director.
-    /// </summary>
-    public List<GameObject> AgentGameObjects
+    public class NPCDirector : MonoBehaviour
     {
-        get
+        [SerializeField]
+        private Dictionary<string, NPCHubDirector> m_hubDirectors;
+
+        public NPCDirector()
         {
-            return m_agents.Select(x => x.Value.gameObject).ToList();
-        }
-    }
-
-    private int m_oldTargetCount;
-
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    public NPCDirector()
-    {
-        m_targets = new List<GameObject>();
-        m_agents = new Dictionary<int, NPCAgent>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        this.UpdateAgentTargets();
-        this.UpdateAllAgentLights();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (m_oldTargetCount != m_targets.Count)
-        {
-            this.UpdateAgentTargets();
-            this.UpdateAllAgentLights();
+            m_hubDirectors = new Dictionary<string, NPCHubDirector>();
         }
 
-        m_oldTargetCount = m_targets.Count;
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="agent"></param>
-    /// <returns></returns>
-    public bool RegisterAgent(NPCAgent agent)
-    {
-        var key = agent.gameObject.GetInstanceID();
-
-        if (!m_agents.ContainsKey(key))
+        private void Start()
         {
-            m_agents.Add(key, agent);
-            this.UpdateAgentTargets(agent);
-            this.UpdateAllAgentLights();
-            return true;
+            this.Initialise();
         }
 
-        return false;
-    }
-
-    public void ClearAgents()
-    {
-        m_agents.Clear();
-    }
-
-
-    public void ClearTargets()
-    {
-        m_targets.Clear(); 
-    }
-
-    public bool RemoveTarget(GameObject target)
-    {
-        var key = target.GetInstanceID();
-        var removedCount = m_targets.RemoveAll(x => x == null || x.GetInstanceID() == key);
-        this.UpdateAgentTargets();
-        this.UpdateAllAgentLights();
-
-        return removedCount > 0;
-    }
-
-    public void AddTarget(GameObject target)
-    {
-        foreach (var tgt in m_targets)
+        private void Update()
         {
-            if (tgt.GetInstanceID() == target.GetInstanceID())
+            
+        }
+
+        private void Initialise()
+        {
+            var hubDirs = this.GetComponentsInChildren<NPCHubDirector>();
+
+            foreach(var hub in hubDirs)
             {
-                return;
+                m_hubDirectors.Add(hub.gameObject.name, hub);
             }
         }
 
-        m_targets.Add(target);
-    }
-
-    private void UpdateAgentTargets(NPCAgent agent)
-    {
-        agent.ClearTargets();
-
-        foreach (var target in m_targets)
+        public void ClearPlayerFromHubTargets(GameObject npcHub)
         {
-            if (target != null)
-            {
-                agent.AddTarget(target);
-            }
+            m_hubDirectors[npcHub.gameObject.name].RemovePlayerFromTargets();
         }
-    }
 
-    private void UpdateAgentTargets()
-    {
-        foreach (var kvp in m_agents)
+        public void AddPlayerToHubTargets(GameObject npcHub)
         {
-            this.UpdateAgentTargets(kvp.Value);
-        }
-    }
-
-    public void UpdateAllAgentLights()
-    {
-        foreach (var kvp in m_agents)
-        {
-            var passive = !kvp.Value.Targets.Contains(m_player);
-            this.UpdateAgentLight(kvp.Value, passive);
-        }
-    }
-
-    private void UpdateAgentLight(NPCAgent agent, bool passive)
-    {
-        var lightCmp = agent.GetComponent<GuardLight>();
-
-        if (lightCmp != null)
-        {
-            lightCmp.UsePassiveColour = passive;
+            m_hubDirectors[npcHub.gameObject.name].RemovePlayerFromTargets();
         }
     }
 }

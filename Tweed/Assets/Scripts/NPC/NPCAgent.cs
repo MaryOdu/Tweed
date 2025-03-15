@@ -29,7 +29,7 @@ namespace Assets.Scripts.NPC
         /// The 'NPCDirector' which will monitor this agent/npc.
         /// </summary>
         [SerializeField]
-        private NPCDirector m_director;
+        private NPCHubDirector m_director;
 
         /// <summary>
         /// The maximum sight range of this agent/npc.

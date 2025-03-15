@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 1366797037719274210}
   m_Layer: 0
   m_Name: ControlPanel
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1768,15 +1768,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1366a81cb98ed0f4183fb8da24036f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IntText: {fileID: 0}
-  interactable: 0
-  InterOnce: 0
-  Gates: 0
-  TargetSwap: 1
-  InteractingSound: {fileID: 1366797037719274210}
-  npcDirector: {fileID: 0}
-  happen: {fileID: 0}
-  happen2: {fileID: 0}
+  m_interactable: 1
+  m_interactOnce: 0
+  m_interactSound: {fileID: 0}
+  m_switchEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_switchController: {fileID: 0}
 --- !u!82 &1366797037719274210
 AudioSource:
   m_ObjectHideFlags: 0
