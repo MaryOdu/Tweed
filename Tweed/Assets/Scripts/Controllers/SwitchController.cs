@@ -14,6 +14,8 @@ namespace Assets.Scripts
         [SerializeField]
         private NPCDirector m_npcDirector;
 
+        [SerializeField] PlayerRespawn TargetSpawn;
+
         private void Start()
         {
             
@@ -40,6 +42,11 @@ namespace Assets.Scripts
             {
                 gate.Open();
             }
+        }
+
+        public void RepPlayerSpawn(GameObject RespawnPoint)
+        {
+            TargetSpawn.ReplaceSpawn(RespawnPoint);
         }
     }
 }

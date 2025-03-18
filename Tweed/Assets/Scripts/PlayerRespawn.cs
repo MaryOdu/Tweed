@@ -1,7 +1,9 @@
 using Assets.Scripts;
+using Assets.Scripts.Environment;
 using Assets.Scripts.Util;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
@@ -67,5 +69,15 @@ public class PlayerRespawn : MonoBehaviour
         m_plyerMove.enabled = false;
         m_playerBody.SetActive(false);
         m_playerSpawn = true;
+    }
+
+    /*public void ReplaceSpawn(GameObject RespawnPoint)
+    {
+        m_spawnPoints.Remove(RespawnPoint);
+    }*/
+
+    public void ReplaceSpawn(GameObject RespawnPoint)
+    {
+        Destroy(RespawnPoint);
     }
 }
