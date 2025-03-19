@@ -78,6 +78,8 @@ public class PlayerRespawn : MonoBehaviour
 
     public void ReplaceSpawn(GameObject RespawnPoint)
     {
-        Destroy(RespawnPoint);
+        m_spawnPoints[0] = RespawnPoint;
+        //m_player = RespawnPoint;
+        //m_spawnPoints newObject = new RespawnPoint;
     }
 }
