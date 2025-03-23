@@ -3,7 +3,7 @@ using Assets.Scripts.Environment;
 using Assets.Scripts.Util;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
+//using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour

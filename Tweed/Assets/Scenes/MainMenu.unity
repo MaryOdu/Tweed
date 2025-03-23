@@ -16688,7 +16688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -49.799988}
+  m_AnchoredPosition: {x: 0, y: -49.80005}
   m_SizeDelta: {x: 716, y: 162.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458421650
@@ -17734,7 +17734,8 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.05138728
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1339360072975790750, guid: dec40839ed3e9204fb582f952f849605, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8707757138290136009, guid: dec40839ed3e9204fb582f952f849605, type: 3}
     m_AddedGameObjects: []
@@ -22124,6 +22125,7 @@ MonoBehaviour:
   Testing: AnimationTesting
   Prototype_Level: EnemyAgent_Test
   MMMusic: {fileID: 0}
+  MGMusic: {fileID: 0}
   PauseMenu: {fileID: 0}
   CaughtMenu: {fileID: 0}
   RespawnTime: 3
@@ -24882,6 +24884,7 @@ MonoBehaviour:
   Testing: AnimationTesting
   Prototype_Level: EnemyAgent_Test
   MMMusic: {fileID: 1341330276}
+  MGMusic: {fileID: 0}
   PauseMenu: {fileID: 0}
   CaughtMenu: {fileID: 0}
   RespawnTime: 3
