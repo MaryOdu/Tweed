@@ -66,6 +66,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private int width = 1920;
+    private int height = 1080;
+    private bool isFullScreen = true;
+
+
+    private void Awake()
+    {
+        Screen.SetResolution(width, height, isFullScreen);
+    }
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

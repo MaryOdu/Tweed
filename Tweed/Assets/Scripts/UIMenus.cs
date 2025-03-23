@@ -23,17 +23,20 @@ public class UIMenus : MonoBehaviour
     private bool Caught = false;
     //private bool WonTrue = false;
 
-    private int width = 1920; 
-    private int height = 1080; 
-    private bool isFullScreen = true; 
+    /*private int width = 1920; 
+    private int height = 700; 
+    private bool isFullScreen = true;
 
-    
 
+    private void Awake()
+    {
+        Screen.SetResolution(width, height, isFullScreen);
+    }*/
 
     void Start()
     {
 
-        Screen.SetResolution(width, height, isFullScreen);
+       
         //too be an audio function call
         if (CaughtMenu != null)
         {
