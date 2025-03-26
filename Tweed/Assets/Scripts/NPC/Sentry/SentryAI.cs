@@ -48,7 +48,7 @@ namespace Assets.Scripts.NPC.Sentry
         /// <summary>
         /// The list of guard agents that are tied to this sentry. When this sentry goes into 'alert' mode, it will notify the guards within this list.
         /// </summary>
-        [SerializeField]
+        //[SerializeField]
         private List<GuardAI> m_guardList;
 
         /// <summary>
@@ -118,12 +118,24 @@ namespace Assets.Scripts.NPC.Sentry
             this.SetSightParameters(50.0f, 45.0f);
         }
 
+        private void InitialiseGuardList()
+        {
+            var target = this.Director.Targets;
+
+            foreach (var agent in target)
+            {
+                this.AddTarget(agent);
+            }
+        }
+
         /// <summary>
         /// Called before first frame in Unity scene.
         /// </summary>
         protected override void Start()
         {
             base.Start();
+
+            this.InitialiseGuardList();
         }
 
         /// <summary>

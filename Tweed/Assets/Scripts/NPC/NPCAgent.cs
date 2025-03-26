@@ -60,6 +60,14 @@ namespace Assets.Scripts.NPC
             }
         }
 
+        protected NPCHubDirector Director
+        {
+            get
+            {
+                return m_director;
+            }
+        }
+
         /// <summary>
         /// Gets the maximum sight angle of this agent/npc - in degrees. 
         /// </summary>

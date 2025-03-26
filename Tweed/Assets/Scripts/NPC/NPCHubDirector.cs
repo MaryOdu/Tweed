@@ -16,9 +16,17 @@ public class NPCHubDirector : MonoBehaviour
     private List<GameObject> m_targets;
 
     /// <summary>
+    /// Agents
+    /// </summary>
+    [SerializeField]
+    private List<GameObject> m_agents;
+
+    /// <summary>
     /// The list of NPC agents associated with this director.
     /// </summary>
-    private Dictionary<int, NPCAgent> m_agents;
+    [SerializeField]
+    private Dictionary<int, NPCAgent> m_agentDictionary;
+
 
     /// <summary>
     /// Gets the list of agent GameObjects' registered unto this director.
@@ -27,7 +35,15 @@ public class NPCHubDirector : MonoBehaviour
     {
         get
         {
-            return m_agents.Select(x => x.Value.gameObject).ToList();
+            return m_agentDictionary.Select(x => x.Value.gameObject).ToList();
+        }
+    }
+
+    public List<GameObject> Targets
+    {
+        get
+        {
+            return m_targets;
         }
     }
 
@@ -39,7 +55,8 @@ public class NPCHubDirector : MonoBehaviour
     public NPCHubDirector()
     {
         m_targets = new List<GameObject>();
-        m_agents = new Dictionary<int, NPCAgent>();
+        m_agents = new List<GameObject>();
+        m_agentDictionary = new Dictionary<int, NPCAgent>();
     }
 
     // Start is called before the first frame update
@@ -54,11 +71,26 @@ public class NPCHubDirector : MonoBehaviour
     {
         if (m_oldTargetCount != m_targets.Count)
         {
+            this.InitialiseAgentDictionary();
             this.UpdateAgentTargets();
             this.UpdateAllAgentLights();
         }
 
         m_oldTargetCount = m_targets.Count;
+    }
+
+    private void InitialiseAgentDictionary()
+    {
+        m_agentDictionary = new Dictionary<int, NPCAgent>();
+
+        for (int i = 0; i < m_agents.Count; i++)
+        {
+            var obj = m_agents[i];
+            var agent = obj.GetComponent<NPCAgent>();
+            var key = obj.GetInstanceID();
+
+            m_agentDictionary.Add(key, agent);
+        }
     }
 
     /// <summary>
@@ -70,9 +102,9 @@ public class NPCHubDirector : MonoBehaviour
     {
         var key = agent.gameObject.GetInstanceID();
 
-        if (!m_agents.ContainsKey(key))
+        if (!m_agentDictionary.ContainsKey(key))
         {
-            m_agents.Add(key, agent);
+            m_agentDictionary.Add(key, agent);
             this.UpdateAgentTargets(agent);
             this.UpdateAllAgentLights();
             return true;
@@ -141,7 +173,7 @@ public class NPCHubDirector : MonoBehaviour
 
     private void UpdateAgentTargets()
     {
-        foreach (var kvp in m_agents)
+        foreach (var kvp in m_agentDictionary)
         {
             this.UpdateAgentTargets(kvp.Value);
         }
@@ -149,7 +181,7 @@ public class NPCHubDirector : MonoBehaviour
 
     public void UpdateAllAgentLights()
     {
-        foreach (var kvp in m_agents)
+        foreach (var kvp in m_agentDictionary)
         {
             var passive = !kvp.Value.Targets.Contains(m_player);
             this.UpdateAgentLight(kvp.Value, passive);
