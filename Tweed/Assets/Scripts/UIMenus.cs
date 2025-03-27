@@ -23,9 +23,26 @@ public class UIMenus : MonoBehaviour
     private bool Caught = false;
     //private bool WonTrue = false;
 
+<<<<<<< HEAD
 
     void Start()
     {
+=======
+    /*private int width = 1920; 
+    private int height = 700; 
+    private bool isFullScreen = true;
+
+
+    private void Awake()
+    {
+        Screen.SetResolution(width, height, isFullScreen);
+    }*/
+
+    void Start()
+    {
+
+       
+>>>>>>> 1a0816a (Menu fix, turrain pain and texture fix)
         //too be an audio function call
         if (CaughtMenu != null)
         {
